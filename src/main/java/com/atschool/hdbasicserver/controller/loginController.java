@@ -1,5 +1,6 @@
 package com.atschool.hdbasicserver.controller;
 
+import com.atschool.hdbasicserver.bean.User;
 import com.atschool.hdbasicserver.service.LoginService;
 import com.atschool.hdbasicserver.service.impl.LoginServiceImpl;
 import org.apache.ibatis.annotations.Param;
@@ -17,7 +18,7 @@ public class loginController {
     @RequestMapping("/loginUser")
     public String loginUser(@RequestParam("username")String username,@RequestParam("password") String password){
         System.out.println(username+password);
-        if (username.equals("root")&&password.equals("123")){
+        if (loginService.login(new User(username,password))){
             return "success";
         }else {
             return "false";

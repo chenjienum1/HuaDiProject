@@ -13,8 +13,7 @@ class HdBasicServerApplicationTests {
         LoginMapper loginmapper;
     @Test
     void contextLoads() {
-        User root = loginmapper.findUserByName("root");
-        System.out.println(root);
+        loginmapper.registerUser("root","123");
     }
 
 }
