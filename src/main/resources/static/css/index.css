@@ -8,9 +8,11 @@ ul,ol,li{
     list-style: none;
 }
 
+
+@import url(http://fonts.useso.com/css?family=Ubuntu);
 @font-face{
-    font-family: ch;
-    src: url(../font/FZNianLLHTJW.TTF);
+    font-family:'ch';
+    src:url
 }
 
 /* head部分 */
@@ -21,8 +23,9 @@ ul,ol,li{
 }
 
 .logo{
-    width: 150px;
-    height: 150px;
+    margin-top:20px;
+    width: 200px;
+    height: 100px;
     background: url(https://i.postimg.cc/0QSfzchc/image.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -31,14 +34,14 @@ ul,ol,li{
 
 .title{
     text-align: center;
-    width: 420px;
+    width: 370px;
     line-height: 125px;
-    font-size: 18px;
-    font-family: ch;
+    font-size: 30px;
     color: blue;
     /* text-shadow: 5px 0 0 skyblue; */
     float: left;
 }
+
 
 .headerlight{
     float: left;

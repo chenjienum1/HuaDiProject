@@ -1,5 +1,5 @@
 //获取所有承载图片的li和所有承载焦点的li
-        var imgs=document.querySelectorAll('.banner>ul>li')
+var imgs=document.querySelectorAll('.banner>ul>li')
         var points=document.querySelectorAll('.banner>ol>li')
         var banner=document.querySelector('.banner')
         console.log(imgs.length)
@@ -26,7 +26,7 @@
                 index=type
             }
 
-            if(index>=imgs.length-1){
+            if(index>=imgs.length){
                 index=0
             }
             if(index<0){
