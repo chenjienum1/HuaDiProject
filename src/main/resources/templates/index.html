@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        /* @import url("页面.css"); */
+        *{
+    margin: 0;
+    padding: 0;
+}
+
+ul,ol,li{
+    list-style: none;
+}
+
+@font-face{
+    font-family: ch;
+    src: url(../font/FZNianLLHTJW.TTF);
+}
+
+/* head部分 */
+.head{
+    width: 1000px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+.logo{
+    width: 150px;
+    height: 150px;
+    background: url(../img/tiger.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    float: left;
+}
+
+.title{
+    text-align: center;
+    width: 420px;
+    line-height: 125px;
+    font-size: 18px;
+    font-family: ch;
+    color: blue;
+    /* text-shadow: 5px 0 0 skyblue; */
+    float: left;
+}
+
+.headerlight{
+    float: left;
+}
+
+.headerlight ul{
+    height: 40px;
+    line-height: 40px;
+    margin-top: 10px;
+}
+
+.headerlight li{
+    float: left;
+    padding: 0 10px;
+    border-right: 1px solid #b2c7ea;
+    font-size: 15px;
+    color: #ababab;
+    width: 80px;
+}
+
+.headerlight .last{
+    padding-right: 0;
+    border-right: 0;
+} 
+
+.search{
+    float: right;
+    width: 400px;
+    height: 50px;
+    border: 1px solid #d1d1d1;
+    border-radius: 10px; ;
+}
+
+.search input{
+    border: 0;
+    outline: none;
+    height: 50px;
+}
+
+.search .left{
+    width: 150px;
+    float: left;
+    padding-left: 14px;
+    border-radius: 10px 0 0 10px;
+}
+
+.search .right{
+    float: right;
+    height: 50px;
+    background: url(../img/定位3.jpg);
+    width: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
+    border-radius: 0 10px 10px 0;
+}
+
+/* nav部分 */
+.nav{
+     height: 50px;
+    line-height: 50px;
+    background-color: #0c345c;
+    color: white;
+    border-top: 1px solid #657588;
+    border-bottom: 1px solid #657588;
+    display: flex;
+}
+
+.nav .con{
+    margin: 0 auto;
+    width: 1000px;
+    display: flex;
+}
+
+.nav .con div{
+    font-size: 15px;
+    width: 165px;
+    text-align: center;
+}
+
+.con div:hover{
+    background-color: white;
+    color: #0c345c;
+}
+
+.con div ul{
+    display: none;
+    color: #0c345c;
+}
+
+.con div li{
+    border: 1px solid black;
+}
+
+.con div:hover ul{
+    display: block;
+}
+
+/* 轮播图部分 */
+img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.banner{
+    width: 900px;
+    height: 300px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.banner ul{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.banner ul li{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s linear;
+}
+
+.banner>ul>li.active{
+    opacity: 1;
+}
+
+.banner>ol{
+            width: 200px;
+            height: 30px;
+            position: absolute;
+            left: 30px;
+            bottom: 30px;
+            background-color: skyblue;
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 15px;
+        }
+
+.banner>ol>li{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: white;
+            cursor: pointer;
+        }
+
+.banner>ol>li.act{
+        background-color: orange;
+}
+
+.banner>div{
+            width: 40px;
+            height: 60px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+}
+
+.banner>div.left{
+            left: 0;
+}
+
+.banner>div.right{
+            right: 0;
+}
+
+    </style>
+</head>
+<body>
+    <div class="head">
+        <div class="logo"></div>
+        <div class="title">华迪基层公开信息服务</div>
+        <div class="headerlight">
+            <ul>
+                <li>个人登录</li>
+                <li>政府登录</li>
+                <li>注册</li>
+                <li class="last">退出</li>
+            </ul>
+            <div class="search">
+                <input type="text" name="信息搜索" id="" class="left">
+                <input type="submint" name="" id="" class="right">
+            </div>
+        </div>
+    </div>
+
+    <div class="nav">
+        <div class="con">
+            <div>首页</div>
+            <div>基层信息公开
+                <ul>
+                    <li>党务政务村务公开</li>
+                    <li>热点搜集公开</li>
+                    <li>廉政公开</li>
+                    <li>公开满意度评价</li>
+                </ul>
+            </div>
+            <div>三资管理
+                <ul>
+                    <li>总体框架</li>
+                    <li>资金管理</li>
+                    <li>资产管理</li>
+                    <li>资源管理</li>
+                    <li>工程项目管理</li>
+                    <li>收入支出管理</li>
+                    <li>报表管理</li>
+                    <li>统计分析管理</li>
+                    <li>三资监控管理</li>
+                    <li>经济合同管理</li>
+                    <li>三资清查管理</li>
+                </ul>
+            </div>
+            <div>应用平台
+                <ul>
+                    <li>统一信息门户</li>
+                    <li>统一组织机构管理系统</li>
+                    <li>统一权限管理系统</li>
+                    <li>统一用户管理系统</li>
+                    <li>统一身份认证系统</li>
+                    <li>统一检索平台</li>
+                    <li>统一报表平台</li>
+                </ul>
+            </div>
+            <div>数据
+                <ul>
+                    <li>党务数据</li>
+                    <li>政务数据</li>
+                    <li>村务数据</li>
+                    <li>财务数据</li>
+                    <li>热点信息</li>
+                </ul>
+            </div>
+            <div>安全
+                <ul>
+                    <li>物理安全</li>
+                    <li>网络安全</li>
+                    <li>信息安全</li>
+                    <li>安全管理</li>
+                    <li>数字认证</li>
+                    <li>安全审计</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="banner">
+        <ul class="imgBox">
+            <!-- 图片区域 -->
+            <li class="active"><img src="../img/black.jpg" alt=""></li>
+            <li><img src="../img/black1.jpg" alt=""></li>
+            <li><img src="../img/black2.jpg" alt=""></li>
+            <li><img src="../img/timg.gif" alt=""></li>
+        </ul>
+
+        <!-- 焦点区域 -->
+        <ol>
+            <li data-i="0" data-name="point" class="act"></li>
+            <li data-i="1" data-name="point"></li>
+            <li data-i="2" data-name="point"></li>
+            <li data-i="3" data-name="point"></li>
+            <!-- 设置自定义名称 方便检测点击 -->
+            <!-- 设定每个焦点的索引值 -->
+        </ol>
+
+        <!-- 左右切换按钮 -->
+        <div class="left">&lt;</div>
+        <!-- 左按钮 -->
+        <div class="right">&gt;</div>
+        <!-- 右按钮 -->
+    </div>
+    <script>
+        //获取所有承载图片的li和所有承载焦点的li
+        var imgs=document.querySelectorAll('.banner>ul>li')
+        var points=document.querySelectorAll('.banner>ol>li')
+        var banner=document.querySelector('.banner')
+        console.log(imgs.length)
+
+        //准备一个变量，表示当前第几章，默认是0
+        var index=0
+
+        //书写一个切换一张的函数
+        //约定：
+        //参数为true。切换下一张
+        //参数为false，切换上一张
+        //参数为数字，切换到索引这一张
+        function changeOne(type){
+            //1、让当前这张消失
+            imgs[index].className=''
+            points[index].className=''
+
+            //2、根据type传递来的参数，确定切换哪一张
+            if(type===true){
+                index++
+            }else if(type===false){
+                index--
+            }else{
+                index=type
+            }
+
+            if(index>=imgs.length-1){
+                index=0
+            }
+            if(index<0){
+                index=imgs.length-1
+            }
+
+            //3、让改变后的这一张显示出来
+            imgs[index].className='active'
+            points[index].className='act'
+        }
+
+        //4、设定点击事件
+        banner.onclick=function(e){
+            if(e.target.className==='left'){
+                //点击左箭头
+                changeOne(false)
+            }
+
+            //点击右箭头
+            if(e.target.className ==='right'){
+                changeOne(true)
+            }
+
+            //点击焦点
+            if(e.target.dataset.name ==='point'){
+                console.log("je")
+                //dataset获得自定义的值
+                //拿到记录的索引
+                var i=e.target.dataset.i - 0
+                changeOne(i)
+            }
+        }
+
+        //自动转换功能
+        setInterval(function(){
+            //切换到下一张
+            changeOne(true)
+        },2000)
+        </script>
+</body>
+</html>
