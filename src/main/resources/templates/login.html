@@ -27,7 +27,7 @@
       <div class="signin">
         <h1>登录</h1>
         <form  th:action="@{/loginUser}" class="more-padding" autocomplete="off">
-          <input type="text" placeholder="请输入用户名" name="username">
+          <input type="text" th:text="${username}" placeholder="请输入用户名" name="username"><h1 th:text="${msg}">11</h1>
           <input type="password" placeholder="请输入密码" name="password">
           <div class="checkbox">
             <input type="checkbox" id="remember" /><label for="remember">记住密码</label>

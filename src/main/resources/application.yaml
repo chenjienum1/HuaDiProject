@@ -7,7 +7,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/project?useUnicode=true&characterEncoding=utf-8
     username: root
-    password: wsq130
+    password: 572562107
 
 #指定全局配置文件
 #配置mybatis规则
