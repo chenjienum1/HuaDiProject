@@ -12,6 +12,6 @@
     <!--public void registerUser(String username,String password);-->
 
     <insert id="registerUser">
-        insert into ordinaryuser (username,password) values (#{username},#{password});
+        insert into ordinaryuser(username,password) values (#{username},#{password});
     </insert>
 </mapper>
