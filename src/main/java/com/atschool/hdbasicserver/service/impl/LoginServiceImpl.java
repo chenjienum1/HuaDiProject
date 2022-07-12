@@ -23,7 +23,7 @@ public class LoginServiceImpl implements LoginService {
     public boolean login(User user){
         String username=user.getUsername();
         User userByName = loginMapper.findUserByName(username);
-        if (userByName.getPassword()==user.getPassword()){
+        if (userByName.getPassword().equals(user.getPassword())){
             return true;
         }
         return false;

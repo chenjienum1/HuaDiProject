@@ -1,5 +1,6 @@
 package com.atschool.hdbasicserver;
 
+import com.atschool.hdbasicserver.bean.User;
 import com.atschool.hdbasicserver.mapper.LoginMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ class HdBasicServerApplicationTests {
         LoginMapper loginmapper;
     @Test
     void contextLoads() {
+        loginmapper.registerUser("root","123");
     }
 
 }
