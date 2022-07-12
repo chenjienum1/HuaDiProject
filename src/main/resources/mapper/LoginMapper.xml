@@ -6,12 +6,12 @@
 
     <!--public User findUserByName(String name);-->
     <select id="findUserByName" resultType="com.atschool.hdbasicserver.bean.User">
-
+        select username,password from ordinaryuser where username=#{name};
     </select>
 
     <!--public void registerUser(String username,String password);-->
 
     <insert id="registerUser">
-
+        insert into ordinaryuser (username,password) values (#{username},#{password});
     </insert>
 </mapper>
