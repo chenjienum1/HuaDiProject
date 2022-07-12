@@ -1,5 +1,7 @@
 package com.atschool.hdbasicserver.bean;
 
+import java.util.Objects;
+
 public class Official {
     private String username;
     private String password;
@@ -36,5 +38,29 @@ public class Official {
 
     public void setPosition(String position) {
         this.position = position;
+    }
+
+    @Override
+    public String toString() {
+        return "Official{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", position='" + position + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Official official = (Official) o;
+        return Objects.equals(username, official.username) &&
+                Objects.equals(password, official.password) &&
+                Objects.equals(position, official.position);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(username, password, position);
     }
 }
