@@ -23,7 +23,7 @@ ul,ol,li{
 .logo{
     width: 150px;
     height: 150px;
-    background: url(../img/tiger.gif);
+    background: url(https://i.postimg.cc/0QSfzchc/image.png);
     background-size: contain;
     background-repeat: no-repeat;
     float: left;
@@ -88,7 +88,7 @@ ul,ol,li{
 .search .right{
     float: right;
     height: 50px;
-    background: url(../img/定位3.jpg);
+    background: url(https://i.postimg.cc/QMjmRcCV/3.jpg);
     width: 50px;
     background-size: contain;
     background-repeat: no-repeat;
@@ -111,12 +111,15 @@ ul,ol,li{
     margin: 0 auto;
     width: 1000px;
     display: flex;
+    position: relative;
 }
 
 .nav .con div{
     font-size: 15px;
     width: 165px;
     text-align: center;
+
+
 }
 
 .con div:hover{
@@ -127,14 +130,27 @@ ul,ol,li{
 .con div ul{
     display: none;
     color: #0c345c;
+    position: relative;
+    width: 165px;
+    height: 50px;
+    text-align: center;
 }
 
 .con div li{
     border: 1px solid black;
+    position: relative;
+    z-index: 2;
 }
 
 .con div:hover ul{
     display: block;
+    z-index: 2;
+}
+
+.con div li:hover{
+    color: #0c345c;
+    background-color: white;
+
 }
 
 /* 轮播图部分 */
