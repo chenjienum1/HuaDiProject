@@ -12,4 +12,10 @@
     <insert id="addAffair">
         insert into affair(`title`,`time`,`picture`,`content`) values (#{title},#{time},#{picture},#{content})
     </insert>
+
+
+<!--public List<Affair> getAffair();-->
+    <select id="getAffair" resultType="com.atschool.hdbasicserver.bean.Affair">
+        select * from affair
+    </select>
 </mapper>

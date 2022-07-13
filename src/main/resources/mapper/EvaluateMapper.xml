@@ -8,4 +8,10 @@
     <insert id="addEvaluate">
         insert into evaluate(`title`,`kind`,`satisfaction`,`time`,`evaluate`) values (#{title},#{kind},#{satisfaction},#{time},#{evaluate})
     </insert>
+
+
+<!--public void  getEvaluate();-->
+    <select id="getEvaluate" resultType="com.atschool.hdbasicserver.bean.Evaluate">
+        select * from evaluate
+    </select>
 </mapper>
