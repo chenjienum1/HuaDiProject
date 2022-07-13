@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.atschool.hdbasicserver.mapper.FundsMapper">
+
+    <!--public void addFunds(String town, String village, int account, int realaccount, boolean available, String comment, String accountant, String functionary);-->
+    <insert id="addFunds">
+        insert into funds(`town`,`village`,`account`,`realaccount`,`available`,`comment`,`accountant`,`functionary`) values (#{town},#{village},#{account},#{realAccount},#{available},#{comment},#{accountant},#{functionary})
+    </insert>
+</mapper>
