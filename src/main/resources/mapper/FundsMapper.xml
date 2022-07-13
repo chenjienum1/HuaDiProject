@@ -9,4 +9,9 @@
     <insert id="addFunds">
         insert into funds(`town`,`village`,`account`,`realaccount`,`available`,`comment`,`accountant`,`functionary`) values (#{town},#{village},#{account},#{realAccount},#{available},#{comment},#{accountant},#{functionary})
     </insert>
+
+    <!--public List<Funds> getFunds();-->
+    <select id="getFunds" resultType="com.atschool.hdbasicserver.bean.Funds">
+        select * from funds
+    </select>
 </mapper>

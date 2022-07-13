@@ -9,4 +9,9 @@
     <insert id="addProperty">
         insert into property(`town`,`village`,`name`,`unit`,`amount`,`jinzhi`,`time`,`principal`) values (#{town},#{village},#{name},#{unit},#{amount},#{jinZhi},#{time},#{principal})
     </insert>
+
+    <!--public List<Property> getProperty();-->
+    <select id="getProperty" resultType="com.atschool.hdbasicserver.bean.Property">
+        select * from property
+    </select>
 </mapper>
