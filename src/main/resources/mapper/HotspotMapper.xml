@@ -10,4 +10,12 @@
     <insert id="addHotspot">
         insert into hotspot(`title`,`time`,`picture`,`content`) values (#{title},#{time},#{picture},#{content})
     </insert>
+
+
+
+<!--public List<Hotspot> getHotspot();-->
+    <select id="getHotspot" resultType="com.atschool.hdbasicserver.bean.Hotspot">
+        select * from hotspot
+    </select>
+    
 </mapper>
