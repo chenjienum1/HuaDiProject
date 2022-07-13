@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.atschool.hdbasicserver.mapper.EvaluateMapper">
+<!--public void addEvaluate(String title, String kind, Integer satisfaction, String time, String evaluate);-->
+    <insert id="addEvaluate">
+        insert into evaluate(`title`,`kind`,`satisfaction`,`time`,`evaluate`) values (#{title},#{kind},#{satisfaction},#{time},#{evaluate})
+    </insert>
+
+
+<!--public void  getEvaluate();-->
+    <select id="getEvaluate" resultType="com.atschool.hdbasicserver.bean.Evaluate">
+        select * from evaluate
+    </select>
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.atschool.hdbasicserver.mapper.HotspotMapper">
+
+<!--public void addHotspot(String title, String time, String picture, String content);-->
+    <insert id="addHotspot">
+        insert into hotspot(`title`,`time`,`picture`,`content`) values (#{title},#{time},#{picture},#{content})
+    </insert>
+
+
+
+<!--public List<Hotspot> getHotspot();-->
+    <select id="getHotspot" resultType="com.atschool.hdbasicserver.bean.Hotspot">
+        select * from hotspot
+    </select>
+    
+</mapper>
