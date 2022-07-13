@@ -4,15 +4,19 @@
     padding: 0;
 }
 
+body{
+    background:white;
+}
+
 ul,ol,li{
     list-style: none;
 }
 
 
-@import url(http://fonts.useso.com/css?family=Ubuntu);
+
 @font-face{
     font-family:'ch';
-    src:url
+    src:url("/font/FZNianLLHTJW.TTF");
 }
 
 /* head部分 */
@@ -33,11 +37,12 @@ ul,ol,li{
 }
 
 .title{
-    text-align: center;
+    text-align: left;
     width: 370px;
     line-height: 125px;
     font-size: 30px;
-    color: blue;
+    font-family:ch;
+    color: skyblue;
     /* text-shadow: 5px 0 0 skyblue; */
     float: left;
 }
@@ -69,30 +74,31 @@ ul,ol,li{
 
 .search{
     float: right;
-    width: 400px;
-    height: 50px;
+    width: 350px;
+    height: 30px;
     border: 1px solid #d1d1d1;
-    border-radius: 10px; ;
+    border-radius: 10px;
+    margin-top:5px;
 }
 
 .search input{
     border: 0;
     outline: none;
-    height: 50px;
+    height: 30px;
 }
 
 .search .left{
-    width: 150px;
+    width: 320px;
     float: left;
-    padding-left: 14px;
+    padding:0;
     border-radius: 10px 0 0 10px;
 }
 
 .search .right{
-    float: right;
-    height: 50px;
+    float: left;
+    height: 30px;
     background: url(https://i.postimg.cc/QMjmRcCV/3.jpg);
-    width: 50px;
+    width: 30px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: left center;
