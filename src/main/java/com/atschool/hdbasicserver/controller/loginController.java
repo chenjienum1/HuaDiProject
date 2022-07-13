@@ -8,10 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.mvc.support.RedirectAttributesModelMap;
 
 import javax.servlet.http.HttpSession;
+
 
 @Controller
 public class loginController {
@@ -19,23 +20,28 @@ public class loginController {
     @Autowired
     LoginServiceImpl loginService;
 
-    @RequestMapping("/loginUser")
-    public String loginUser(Model model, @RequestParam("username")String username, @RequestParam("password") String password){
+    @RequestMapping(value = "/loginUser",method = RequestMethod.PUT)
+    public String loginUser(HttpSession session, @RequestParam("username")String username, @RequestParam("password") String password){
         System.out.println(username+password);
         boolean ifExist = loginService.ifExist(username);
         if (!ifExist){
-            model.addAttribute("msg","用户名不存在");
+            session.setAttribute("msg","用户不存在");
+            System.out.println("用户不存在");
             return "login";
         }
-
-        if (loginService.login(new User(username,password))){
-            return "success";
+        User u=new User(username,password);
+        if (loginService.login(u)){
+            session.setAttribute("User",u);
+            return "redirect:success.html";
         }else {
-            model.addAttribute("msg","密码错误");
-            model.addAttribute("username",username);
+            session.setAttribute("msg","密码错误");
+            session.setAttribute("username",username);
+            System.out.println("密码错误");
             return "login";
         }
     }
+
+
 
 
 }
