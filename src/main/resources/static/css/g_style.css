@@ -54,34 +54,6 @@ body {
 }
 
 /*--- social-icons ----*/
-.right{
-	float: right;
-}
-
-.headerlight{
-    float: right;
-}
-
-.headerlight ul{
-    height: 40px;
-    line-height: 40px;
-    margin-top: 10px;
-}
-
-.headerlight li{
-    float: left;
-    padding: 0 10px;
-    border-right: 1px solid #b2c7ea;
-    font-size: 15px;
-    color: #fff;
-    width: 80px;
-}
-
-.headerlight .last{
-    padding-right: 0;
-    border-right: 0;
-} 
-
 .text {
 	float:right;
 	padding: 2.4%;
@@ -104,10 +76,12 @@ body {
 	margin-right:20px;
 	float: left;
 }
+
 .h_menu ul li.active a{
 	color: #74D7E1;
 }
-.h_menu ul li a{
+
+.h_menu ul li .hnav{
 	display:block;
 	padding: 33px 15px;
 	text-transform: uppercase;
@@ -119,50 +93,59 @@ body {
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 }
-.h_menu ul li div:hover{
-	color: #74D7E1;
+.hnav {
+	height: 44px;
 }
-
-.h_menu ul li div ul{
-    display: none;
-    color: #0c345c;
-    position: relative;
-    width: 165px;
-    height: 50px;
-    text-align: center;
+.hnav > ul {
+	margin: 0px auto; width: 1100px; position: relative;
 }
-
-.h_menu ul li div:hover ul{
+.hnav > ul > li {
+	width: 137px; height: 44px; text-align: center; line-height: 44px; float: left;
+}
+.hnav > ul > li > a {
+	color: rgb(255, 255, 255); font-size: 22px; display: block;
+}
+.hnav > ul > li:hover > a {
+	background: rgb(238, 238, 238); color: rgb(30, 75, 143);
+}
+.hnav > ul > li:hover .hnavbox {
 	display: block;
-	z-index: 2;
 }
-.h_menu ul li div li:hover{
-    color: #fff;
-
+.hnavbox {
+	background: url(https://www.haikou.gov.cn/material/images/hmbb.png); padding: 10px 50px; left: 0px; top: 44px; width: 1000px; height: 90px; display: none; position: absolute; z-index: 99;
 }
-.h_menu ul li.active div{
-	color: #74D7E1;
+.hnavbox .hnavl {
+	width: 799px; height: 90px; border-right-color: rgb(51, 51, 51); border-right-width: 1px; border-right-style: solid; float: left;
 }
-.h_menu ul li div{
-	display:block;
-	padding: 33px 15px;
-	text-transform: uppercase;
-	font-size: 0.925em;
-	color:#fff;
-	font-weight: 600;
-	-webkit-transition: all 0.3s ease-in-out;
-	-moz-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
+.hnavbox p {
+	height: 30px; text-align: left; line-height: 30px; font-weight: bold;
 }
-.h_menu ul li div:hover{
-	color: #74D7E1;
+.hnavbox p span {
+	width: 117px; text-align: center; color: rgb(51, 51, 51); font-size: 16px; float: left; display: block;
+}
+.hnavbox p a {
+	color: rgb(51, 51, 51); font-size: 16px; font-weight: normal; margin-right: 20px;
+}
+.hnavbox .hnavr p {
+	padding-left: 20px; font-weight: bold;
+}
+.hnavbox .hnavr p a {
+	font-weight: bold;
+}
+.hnavbox .hnavr {
+	width: 200px; height: 110px; float: left;
+}
+.hnavbox ul li {
+	float: left;
+}
+.hnavbox ul li a {
+	padding: 0px 10px; color: rgb(51, 51, 51); font-size: 16px; font-weight: bold; float: left; display: block;
 }
 /*search*/
 .h_search{
 	float: right;
 	position: relative;
-	margin: 20px 0;
+	margin: 2px 0;
 	width: 24.3333%;
 	background: #FFF;
 	border-radius: 30px;
@@ -2067,6 +2050,9 @@ ul.sidebar_1 li {
 	.h_menu{
 		display:none;
 	}
+	.hnav{
+		display:none;
+	}
 	#page{
 		display:block;
 	}
@@ -2082,7 +2068,8 @@ ul.sidebar_1 li {
 	}
 	.h_search {
 		width: 48%;
-		margin: 13px 0;
+		margin: 2px 0;
+		position: relative;
 	}
 	.text{
 		display:none;
@@ -2293,7 +2280,7 @@ ul.sidebar_1 li {
 	}
 	.h_search {
 		width: 48%;
-		margin: 13px 0;
+		margin: 2px 0;
 	}
 	.text{
 		display:none;
@@ -2513,7 +2500,7 @@ ul.sidebar_1 li {
 	}
 	.h_search {
 		width:66%;
-		margin: 13px 0;
+		margin:2px 0;
 	}
 
 	.text{
@@ -2797,7 +2784,7 @@ ul.sidebar_1 li {
 	}
 	.h_search {
 		width: 80%;
-		margin: 7px 0;
+		margin: 2px 0;
 	}
 
 	.text{
