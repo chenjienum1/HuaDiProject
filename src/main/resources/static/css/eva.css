@@ -1,0 +1,80 @@
+.evaform{
+
+
+}
+.evaform p{
+margin-top:20px;
+top:50px;
+}
+            .radio-bj {
+                width: auto;
+                display: inline-block !important;
+            }
+
+            div.radio-bj span {
+                margin-left: 15px !important;
+            }
+            td {
+                padding: 5px 5px;
+            }
+
+            strong {
+                background: #eee;
+            }
+            .radio-bj{
+                margin-left: 10px;;
+            }
+            .container {
+                width:1000px;
+            }
+            .r-slider-button {
+                background: #2196f3;
+                border-radius: 100%;
+                text-align: center;
+            }
+
+            .ace-file-input {
+                display: block;
+                font-size: inherit;
+                position: relative;
+                height: 30px;
+                width: 40%;
+            }
+
+            .r-slider-line {
+                background: #ccc;
+            }
+
+            .r-slider-fill {
+                background: #2196f3;
+            }
+
+            .r-slider-number {
+                position: absolute;
+                background: #000;
+                color: #fff;
+                width: 28px;
+                left: calc(50% - 14px);
+                top: -16px;
+                font-size: 12px;
+                border-radius: 3px;
+            }
+
+            .r-slider-text {
+                font-size: 10px;
+                text-align: center;
+            }
+
+            .r-slider-pin {
+                background: #ccc;
+            }
+
+            .r-slider-label {
+                font-size: 10px;
+                top: 16px;
+            }
+
+
+            .a{
+            margin:0 auto;
+            }

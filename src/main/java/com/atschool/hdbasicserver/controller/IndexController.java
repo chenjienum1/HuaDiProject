@@ -32,4 +32,8 @@ public class IndexController {
     public String login4(){
         return "Fundstable";
     }
+    @RequestMapping("/evaluate")
+    public String login5(){
+        return "evaluate";
+    }
 }
