@@ -18,8 +18,8 @@ public class IndexController {
         return "login";
     }
 
-    @RequestMapping("/try")
+    @RequestMapping("/szjs")
     public String login2(){
-        return "try";
+        return "szjs";
     }
 }
