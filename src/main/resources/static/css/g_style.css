@@ -112,7 +112,7 @@ body {
 	display: block;
 }
 .hnavbox {
-	background: url(https://www.haikou.gov.cn/material/images/hmbb.png); padding: 10px 50px; left: 0px; top: 44px; width: 1000px; height: 90px; display: none; position: absolute; z-index: 99;
+	background-color:#f2f2f2; padding: 5px 5px; left: 0px; top: 44px; width: 1090px; height: 30px; display: none; position: absolute; z-index: 99;
 }
 .hnavbox .hnavl {
 	width: 799px; height: 90px; border-right-color: rgb(51, 51, 51); border-right-width: 1px; border-right-style: solid; float: left;
@@ -140,6 +140,25 @@ body {
 }
 .hnavbox ul li a {
 	padding: 0px 10px; color: rgb(51, 51, 51); font-size: 16px; font-weight: bold; float: left; display: block;
+}
+.hcontent {
+    background: rgb(249, 249, 249);
+}
+.hcon {
+    background: rgb(255, 255, 255);
+    margin: 0px auto;
+    width: 1100px;
+}
+.powz {
+    line-height: 44px;
+    height: 44px;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    color: #000;
+    padding-left: 30px;
+    background: url(../images/wz.png) 0 9px no-repeat;
+    width: 1010px;
+    margin: 0 auto;
 }
 /*search*/
 .h_search{
