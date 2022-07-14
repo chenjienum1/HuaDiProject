@@ -23,4 +23,4 @@ mybatis:
     map-underscore-to-camel-case: true
 
   # 指定全局配置文件位置
-  config-location: classpath:mybatis-config.xml
+  #config-location: classpath:mybatis-config.xml
