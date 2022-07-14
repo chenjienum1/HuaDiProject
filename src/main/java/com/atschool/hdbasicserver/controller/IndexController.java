@@ -22,4 +22,14 @@ public class IndexController {
     public String login2(){
         return "boot";
     }
+
+    @RequestMapping("/xinxi")
+    public String login3(){
+        return "xinxi";
+    }
+
+    @RequestMapping("/Fundstable")
+    public String login4(){
+        return "Fundstable";
+    }
 }

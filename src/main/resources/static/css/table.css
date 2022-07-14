@@ -1,0 +1,19 @@
+.table tr{
+    height: 50px;
+    text-align:center;
+    line-height:50px;
+    border: 0;
+}
+
+.table input{
+    position: relative;
+    width: 40%;
+}
+
+.table .active{
+    background-color:#dfdfdf;
+}
+
+textarea{
+    width: 60%;
+}

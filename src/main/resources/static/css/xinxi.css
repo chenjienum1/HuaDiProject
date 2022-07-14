@@ -1,0 +1,40 @@
+.con_title{
+    width:100%;
+    background-color:white;
+    font-size:30px;
+    margin-bottom-10px;
+    border-bottom:1px solid #ccc;
+}
+
+.second_title{
+    width:100%;
+    height:40px;
+    background:white;
+    font-size:30px;
+    color:#313131;
+}
+
+.main_comment{
+    width:100%
+    background:white;
+    overflow:hidden;
+    margin-top:10px;
+}
+
+.list1{
+    background:white;
+    border-bottom:1px solid #ccc;
+    padding-bottom:15px;
+    height:80px;
+    width:100%;
+}
+
+.listcomment{
+    width:100%;
+    padding-top:7px;
+    padding-bottom:5px;
+    curson:pointer;
+    font-size:24px;
+    line-height:24px;
+    color:#525252;
+}

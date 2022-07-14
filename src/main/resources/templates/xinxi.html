@@ -1,118 +1,208 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" dir="ltr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/index.css">
-
+    <title>Home</title>
+    <!--此处填写网页标签名 -->
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="images/ico/favicon.ico" type="image/x-icon">
+    <!--此处加入网页图标 -->
+    <link href="css/g_style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--此处加载模块预置css，不能修改g_style.css-->
+    <link href="css/xbcon.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <!-----768px-menu----->
+    <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
+    <link type="text/css" rel="stylesheet" href="css/xinxi.css" />
+    <script type="text/javascript" src="js/jquery.mmenu.js"></script>
+    <script type="text/javascript">
+        //	The menu on the left
+        $(function () {
+            $('nav#menu-left').mmenu();
+        });
+    </script>
+    <!-----//768px-menu----->
 </head>
+
 <body>
-
-<div class="head">
-    <div class="logo"></div>
-    <div class="title" >华迪基层公开信息服务</div>
-    <div class="headerlight">
-        <ul>
-            <li>个人登录</li>
-            <li>政府登录</li>
-            <li><a href="login">登录</a></li>>
-            <li class="last">退出</li>
-        </ul>
-        <div class="search">
-            <input type="text" name="信息搜索"  class="left">
-            <input type="submint" name=""  class="right">
+<div class="header_bg">
+    <div class="wrap">
+        <div class="header">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/lg.png" alt="">
+                    <div class="clear"> </div>
+                </a>
+            </div>
+            <div class="text">
+                <p >华迪基层公开综合服务监管系统</p>
+            </div>
+            <div class="clear"> </div>
         </div>
     </div>
 </div>
+<!-- start header -->
+<div class="header_btm">
+    <div class="wrap">
+        <!------start-768px-menu---->
+        <div id="page">
+            <div id="header">
+                <a class="navicon" href="#menu-left"> </a>
+            </div>
+            <nav id="menu-left">
+                <ul>
+                    <li class="active"><a href="index.html">首页</a></li>
+                    <li><a href="">基层信息公开</a></li>
+                    <li><a href="">三资管理</a></li>
+                    <li><a href="">应用平台</a></li>
+                    <li><a href="">数据</a></li>
+                    <li><a href="">安全</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!------start-768px-menu---->
+        <div class="hnav">
+            <ul>
+                <li><a href="" target="_blank">首页</a></li>
+                <li><a href="" target="_blank">基层信息公开</a>
+                    <div class="hnavbox">
+                        <ul id="hnavl">
+                            <li><a href="" target="_blank">党务政务村务公开</a></li>
+                            <li><a href="" target="_blank">热点搜集公开</a></li>
+                            <li><a href="" target="_blank">廉政公开</a></li>
+                            <li><a href="" target="_blank">公开满意度评价</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="" target="_blank">三资管理</a>
+                    <div class="hnavbox">
+                        <ul id="hnav2">
+                            <li><a href="" target="_blank">总体框架</a></li>
+                            <li><a href="" target="_blank">资金管理</a></li>
+                            <li><a href="" target="_blank">资产管理</a></li>
+                            <li><a href="" target="_blank">资源管理</a></li>
+                            <li><a href="" target="_blank">工程项目</a></li>
+                            <li><a href="" target="_blank">收入支出</a></li>
+                            <li><a href="" target="_blank">报表管理</a></li>
+                            <li><a href="" target="_blank">统计分析</a></li>
+                            <li><a href="" target="_blank">三资监控</a></li>
+                            <li><a href="" target="_blank">经济合同</a></li>
+                            <li><a href="" target="_blank">三资清查</a></li>
+                            <li><a href="" target="_blank"></a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="" target="_blank">应用平台</a>
+                    <div class="hnavbox">
+                        <ul id="hnav3">
+                            <li><a href="" target="_blank">统一信息门户</a></li>
+                            <li><a href="" target="_blank">统一机构管理系统</a></li>
+                            <li><a href="" target="_blank">统一权限管理系统</a></li>
+                            <li><a href="" target="_blank">统一用户管理系统</a></li>
+                            <li><a href="" target="_blank">统一身份认证系统</a></li>
+                            <li><a href="" target="_blank">统一检索平台</a></li>
+                            <li><a href="" target="_blank">统一报表平台</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="" target="_blank">数据</a>
+                    <div class="hnavbox">
+                        <ul id="hnav4">
+                            <li><a href="" target="_blank">党务数据</a></li>
+                            <li><a href="" target="_blank">政务数据</a></li>
+                            <li><a href="" target="_blank">村务数据</a></li>
+                            <li><a href="" target="_blank">财务数据</a></li>
+                            <li><a href="" target="_blank">热点信息</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="" target="_blank">安全</a>
+                    <div class="hnavbox">
+                        <ul id="hnav5">
+                            <li><a href="" target="_blank">物理安全</a></li>
+                            <li><a href="" target="_blank">网络安全</a></li>
+                            <li><a href="" target="_blank">信息安全</a></li>
+                            <li><a href="" target="_blank">安全管理</a></li>
+                            <li><a href="" target="_blank">数字认证</a></li>
+                            <li><a href="" target="_blank">安全审计</a></li>
+                        </ul>
+                    </div>
+                </li>
 
-<div class="nav">
-    <div class="con">
-        <div>首页</div>
-        <div>基层信息公开
-            <ul>
-                <li>党务政务村务公开</li>
-                <li>热点搜集公开</li>
-                <li>廉政公开</li>
-                <li>公开满意度评价</li>
+
+
+
+                <div class="h_search">
+                    <form>
+                        <input type="text" value="" placeholder="搜索">
+                        <input type="submit" value="">
+                    </form>
+                </div>
             </ul>
-        </div>
-        <div>三资管理
-            <ul>
-                <li>总体框架</li>
-                <li>资金管理</li>
-                <li>资产管理</li>
-                <li>资源管理</li>
-                <li>工程项目管理</li>
-                <li>收入支出管理</li>
-                <li>报表管理</li>
-                <li>统计分析管理</li>
-                <li>三资监控管理</li>
-                <li>经济合同管理</li>
-                <li>三资清查管理</li>
-            </ul>
-        </div>
-        <div>应用平台
-            <ul>
-                <li>统一信息门户</li>
-                <li>统一组织机构管理系统</li>
-                <li>统一权限管理系统</li>
-                <li>统一用户管理系统</li>
-                <li>统一身份认证系统</li>
-                <li>统一检索平台</li>
-                <li>统一报表平台</li>
-            </ul>
-        </div>
-        <div>数据
-            <ul>
-                <li>党务数据</li>
-                <li>政务数据</li>
-                <li>村务数据</li>
-                <li>财务数据</li>
-                <li>热点信息</li>
-            </ul>
-        </div>
-        <div>安全
-            <ul>
-                <li>物理安全</li>
-                <li>网络安全</li>
-                <li>信息安全</li>
-                <li>安全管理</li>
-                <li>数字认证</li>
-                <li>安全审计</li>
-            </ul>
+
+
+
+
+
+            <div class="clear"> </div>
         </div>
     </div>
 </div>
-
-<div class="banner">
-    <ul class="imgBox">
-        <!-- 图片区域 -->
-        <li class="active"><img src="https://i.postimg.cc/wjQ3bmnW/black.webp" alt=""></li>
-        <li><img src="https://i.postimg.cc/G3TtnNZT/black1.webp" alt=""></li>
-        <li><img src="https://i.postimg.cc/Wb622PSz/black2.webp" alt=""></li>
-        <li><img src="https://i.postimg.cc/QdG0J2rQ/timg.jpg" alt=""></li>
-    </ul>
-
-    <!-- 焦点区域 -->
-    <ol>
-        <li data-i="0" data-name="point" class="act"></li>
-        <li data-i="1" data-name="point"></li>
-        <li data-i="2" data-name="point"></li>
-        <li data-i="3" data-name="point"></li>
-        <!-- 设置自定义名称 方便检测点击 -->
-        <!-- 设定每个焦点的索引值 -->
-    </ol>
-
-    <!-- 左右切换按钮 -->
-    <div class="left">&lt;</div>
-    <!-- 左按钮 -->
-    <div class="right">&gt;</div>
-    <!-- 右按钮 -->
+<div class="header_bottom">
 </div>
+</div>
+<!-- 预加载模块结束 -->
+
+
+<div class="hcontent">
+    <div class="hcon">
+
+        <div class="main">
+            <div class="set_height" ></div>
+            <div class="powz accbg" accidx="67"><a href="index" target="_self" title="xxx" class="CurrChnlCls">首页</a>&nbsp;&gt;&gt;&nbsp;<a href="xinxi" target="_self" title="xxx" class="CurrChnlCls">基层信息公开</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>
+            </div>
+            <div class="maincon">
+                <div class="con_title">
+                    <div class="second_title">
+                        “政府信息”
+                        <span style="font-size:20px margin-left:50px color:#313131">按发稿时间排序</span>
+                    </div>
+                </div>
+
+                <div class="main_comment">
+                    <div class="list1">
+                        <div class="listcomment">
+                            一周后放假
+                        </div>
+                        <table width="100%" cellspacing="0" border="0" align="center" style="margin-top:10px; color：#9E9E9E">
+                            <tr>
+                                <td width="50%" align="left">发布时间：2022-7-14</td>
+                                <td width="50%" align="right"><span>信息公开</span></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="main01"></div>
+    </div>
+    <div class="clear"></div>
+
+
+
+
+</div>
+
+
+
+
+
+
 
 
 </body>
-<script type="text/javascript" src='/js/index.js'></script>
+
 </html>

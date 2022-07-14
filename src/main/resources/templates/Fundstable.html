@@ -14,6 +14,7 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <!-----768px-menu----->
     <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
+    <link href="css/table.css" rel="stylesheet" type="text/css" media="all" />
     <script type="text/javascript" src="js/jquery.mmenu.js"></script>
     <script type="text/javascript">
         //	The menu on the left
@@ -154,22 +155,58 @@
 <!-- 预加载模块结束 -->
 
 
-        <div class="hcontent">
-            <div class="hcon">
+<div class="hcontent">
+    <div class="hcon">
 
-                <div class="main">
-                    <div class="set_height" ></div>
-                    <div class="powz accbg" accidx="67"><a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>
-                    </div>
-                    <div class="maincon">
-                    <div>
-
-                    </div>
-                    </div>
-                </div>
-                <div class="main01"></div>
+        <div class="main">
+            <div class="set_height" ></div>
+            <div class="powz accbg" accidx="67"><a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>
             </div>
-            <div class="clear"></div>
+            <div class="maincon">
+                <div>
+                    <table cellspaceing="1" align="center" border="1" bordercolor="black" class="table">
+                        <tr class="active">
+                            <td width="100px">镇（社区）</td>
+                            <td width="300px"><input type="text"></td>
+                            <td width="100px">村（街道）</td>
+                            <td width="300px"><input type="text"></td>
+                        </tr>
+                        <tr >
+                            <td>金额</td>
+                            <td colspan="3"><input type="text"></td>
+                        </tr>
+                        <tr class="active">
+                            <td>实际金额</td>
+                            <td colspan="3"><input type="text" ></td>
+                        </tr>
+                        <tr>
+                            <td>是否属实</td>
+                            <td width="350px"><lable for="a">是</lable> <input type="radio" name="A" id="a"> </td>
+                            <td colspan="2"><lable for="b">否</lable> <input type="radio" name="A" id="b"> </td>
+                        </tr>
+                        <tr class="active">
+                            <td style="line-height:200px;">核实情况</td>
+                            <td colspan="3"><textarea name="" id="" cols="30" rows="10" style="line-height:200px;"></textarea></td>
+                        </tr>
+                        <tr >
+                            <td>资产负责人</td>
+                            <td colspan="3"><input type="text" ></td>
+                        </tr>
+                        <tr class="active">
+                            <td>负责人</td>
+                            <td colspan="3"><input type="text" ></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><input type="submit" value="提交"></td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="main01"></div>
+    </div>
+    <div class="clear"></div>
 
 
 
