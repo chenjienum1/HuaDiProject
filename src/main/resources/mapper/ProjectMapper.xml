@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.atschool.hdbasicserver.mapper.ProjectMapper">
+
+    <!--public void addProject(String town, String village, String company, int area, int cost, String startTime, String completeTime, String manager);-->
+    <insert id="addProject">
+        insert into project(`town`,`village`,`company`,`area`,`cost`,`starttime`,`completetime`,`manager`) values (#{town},#{village},#{company},#{area},#{cost},#{startTime},#{completeTime},#{manager})
+    </insert>
+
+    <!--public List<Project> getProject();-->
+    <select id="getProject" resultType="com.atschool.hdbasicserver.bean.Project">
+        select * from project
+    </select>
+</mapper>
