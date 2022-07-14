@@ -22,4 +22,8 @@ public class IndexController {
     public String login2(){
         return "boot";
     }
+    @RequestMapping("/loginup")
+    public String login3(){
+        return "login_up";
+    }
 }
