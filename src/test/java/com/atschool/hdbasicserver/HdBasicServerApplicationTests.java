@@ -1,9 +1,6 @@
 package com.atschool.hdbasicserver;
 
-import com.atschool.hdbasicserver.bean.Affair;
-import com.atschool.hdbasicserver.bean.Evaluate;
-import com.atschool.hdbasicserver.bean.Hotspot;
-import com.atschool.hdbasicserver.bean.User;
+import com.atschool.hdbasicserver.bean.*;
 import com.atschool.hdbasicserver.mapper.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,15 +12,14 @@ import java.util.List;
 class HdBasicServerApplicationTests {
 
     @Autowired
-    EvaluateMapper evaluateMapper;
+    HotspotMapper hotspotMapper;
     @Test
     void contextLoads() {
-        List<Evaluate> evaluateList = evaluateMapper.getEvaluate();
-        for (Evaluate e: evaluateList
+        List<Hotspot> hotspotList = hotspotMapper.getHotspot();
+        for (Hotspot h: hotspotList
              ) {
-            System.out.println(e.toString());
+            System.out.println(h.toString());
         }
-
     }
 
 }

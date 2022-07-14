@@ -2,15 +2,15 @@ package com.atschool.hdbasicserver.bean;
 
 import java.sql.Date;
 
-public class Property {
-    private String town;
-    private String village;
-    private String name;
-    private String unit;
-    private int amount;
-    private int jinZhi;
-    private Date time;
-    private String principal;
+public class Property {//资产
+    private String town;//镇
+    private String village;//村
+    private String name;//资产名称
+    private String unit;//资产单位
+    private int amount;//数量
+    private int jinZhi;//资产净值
+    private Date time;//购置时间
+    private String principal;//资产负责人
 
     public Property() {
     }

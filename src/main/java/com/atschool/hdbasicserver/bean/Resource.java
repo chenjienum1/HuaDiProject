@@ -1,12 +1,12 @@
 package com.atschool.hdbasicserver.bean;
 
-public class Resource {
-    private String town;
-    private String village;
-    private String variety;
-    private String position;
-    private int area;
-    private String charger;
+public class Resource {//资源
+    private String town;//镇
+    private String village;//村
+    private String variety;//资源种类
+    private String position;//资源地址
+    private int area;//资源面积
+    private String charger;//资源负责人
 
     public Resource() {
     }

@@ -1,14 +1,14 @@
 package com.atschool.hdbasicserver.bean;
 
-public class Funds {
-    private String town;
-    private String village;
-    private int account;
-    private int realAccount;
-    private boolean available;
-    private String comment;
-    private String accountant;
-    private String functionary;
+public class Funds {//资金
+    private String town;//镇
+    private String village;//村
+    private int account;//金额
+    private int realAccount;//实际金额
+    private boolean available;//是否符合
+    private String comment;//原因
+    private String accountant;//财务负责人
+    private String functionary;//乡镇负责人
 
     public Funds() {
     }

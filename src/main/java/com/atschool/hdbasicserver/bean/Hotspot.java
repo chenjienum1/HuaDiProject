@@ -2,16 +2,16 @@ package com.atschool.hdbasicserver.bean;
 
 import java.util.Date;
 
-public class Hotspot {
+public class Hotspot {//热点
 
 
-    private String title;
+    private String title;//标题
 
-    private Date time;
+    private Date time;//时间
 
-    private String picture;
+    private String picture;//图片
 
-    private String content;
+    private String content;//内容
 
     public Hotspot(){
 

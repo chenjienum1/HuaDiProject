@@ -14,4 +14,14 @@
     <select id="getFunds" resultType="com.atschool.hdbasicserver.bean.Funds">
         select * from funds
     </select>
+
+    <!--public List<Funds> getIncome();-->
+    <select id="getIncome" resultType="com.atschool.hdbasicserver.bean.Funds">
+        select * from funds where realaccount &gt; 0
+    </select>
+
+    <!-->public List<Funds> getExpend();-->
+    <select id="getExpend" resultType="com.atschool.hdbasicserver.bean.Funds">
+        select * from funds where realaccount &lt; 0
+    </select>
 </mapper>

@@ -2,17 +2,17 @@ package com.atschool.hdbasicserver.bean;
 
 import java.util.Date;
 
-public class Evaluate {
+public class Evaluate {//满意度
 
-    private String title;
+    private String title;//标题
 
-    private String kind;
+    private String kind;//种类
 
-    private Integer satisfaction;
+    private Integer satisfaction;//满意度
 
-    private Date time;
+    private Date time;//时间
 
-    private String evaluate;
+    private String evaluate;//评价
 
     public Evaluate() {
     }
