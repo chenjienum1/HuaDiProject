@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" dir="ltr">
 
 <head>
@@ -175,40 +175,37 @@
             <div class="powz accbg" accidx="67"><a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>
             </div>
             <div class="maincon">
-                <form id="formtype" action="" class="evaform">
-
-                    <p>
-                        3.请对服务进行评价(90分以上优；80-89良；70-79一般；60-69合格；60以下不合格)。
-                    </p>
-                    <p>
-                         <input type="text" style="margin-left:86px" placeholder="请输入1-100的整数" data-name="szt" onfocus="clearTitle(this)" zgf="100" onchange="clearTitle(this)" >
-                    </p>
-
+                <form th:action="@{/insertEvaluate}" id="formtype" method="post" class="evaform">
                     <p>
                         1.评价标题:
-                        <input type="text"/>
+                        <input name="title" type="text" />
                     </p>
                     <p>
                         2.评价种类
-                        <select name="选择要评价的种类">
+                        <select name="kind" >
                             <option value="三资管理系统">三资管理系统 </option>
                             <option value="基层信息公开">基层信息公开 </option>
                         </select>
                     </p>
-
+                    <div >
+                        <p>
+                            满意度<input name="satisfaction" type="text" style="margin-left:86px" placeholder=" 请对服务进行评价" data-name="szt" onfocus="clearTitle(this)" zgf="100" onchange="clearTitle(this)" >
+                        </p>
+                        <p> 90分以上优；80-89良；70-79一般；60-69合格；60以下不合格</p>
+                    </div>
                     <p>
                         时间填写
-                        <input type="text" style="width: 50px;" value=""/>
+                        <input name="year" type="text" style="width: 50px;" value=""/>
                         年
-                        <input type="text" style="width: 40px;" value=""/>
+                        <input name="month" type="text" style="width: 40px;" value=""/>
                         月
-                        <input type="text" style="width: 40px;" value=""/>
+                        <input name="day" type="text" style="width: 40px;" value=""/>
                         日
                     </p>
 
                     <p>
                         具体评价
-                        <input type="text" style="width: 800px; height:80px;" value=""/>
+                        <input name="evaluate" type="text" style="width: 800px; height:80px;" value=""/>
                     </p>
                     <p>
                         <input type="submit" value="提交">
