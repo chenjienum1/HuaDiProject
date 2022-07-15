@@ -5,4 +5,5 @@ import com.github.pagehelper.PageInfo;
 
 public interface HotspotService {
     public PageInfo<Hotspot> listPage(int pageNumber,int pageSize);
+    public void deleteByTitle(String title);
 }

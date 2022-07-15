@@ -165,6 +165,8 @@
 <!-- 预加载模块结束 -->
 
 
+
+
 <div class="hcontent">
     <div class="hcon">
 
@@ -180,19 +182,23 @@
                     </div>
                 </div>
 
-                <table border="1px" >
 
-                    <tr style="border: 1px solid black;" th:each="hotspot : ${pages.list}">
-                        <td th:text="${hotspot.title}"></td>
-                        <td th:text="${hotspot.time}"></td>
-                        <td th:text="${hotspot.picture}"></td>
-                        <td th:text="${hotspot.content}"></td>
-                        <!--<td>
-                            <a @click="deleteEmployee" th:href="@{/employee/}+${employee.id}">delete</a>
-                            <a th:href="@{'/employee/'+${employee.id}}">update</a>
-                        </td>-->
+
+
+                <table id="dataTable"   style="margin:0 auto; width:100%">
+
+                    <tr style="border-bottom: 1px solid black; height:80px; line-height:80px;" th:each="hotspot : ${pages.list}">
+                        <td th:text="${hotspot.title}" style="font-size:50px; font-weight:bold;"></td>
+                        <td th:text="${hotspot.time}"  align="right" style="font-size:20px"></td>
+                        <td>
+                            <a @click="deleteEmployee" th:href="@{/hotspot/}+${hotspot.title}">delete</a>
+                            <a th:href="@{'/hotspot/'+${hotspot}}">update</a>
+                        </td>
                     </tr>
                 </table>
+                <form id="deleteForm" method="post">
+                    <input type="hidden" name="_method" value="delete">
+                </form>
 
                 </div>
 
@@ -202,18 +208,25 @@
     </div>
     <div class="clear"></div>
 
-
-
-
 </div>
-
-
-
-
-
-
-
-
 </body>
+<script type="text/javascript" th:src="@{/js/vue.js}"></script>
+<script type="text/javascript">
+    var vue=new Vue({
+        el:"#dataTable",
+        methods:{
+            deleteEmployee:function (event) {
+                //根据id获取单击事件
+                var deleteForm=document.getElementById("deleteForm");
+                //触发点击事件的href属性赋值给表单的action
+                deleteForm.action=event.target.href;
+                //提交表单
+                deleteForm.submit();
+                //取消超链接默认行为
+                event.preventDefault();
+            }
+        }
+    });
+</script>
 
 </html>

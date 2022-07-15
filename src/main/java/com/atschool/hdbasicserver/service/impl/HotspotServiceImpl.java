@@ -25,4 +25,9 @@ public class HotspotServiceImpl implements HotspotService {
         PageInfo<Hotspot> page=new PageInfo<>(hotspot,NAVIGATEPAGES);
         return page;
     }
+
+    @Override
+    public void deleteByTitle(String title) {
+        hotspotMapper.deleteByTitle(title);
+    }
 }
