@@ -61,15 +61,15 @@
             <div th:if="${session.User==null}" class="login">
 
                 <ul>
-                    <li>个人登录</li>
+                    <li><a href="login">个人登录</a></li>
                     <li>政府登录</li>
-                    <li><a href="login">登录</a></li>>
-
                 </ul>
             </div>
                 <div th:if="${session.User!=null}" class="login">
-                    <h3 th:text="${session.User.username}"></h3>
-                    <a class="last" href="logout">退出</a>
+                    <a>欢迎你：</a>
+                    <a th:text="${session.User.username}"></a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="last" href="logout" style="color：black">退出</a>
                 </div>
             <div class="text">
                 <p >华迪基层公开综合服务监管系统</p>
