@@ -10,14 +10,13 @@ import javax.servlet.http.HttpSession;
 import java.sql.Date;
 
 @Controller
-@ResponseBody
 public class EvaluateController {
 
     @Autowired
     EvaluateMapper evaluateMapper;
 
     @PostMapping(value = "/insertEvaluate")
-    public void insert(@RequestParam("title")String title,
+    public String insert(@RequestParam("title")String title,
                        @RequestParam("kind") String kind,
                        @RequestParam("satisfaction")Integer satisfaction,
                        @RequestParam("year")String time_year,
@@ -27,6 +26,7 @@ public class EvaluateController {
 
         String time = time_year + "-" + time_month + "-" + time_day;
         evaluateMapper.addEvaluate(title,kind,satisfaction,time,evaluate);
+        return "evaluate";
     }
 
 
