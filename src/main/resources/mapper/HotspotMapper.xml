@@ -17,5 +17,10 @@
     <select id="getHotspot" resultType="com.atschool.hdbasicserver.bean.Hotspot">
         select * from hotspot
     </select>
+
+    <!--public void deleteByTitle(String title);-->
+    <delete id="deleteByTitle">
+        delete from hotspot where `title` =#{title}
+    </delete>
     
 </mapper>

@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
 
-
     @RequestMapping("/")
     public String index(){
         return "index";
@@ -23,10 +22,6 @@ public class IndexController {
         return "boot";
     }
 
-    @RequestMapping("/xinxi")
-    public String login3(){
-        return "xinxi";
-    }
 
     @RequestMapping("/Fundstable")
     public String login4(){
@@ -36,8 +31,19 @@ public class IndexController {
     public String login5(){
         return "evaluate";
     }
-    @RequestMapping("/affair")
+
+    @RequestMapping("/Propertytable")
     public String login6(){
+        return "Propertytable";
+    }
+
+    @RequestMapping("/Sourcetable")
+    public String login7(){
+        return "Sourcetable";
+    }
+    @RequestMapping("/affair")
+    public String login8(){
         return "affair";
     }
+
 }

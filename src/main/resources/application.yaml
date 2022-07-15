@@ -7,7 +7,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/project?useUnicode=true&characterEncoding=utf-8
     username: root
-    password: 572562107
+    password: zhch2935650991
 
   mvc:
     hiddenmethod:
@@ -24,3 +24,9 @@ mybatis:
 
   # 指定全局配置文件位置
   #config-location: classpath:mybatis-config.xml
+
+  pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql

@@ -12,4 +12,6 @@ public interface HotspotMapper {
     public void addHotspot(String title, String time, String picture, String content);
 
     public List<Hotspot> getHotspot();
+
+    public void deleteByTitle(String title);
 }

@@ -14,7 +14,7 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <!-----768px-menu----->
     <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
-    <link type="text/css" rel="stylesheet" href="css/xinxi.css" />
+    <link href="css/table.css" rel="stylesheet" type="text/css" media="all" />
     <script type="text/javascript" src="js/jquery.mmenu.js"></script>
     <script type="text/javascript">
         //	The menu on the left
@@ -165,68 +165,75 @@
 <!-- 预加载模块结束 -->
 
 
-
-
 <div class="hcontent">
     <div class="hcon">
 
         <div class="main">
             <div class="set_height" ></div>
-            <div class="powz accbg" accidx="67"><a href="index" target="_self" title="xxx" class="CurrChnlCls">首页</a>&nbsp;&gt;&gt;&nbsp;<a href="xinxi" target="_self" title="xxx" class="CurrChnlCls">基层信息公开</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>
+            <div class="powz accbg" accidx="67"><a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>
             </div>
             <div class="maincon">
-                <div class="con_title">
-                    <div class="second_title">
-                        “政府信息”
-                        <span style="font-size:20px margin-left:50px color:#313131">按发稿时间排序</span>
-                    </div>
+                <div>
+                    <form action="Propertytable">
+                        <table cellspaceing="0" align="center" border="1" bordercolor="white" class="table">
+                            <tr class="active">
+                                <td width="100px">镇（社区）</td>
+                                <td width="300px"><input type="text"></td>
+                                <td width="100px">村（街道）</td>
+                                <td width="300px"><input type="text"></td>
+                            </tr>
+                            <tr >
+                                <td>资产名称</td>
+                                <td colspan="3"><input type="text"></td>
+                            </tr>
+                            <tr class="active">
+                                <td>资产单位</td>
+                                <td colspan="3"><input type="text" ></td>
+                            </tr>
+                            <tr >
+                                <td>数量</td>
+                                <td colspan="3"><input type="text"></td>
+                            </tr>
+                            <tr class="active">
+                                <td>资产净值</td>
+                                <td colspan="3"><input type="text">（万元）</td>
+                            </tr>
+                            <tr >
+                                <td>购置时间</td>
+                                <td colspan="3"><input type="text" style="width:150px">年
+                                    <input type="text" style="width:150px">月
+                                    <input type="text" style="width:150px">日</td>
+                            </tr>
+                            <tr class="active">
+                                <td>资产负责人</td>
+                                <td colspan="3"><input type="text"></td>
+                            </tr>
+                            <tr >
+                                <td>负责人</td>
+                                <td colspan="3"><input type="text" ></td>
+                            </tr>
+                        </table>
+                        </table>
+                    </form>
                 </div>
-
-
-
-
-                <table id="dataTable"   style="margin:0 auto; width:100%">
-
-                    <tr style="border-bottom: 1px solid black; height:80px; line-height:80px;" th:each="hotspot : ${pages.list}">
-                        <td th:text="${hotspot.title}" style="font-size:50px; font-weight:bold;"></td>
-                        <td th:text="${hotspot.time}"  align="right" style="font-size:20px"></td>
-                        <td>
-                            <a @click="deleteEmployee" th:href="@{/hotspot/}+${hotspot.title}">delete</a>
-                            <a th:href="@{'/hotspot/'+${hotspot}}">update</a>
-                        </td>
-                    </tr>
-                </table>
-                <form id="deleteForm" method="post">
-                    <input type="hidden" name="_method" value="delete">
-                </form>
-
-                </div>
-
             </div>
         </div>
         <div class="main01"></div>
     </div>
     <div class="clear"></div>
 
+
+
+
 </div>
+
+
+
+
+
+
+
+
 </body>
-<script type="text/javascript" th:src="@{/js/vue.js}"></script>
-<script type="text/javascript">
-    var vue=new Vue({
-        el:"#dataTable",
-        methods:{
-            deleteEmployee:function (event) {
-                //根据id获取单击事件
-                var deleteForm=document.getElementById("deleteForm");
-                //触发点击事件的href属性赋值给表单的action
-                deleteForm.action=event.target.href;
-                //提交表单
-                deleteForm.submit();
-                //取消超链接默认行为
-                event.preventDefault();
-            }
-        }
-    });
-</script>
 
 </html>
