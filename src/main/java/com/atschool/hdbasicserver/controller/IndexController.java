@@ -31,4 +31,14 @@ public class IndexController {
     public String login5(){
         return "evaluate";
     }
+
+    @RequestMapping("/Propertytable")
+    public String login6(){
+        return "Propertytable";
+    }
+
+    @RequestMapping("/Sourcetable")
+    public String login7(){
+        return "Sourcetable";
+    }
 }

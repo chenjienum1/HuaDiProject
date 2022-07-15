@@ -7,7 +7,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/project?useUnicode=true&characterEncoding=utf-8
     username: root
-    password: 572562107
+    password: zhch2935650991
 
   mvc:
     hiddenmethod:
