@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
 
-
     @RequestMapping("/")
     public String index(){
         return "index";
@@ -23,10 +22,6 @@ public class IndexController {
         return "boot";
     }
 
-    @RequestMapping("/xinxi")
-    public String login3(){
-        return "xinxi";
-    }
 
     @RequestMapping("/Fundstable")
     public String login4(){

@@ -21,10 +21,10 @@
         <!-- mybatis 依赖的分页组件 -->
         <dependency>
             <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper</artifactId>
-            <version>4.1.3</version>
-            <scope>compile</scope>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>1.4.3</version>
         </dependency>
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -6,10 +6,12 @@ import com.atschool.hdbasicserver.service.impl.LoginServiceImpl;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
 
@@ -25,19 +27,17 @@ public class loginController {
         System.out.println(username+password);
         boolean ifExist = loginService.ifExist(username);
         if (!ifExist){
-            session.setAttribute("msg","用户不存在");
-            System.out.println("用户不存在");
-            return "login";
+            session.setAttribute("msg","用户或密码错误");
+            return "redirect:login";
         }
         User u=new User(username,password);
         if (loginService.login(u)){
             session.setAttribute("User",u);
+            session.removeAttribute("msg");
             return "redirect:success.html";
         }else {
-            session.setAttribute("msg","密码错误");
-            session.setAttribute("username",username);
-            System.out.println("密码错误");
-            return "login";
+            session.setAttribute("msg","用户名或密码错误");
+            return "redirect:login";
         }
     }
 

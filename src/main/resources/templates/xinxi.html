@@ -180,18 +180,19 @@
                     </div>
                 </div>
 
-                <div class="main_comment">
-                    <div class="list1">
-                        <div class="listcomment">
-                            一周后放假
-                        </div>
-                        <table width="100%" cellspacing="0" border="0" align="center" style="margin-top:10px; color：#9E9E9E">
-                            <tr>
-                                <td width="50%" align="left">发布时间：2022-7-14</td>
-                                <td width="50%" align="right"><span>信息公开</span></td>
-                            </tr>
-                        </table>
-                    </div>
+                <table border="1px" >
+
+                    <tr style="border: 1px solid black;" th:each="hotspot : ${pages.list}">
+                        <td th:text="${hotspot.title}"></td>
+                        <td th:text="${hotspot.time}"></td>
+                        <td th:text="${hotspot.picture}"></td>
+                        <td th:text="${hotspot.content}"></td>
+                        <!--<td>
+                            <a @click="deleteEmployee" th:href="@{/employee/}+${employee.id}">delete</a>
+                            <a th:href="@{'/employee/'+${employee.id}}">update</a>
+                        </td>-->
+                    </tr>
+                </table>
 
                 </div>
 
