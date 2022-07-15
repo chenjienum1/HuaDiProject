@@ -1,8 +1,17 @@
+.table{
+    margin:0 auto;
+    border:1px solid black;
+}
+
 .table tr{
     height: 50px;
     text-align:center;
     line-height:50px;
-    border: 0;
+    border: 1px solid black;
+}
+
+.tab;e tr td{
+    border:1px solid black;
 }
 
 .table input{
