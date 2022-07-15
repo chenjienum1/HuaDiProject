@@ -89,10 +89,10 @@
                     <div class="hnavbox">
                         <ul id="hnav2">
                             <li><a href="" target="_blank">总体框架</a></li>
-                            <li><a href="" target="_blank">资金管理</a></li>
-                            <li><a href="" target="_blank">资产管理</a></li>
-                            <li><a href="" target="_blank">资源管理</a></li>
-                            <li><a href="" target="_blank">工程项目</a></li>
+                            <li><a href="Fundstable" target="_blank">资金管理</a></li>
+                            <li><a href="Propertytable" target="_blank">资产管理</a></li>
+                            <li><a href="Sourcetable" target="_blank">资源管理</a></li>
+                            <li><a href="Projecttable" target="_blank">工程项目</a></li>
                             <li><a href="" target="_blank">收入支出</a></li>
                             <li><a href="" target="_blank">报表管理</a></li>
                             <li><a href="" target="_blank">统计分析</a></li>
@@ -174,39 +174,39 @@
             </div>
             <div class="maincon">
                 <div>
-                    <form action="Fundstable">
+                    <form th:action="@{/insertFunds}" method="post">
                     <table cellspaceing="0" align="center" class="table">
 
                         <tr class="active">
                             <td width="100px">镇（社区）</td>
-                            <td width="300px"><input type="text"></td>
+                            <td width="300px"><input name="town" type="text"></td>
                             <td width="100px">村（街道）</td>
-                            <td width="300px"><input type="text"></td>
+                            <td width="300px"><input name="village" type="text"></td>
                         </tr>
                         <tr >
                             <td>金额</td>
-                            <td colspan="3"><input type="text"></td>
+                            <td colspan="3"><input name="account" type="text"></td>
                         </tr>
                         <tr class="active">
                             <td>实际金额</td>
-                            <td colspan="3"><input type="text" ></td>
+                            <td colspan="3"><input name="realAccount" type="text" ></td>
                         </tr>
                         <tr>
                             <td>是否属实</td>
-                            <td width="350px"><lable for="a">是</lable> <input type="radio" name="A" id="a"> </td>
-                            <td colspan="2"><lable for="b">否</lable> <input type="radio" name="A" id="b"> </td>
+                            <td width="350px"><lable for="a">是</lable> <input th:value="1" type="radio" name="available" id="a"> </td>
+                            <td colspan="2"><lable for="b">否</lable> <input th:value="0" type="radio" name="available" id="b"> </td>
                         </tr>
                         <tr class="active">
                             <td style="line-height:200px;">核实情况</td>
-                            <td colspan="3"><textarea name="" id="" cols="30" rows="10" style="margin-top:50px;"></textarea></td>
+                            <td colspan="3"><textarea name="comment" id="" cols="30" rows="10" style="margin-top:50px;"> </textarea></td>
                         </tr>
                         <tr >
                             <td>资产负责人</td>
-                            <td colspan="3"><input type="text" ></td>
+                            <td colspan="3"><input name="accountant" type="text" ></td>
                         </tr>
                         <tr class="active">
                             <td>负责人</td>
-                            <td colspan="3"><input type="text" ></td>
+                            <td colspan="3"><input name="functionary" type="text" ></td>
                         </tr>
                         <tr>
                             <td colspan="4"><input type="submit" value="提交"></td>

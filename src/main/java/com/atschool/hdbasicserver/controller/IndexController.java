@@ -46,4 +46,9 @@ public class IndexController {
         return "affair";
     }
 
+    @RequestMapping("/Projecttable")
+    public String login9(){
+        return "Projecttable";
+    }
+
 }
