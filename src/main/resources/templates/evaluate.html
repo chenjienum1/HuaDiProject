@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" dir="ltr">
 
 <head>
-    <link rel="stylesheet" href="css/eva.css"/>
+    <link rel="stylesheet" href="css/eva.css" type="text/css" media="all"/>
     <title>Home</title>
     <!--此处填写网页标签名 -->
     <meta charset="utf-8">
@@ -164,29 +164,37 @@
             <div class="set_height" ></div>
             <div class="powz accbg" accidx="67"><a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>
             </div>
-            <div class="maincon">
+            <div class="maincon" >
                 <form id="formtype" action="" class="evaform">
+                    <table  cellspaceing="1" style="text-align:center; margin:0 auto;" border="1" bordercolor="black" >
 
-                    <p>
-                        3.请对服务进行评价(90分以上优；80-89良；70-79一般；60-69合格；60以下不合格)。
-                    </p>
-                    <p>
+                   <tr class="tableact" > <td style="background-color:#dfdfdf;text-align:center line-height:200px;"  ><p style="text-align:center">
+                        1.请对服务进行评价(90分以上优；80-89良；70-79一般；60-69合格；60以下不合格)。
+                   </p> </td>
+                       </tr>
+                    <tr class="tableact"><td><p>
                          <input type="text" style="margin-left:86px" placeholder="请输入1-100的整数" data-name="szt" onfocus="clearTitle(this)" zgf="100" onchange="clearTitle(this)" >
-                    </p>
+                    </p></td></tr>
 
-                    <p>
-                        1.评价标题:
+                    <tr class="tableact"><td style="background-color:#dfdfdf;"><p class="active">
+                        2.评价标题:
                         <input type="text"/>
                     </p>
-                    <p>
-                        2.评价种类
+                    </td>
+                    </tr>
+                    <tr class="tableact"> <td><p>
+                        3.评价种类
                         <select name="选择要评价的种类">
                             <option value="三资管理系统">三资管理系统 </option>
                             <option value="基层信息公开">基层信息公开 </option>
                         </select>
                     </p>
+                    </td>
+                    </tr>
 
-                    <p>
+                    <tr class="tableact">
+                        <td style="background-color:#dfdfdf;">
+                        <p class="active">
                         时间填写
                         <input type="text" style="width: 50px;" value=""/>
                         年
@@ -195,14 +203,31 @@
                         <input type="text" style="width: 40px;" value=""/>
                         日
                     </p>
+                        </td>
 
-                    <p>
+                    </tr>
+
+                    <tr  class="tableact">
+                        <td style="background-color:#dfdfdf;">
+                        <p>
                         具体评价
-                        <input type="text" style="width: 800px; height:80px;" value=""/>
+                        <input type="text" style="width: 600px; height:80px;" value=""/>
                     </p>
-                    <p>
-                        <input type="submit" value="提交">
+                        </td>
+                    </tr>
+                    <tr  class="tableact" style="background-color:#dfdfdf" >
+                        <td>
+                        <p class="active">
+                        <input style="width:100px" type="submit" value="提交">
                     </p>
+                        </td>
+                    </tr>
+
+
+
+
+
+                    </table>
                 </form>
             </div>
         </div>

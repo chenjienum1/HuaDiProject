@@ -3,8 +3,9 @@
 
 }
 .evaform p{
-margin-top:20px;
+
 top:50px;
+
 }
             .radio-bj {
                 width: auto;
@@ -77,4 +78,18 @@ top:50px;
 
             .a{
             margin:0 auto;
+            }
+    .active{
+           background-color:#dfdfdf;
+           text-align:center;
+            }
+            .tableact{
+
+
+            line-width:1500px;
+            line-height:50px;
+            }
+            .tableact td{
+
+            width:800px;
             }

@@ -36,4 +36,8 @@ public class IndexController {
     public String login5(){
         return "evaluate";
     }
+    @RequestMapping("/affair")
+    public String login6(){
+        return "affair";
+    }
 }
