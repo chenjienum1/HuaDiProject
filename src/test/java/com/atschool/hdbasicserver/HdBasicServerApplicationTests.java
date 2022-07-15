@@ -18,9 +18,7 @@ class HdBasicServerApplicationTests {
     HotspotMapper hotspotMapper;
     @Test
     void contextLoads() {
-        for (int i=1;i<20;i++){
-            hotspotMapper.addHotspot(""+i,"1-1-1",""+i,""+i);
-        }
+        hotspotMapper.deleteByTitle("1");
     }
 
 
