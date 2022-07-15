@@ -1,15 +1,13 @@
 package com.atschool.hdbasicserver.controller;
 
 import com.atschool.hdbasicserver.bean.Hotspot;
+import com.atschool.hdbasicserver.mapper.HotspotMapper;
 import com.atschool.hdbasicserver.service.HotspotService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,6 +18,25 @@ public class HotspotController {
 
     @Autowired
     HotspotService hotspotService;
+
+    @Autowired
+    HotspotMapper hotspotMapper;
+
+
+    @PostMapping(value = "/insertHotspot")
+    public String insert(@RequestParam("title")String title,
+                         @RequestParam("year")String time_year,
+                         @RequestParam("month")String time_month,
+                         @RequestParam("day")String time_day,
+                         @RequestParam("picture")String picture,
+                         @RequestParam("content")String content){
+
+        String time = time_year + "-" + time_month + "-" + time_day;
+        hotspotMapper.addHotspot(title,time,picture,content);
+        return "hotspot";
+    }
+
+
 
     @RequestMapping(value = "/hotspot",method = RequestMethod.GET)
     public String listHotspot(Model model){
