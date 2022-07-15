@@ -46,4 +46,9 @@ public class IndexController {
         return "affair";
     }
 
+    @RequestMapping("/xinxi")
+    public String login9(){
+        return "xinxi";
+    }
+
 }
