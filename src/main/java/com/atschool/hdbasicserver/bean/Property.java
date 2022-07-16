@@ -3,6 +3,7 @@ package com.atschool.hdbasicserver.bean;
 import java.sql.Date;
 
 public class Property {//资产
+    private int id;
     private String town;//镇
     private String village;//村
     private String name;//资产名称
@@ -15,7 +16,8 @@ public class Property {//资产
     public Property() {
     }
 
-    public Property(String town, String village, String name, String unit, int amount, int jinZhi, String time, String principal) {
+    public Property(int id,String town, String village, String name, String unit, int amount, int jinZhi, String time, String principal) {
+        this.id = id;
         this.town = town;
         this.village = village;
         this.name = name;
@@ -24,6 +26,14 @@ public class Property {//资产
         this.jinZhi = jinZhi;
         this.time = java.sql.Date.valueOf(time);
         this.principal = principal;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTown() {
@@ -92,8 +102,9 @@ public class Property {//资产
 
     @Override
     public String toString() {
-        return "property{" +
-                "town='" + town + '\'' +
+        return "Property{" +
+                "id=" + id +
+                ", town='" + town + '\'' +
                 ", village='" + village + '\'' +
                 ", name='" + name + '\'' +
                 ", unit='" + unit + '\'' +

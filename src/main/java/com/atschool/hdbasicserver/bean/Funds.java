@@ -1,6 +1,7 @@
 package com.atschool.hdbasicserver.bean;
 
 public class Funds {//资金
+    private int id;
     private String town;//镇
     private String village;//村
     private int account;//金额
@@ -13,7 +14,8 @@ public class Funds {//资金
     public Funds() {
     }
 
-    public Funds(String town, String village, int account, int realAccount, boolean available, String comment, String accountant, String functionary) {
+    public Funds(int id,String town, String village, int account, int realAccount, boolean available, String comment, String accountant, String functionary) {
+        this.id = id;
         this.town = town;
         this.village = village;
         this.account = account;
@@ -22,6 +24,14 @@ public class Funds {//资金
         this.comment = comment;
         this.accountant = accountant;
         this.functionary = functionary;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTown() {
@@ -91,7 +101,8 @@ public class Funds {//资金
     @Override
     public String toString() {
         return "Funds{" +
-                "town='" + town + '\'' +
+                "id=" + id +
+                ", town='" + town + '\'' +
                 ", village='" + village + '\'' +
                 ", account=" + account +
                 ", realAccount=" + realAccount +

@@ -10,6 +10,11 @@
         insert into resource(`town`,`village`,`variety`,`position`,`area`,`charger`) values (#{town},#{village},#{variety},#{position},#{area},#{charger})
     </insert>
 
+    <!--public void deleteReource(int id);-->
+    <delete id="deleteResource">
+        delete from resource where `id`=#{id};
+    </delete>
+
     <!--public List<Resource> getResource();-->
     <select id="getResource" resultType="com.atschool.hdbasicserver.bean.Resource">
         select * from resource

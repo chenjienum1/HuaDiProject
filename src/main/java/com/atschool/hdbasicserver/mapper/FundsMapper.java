@@ -9,7 +9,7 @@ import java.util.List;
 public interface FundsMapper {
     public void addFunds(String town, String village, int account, int realAccount, boolean available, String comment, String accountant, String functionary);
     public List<Funds> getFunds();
-
+    public void deleteFunds(int id);
     public List<Funds> getIncome();
     public List<Funds> getExpend();
 }

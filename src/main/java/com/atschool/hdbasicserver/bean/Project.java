@@ -3,6 +3,7 @@ package com.atschool.hdbasicserver.bean;
 import java.sql.Date;
 
 public class Project {
+    private int id;
     private String town;
     private String village;
     private String company;//负责公司
@@ -15,7 +16,8 @@ public class Project {
     public Project() {
     }
 
-    public Project(String town, String village, String company, int area, int cost, String startTime, String completeTime, String manager) {
+    public Project(int id,String town, String village, String company, int area, int cost, String startTime, String completeTime, String manager) {
+        this.id = id;
         this.town = town;
         this.village = village;
         this.company = company;
@@ -24,6 +26,14 @@ public class Project {
         this.startTime = java.sql.Date.valueOf(startTime);
         this.completeTime = java.sql.Date.valueOf(completeTime);
         this.manager = manager;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTown() {
@@ -93,7 +103,8 @@ public class Project {
     @Override
     public String toString() {
         return "Project{" +
-                "town='" + town + '\'' +
+                "id=" + id +
+                ", town='" + town + '\'' +
                 ", village='" + village + '\'' +
                 ", company='" + company + '\'' +
                 ", area=" + area +

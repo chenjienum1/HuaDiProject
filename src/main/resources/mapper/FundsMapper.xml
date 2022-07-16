@@ -15,6 +15,11 @@
         select * from funds
     </select>
 
+    <!--public void deleteFunds(int id):-->
+    <delete id="deleteFunds">
+        delete from funds where `id`=#{id};
+    </delete>
+
     <!--public List<Funds> getIncome();-->
     <select id="getIncome" resultType="com.atschool.hdbasicserver.bean.Funds">
         select * from funds where realaccount &gt; 0

@@ -8,5 +8,6 @@ import java.util.List;
 @Mapper
 public interface ResourceMapper {
     public void addResource(String town, String village, String variety, String position, int area, String charger);
+    public void deleteResource(int id);
     public List<Resource> getResource();
 }

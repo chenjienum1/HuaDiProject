@@ -1,6 +1,7 @@
 package com.atschool.hdbasicserver.bean;
 
 public class Resource {//资源
+    private int id;
     private String town;//镇
     private String village;//村
     private String variety;//资源种类
@@ -11,13 +12,22 @@ public class Resource {//资源
     public Resource() {
     }
 
-    public Resource(String town, String village, String variety, String position, int area, String charger) {
+    public Resource(int id,String town, String village, String variety, String position, int area, String charger) {
+        this.id = id;
         this.town = town;
         this.village = village;
         this.variety = variety;
         this.position = position;
         this.area = area;
         this.charger = charger;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTown() {
@@ -71,7 +81,8 @@ public class Resource {//资源
     @Override
     public String toString() {
         return "Resource{" +
-                "town='" + town + '\'' +
+                "id=" + id +
+                ", town='" + town + '\'' +
                 ", village='" + village + '\'' +
                 ", variety='" + variety + '\'' +
                 ", position='" + position + '\'' +

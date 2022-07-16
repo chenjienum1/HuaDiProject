@@ -10,6 +10,11 @@
         insert into project(`town`,`village`,`company`,`area`,`cost`,`starttime`,`completetime`,`manager`) values (#{town},#{village},#{company},#{area},#{cost},#{startTime},#{completeTime},#{manager})
     </insert>
 
+    <!--public void deleteProject(int id);-->
+    <delete id="deleteProject">
+        delete from project where `id`=#{id}
+    </delete>
+
     <!--public List<Project> getProject();-->
     <select id="getProject" resultType="com.atschool.hdbasicserver.bean.Project">
         select * from project

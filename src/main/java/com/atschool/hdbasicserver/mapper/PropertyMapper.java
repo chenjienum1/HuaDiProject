@@ -8,5 +8,6 @@ import java.util.List;
 @Mapper
 public interface PropertyMapper {
     public void addProperty(String town, String village, String name, String unit, int amount, int jinZhi, String time, String principal);
+    public void deleteProperty(int id);
     public List<Property> getProperty();
 }
