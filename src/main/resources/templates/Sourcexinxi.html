@@ -2,28 +2,26 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" dir="ltr">
 
 <head>
-    <link rel="stylesheet" href="css/eva.css"/>
     <title>Home</title>
     <!--此处填写网页标签名 -->
     <meta charset="utf-8">
     <link rel="shortcut icon" href="images/ico/favicon.ico" type="image/x-icon">
     <!--此处加入网页图标 -->
-    <link href="css/g_style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="http://localhost:8081/css/g_style.css" rel="stylesheet" type="text/css" media="all" />
     <!--此处加载模块预置css，不能修改g_style.css-->
     <link href="css/xbcon.css" rel="stylesheet" type="text/css" media="all" />
-    <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
-    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://localhost:8081/css/magnific-popup.css">
+    <script type="text/javascript" src="http://localhost:8081/js/jquery.min.js"></script>
     <!-----768px-menu----->
-    <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
-    <script type="text/javascript" src="js/jquery.mmenu.js"></script>
+    <link type="text/css" rel="stylesheet" href="http://localhost:8081/css/jquery.mmenu.all.css" />
+    <link type="text/css" rel="stylesheet" href="http://localhost:8081/css/xinxi.css" />
+    <script type="text/javascript" src="http://localhost:8081/js/jquery.mmenu.js"></script>
     <script type="text/javascript">
         //	The menu on the left
         $(function () {
             $('nav#menu-left').mmenu();
         });
     </script>
-
-
     <!-----//768px-menu----->
 </head>
 
@@ -92,10 +90,10 @@
                     <div class="hnavbox">
                         <ul id="hnav2">
                             <li><a href="" target="_blank">总体框架</a></li>
-                            <li><a href="Fundstable" target="_blank">资金管理</a></li>
-                            <li><a href="Propertytable" target="_blank">资产管理</a></li>
-                            <li><a href="Sourcetable" target="_blank">资源管理</a></li>
-                            <li><a href="Projecttable" target="_blank">工程项目</a></li>
+                            <li><a href="" target="_blank">资金管理</a></li>
+                            <li><a href="" target="_blank">资产管理</a></li>
+                            <li><a href="" target="_blank">资源管理</a></li>
+                            <li><a href="" target="_blank">工程项目</a></li>
                             <li><a href="" target="_blank">收入支出</a></li>
                             <li><a href="" target="_blank">报表管理</a></li>
                             <li><a href="" target="_blank">统计分析</a></li>
@@ -106,12 +104,10 @@
                         </ul>
                     </div>
                 </li>
-                <li>
-                    <a href="evaluate">评价</a>
+
+                <li><a href="evaluate" target="_blank">评价</a>
+
                 </li>
-
-
-
 
             </ul>
 
@@ -129,86 +125,95 @@
 <!-- 预加载模块结束 -->
 
 
+
+
 <div class="hcontent">
     <div class="hcon">
+
         <div class="main">
             <div class="set_height" ></div>
-            <div class="powz accbg" accidx="67"><a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>
+            <div class="powz accbg" accidx="67"><a href="index" target="_self" title="xxx" class="CurrChnlCls">首页</a>&nbsp;&gt;&gt;&nbsp;<a href="xinxi" target="_self" title="xxx" class="CurrChnlCls">基层信息公开</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>
             </div>
-            <div class="maincon" >
+            <div class="maincon">
+                <div class="con_title">
+                    <div class="second_title">
+                        “资源信息”
+                        <span style="font-size:20px margin-left:50px color:#313131">按发稿时间排序</span>
+                    </div>
+                </div>
 
 
 
-                <form th:action="@{/insertEvaluate}" method="post" id="formtype" action="" class="evaform">
-                    <table  cellspaceing="1" style="text-align:center; margin:0 auto;" border="1" bordercolor="black" >
-                    <tr class="tableact"><td style="background-color:#dfdfdf;"><p class="active">
-                        1.评价标题:
-                        <input name="title" type="text"/>
-                    </p>
-                    </td>
-                    </tr>
-                    <tr class="tableact"> <td><p>
-                        2.评价种类
-                        <select name="kind">
-                            <option value="三资管理系统">三资管理系统 </option>
-                            <option value="基层信息公开">基层信息公开 </option>
-                        </select>
-                    </p>
-                    </td>
-                    </tr>
 
-                        <tr class="tableact">
-                            <td >
-                                <p>
-                                <div >
-                                    <p>
-                                        3.满意度<input name="satisfaction" type="text" style="margin-left:86px" placeholder=" 请对服务进行评价"  >
-                                    </p>
-                                    <p> 90分以上优；80-89良；70-79一般；60-69合格；60以下不合格</p>
-                            </div></td></tr>
+                <table id="dataTable"   style="margin:0 auto; width:100%">
 
-                    <tr class="tableact">
-                        <td style="background-color:#dfdfdf;">
-                        <p class="active">
-
-                    <p>
-                        时间填写
-                        <input name="year" type="text" style="width: 50px;" value=""/>
-                        年
-                        <input name="month" type="text" style="width: 40px;" value=""/>
-                        月
-                        <input name="day" type="text" style="width: 40px;" value=""/>
-                        日
-                    </p>
-                        </td>
-
-                    </tr>
-
-                    <tr  class="tableact">
-                        <td style="background-color:#dfdfdf;">
-                        <p>
-                        具体评价
-                        <input name="evaluate" type="text" style="width: 600px; height:80px;" value=""/>
-                    </p>
-                        </td>
-                    </tr>
-                    <tr  class="tableact" style="background-color:#dfdfdf" >
+                    <tr style="border-bottom: 1px solid black; height:80px; line-height:80px;" th:each="hotspot : ${hotspotPages.list}">
+                        <td th:text="${hotspot.id}" ></td>
+                        <td th:text="${hotspot.title}" style="font-size:50px; font-weight:bold;"></td>
+                        <td th:text="${hotspot.time}"  align="right" style="font-size:20px"></td>
                         <td>
-                        <p class="active">
-                        <input style="width:100px" type="submit" value="提交">
-                    </p>
+                            <a @click="deleteEmployee" th:href="@{/hotspot/}+${hotspot.id}">delete</a>
+                            <a th:href="@{'/hotspot/'+${hotspot}}">update</a>
                         </td>
                     </tr>
-                    </table>
+                </table>
+                <form id="deleteForm" method="post">
+                    <input type="hidden" name="_method" value="delete">
                 </form>
 
-
-
             </div>
+
         </div>
-        <div class="main01"></div>
     </div>
-    <div class="clear"></div>
+    <div class="main01"></div>
 </div>
+<div class="clear"></div>
+
+</div>
+
+<ul class="pagination" style="margin: 0px;">
+    <li >
+        <a th:href="@{/hotspot/1}" aria-label="Previous">首页</a>
+    </li><ul class="pagination" style="margin: 0px;">
+
+    <li th:if="${hotspotPages.pageNum}>1"><a th:href="@{/hotspot/}+${hotspotPages.prePage}">上一页</a></li>
+    <!--<c:forEach begin="${pageInfo.pageNum-5>0?pageInfo.pageNum-5:1}"
+               end="${pageInfo.pageNum+4>pageInfo.pages?pageInfo.pages:pageInfo.pageNum+4}" var="i">
+        <li class="paginate_button ${pageInfo.pageNum==i ? 'active':''}"><a href="javascript:goPage(${i})">${i}</a></li>
+    </c:forEach>-->
+
+    <li th:each=" a:${hotspotPages.navigatepageNums}">
+        <a th:href="@{/hotspot/}+${a}" th:text="${a}">
+    <li th:if="${hotspotPages.pageNum}==${a}" style="color: #00AEFF"></li>
+    </a>
+    </li>
+    <li th:if="${hotspotPages.pageNum}<${hotspotPages.pages}"><a th:href="@{/hotspot/}+${hotspotPages.nextPage}">下一页</a></li>
+</ul>
+
+    <li>
+        <a th:href="@{/hotspot/}+${hotspotPages.pages}" aria-label="Next">尾页</a>
+    </li>
+</ul>
+
+
 </body>
+<script type="text/javascript" th:src="@{/js/vue.js}"></script>
+<script type="text/javascript">
+    var vue=new Vue({
+        el:"#dataTable",
+        methods:{
+            deleteEmployee:function (event) {
+                //根据id获取单击事件
+                var deleteForm=document.getElementById("deleteForm");
+                //触发点击事件的href属性赋值给表单的action
+                deleteForm.action=event.target.href;
+                //提交表单
+                deleteForm.submit();
+                //取消超链接默认行为
+                event.preventDefault();
+            }
+        }
+    });
+</script>
+
 </html>
