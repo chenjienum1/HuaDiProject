@@ -187,11 +187,12 @@
 
                 <table id="dataTable"   style="margin:0 auto; width:100%">
 
-                    <tr style="border-bottom: 1px solid black; height:80px; line-height:80px;" th:each="hotspot : ${pages.list}">
+                    <tr style="border-bottom: 1px solid black; height:80px; line-height:80px;" th:each="hotspot : ${hotspotPages.list}">
+                        <td th:text="${hotspot.id}" ></td>
                         <td th:text="${hotspot.title}" style="font-size:50px; font-weight:bold;"></td>
                         <td th:text="${hotspot.time}"  align="right" style="font-size:20px"></td>
                         <td>
-                            <a @click="deleteEmployee" th:href="@{/hotspot/}+${hotspot.title}">delete</a>
+                            <a @click="deleteEmployee" th:href="@{/hotspot/}+${hotspot.id}">delete</a>
                             <a th:href="@{'/hotspot/'+${hotspot}}">update</a>
                         </td>
                     </tr>

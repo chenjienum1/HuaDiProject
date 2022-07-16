@@ -27,7 +27,7 @@ public class HotspotServiceImpl implements HotspotService {
     }
 
     @Override
-    public void deleteByTitle(String title) {
-        hotspotMapper.deleteByTitle(title);
+    public void deleteByID(int id) {
+        hotspotMapper.deleteByID(id);
     }
 }

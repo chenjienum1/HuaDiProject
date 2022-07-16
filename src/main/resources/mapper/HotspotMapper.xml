@@ -18,9 +18,9 @@
         select * from hotspot
     </select>
 
-    <!--public void deleteByTitle(String title);-->
-    <delete id="deleteByTitle">
-        delete from hotspot where `title` =#{title}
+    <!--public void deleteByID(int id);-->
+    <delete id="deleteByID">
+        delete from hotspot where `id` =#{id}
     </delete>
     
 </mapper>

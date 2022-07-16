@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Hotspot {//热点
 
-
+    private  int id;
     private String title;//标题
 
     private Date time;//时间
@@ -42,6 +42,14 @@ public class Hotspot {//热点
         return content;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -59,11 +67,11 @@ public class Hotspot {//热点
     }
 
 
-
     @Override
     public String toString() {
         return "Hotspot{" +
-                "title='" + title + '\'' +
+                "id=" + id +
+                ", title='" + title + '\'' +
                 ", time=" + time +
                 ", picture='" + picture + '\'' +
                 ", content='" + content + '\'' +

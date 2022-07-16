@@ -13,5 +13,5 @@ public interface HotspotMapper {
 
     public List<Hotspot> getHotspot();
 
-    public void deleteByTitle(String title);
+    public void deleteByID(int id);
 }
