@@ -31,18 +31,45 @@
         <div class="header">
             <div class="logo">
                 <a href="index.html">
-                    <img src="images/lg.png" alt="">
+                    <img src="http://localhost:8081/images/lg.png" alt="">
                     <div class="clear"> </div>
                 </a>
             </div>
             <div class="right">
-                <div class="login">
+
+                <!--<div id="header">
+			<img class="logo_img" alt="" src="static/img/logo.gif" >
+			<span class="wel_word">网上书城</span>
+			<div>
+				<%--如果用户还没有登录，显示【登录和注册的菜单】--%>
+				<c:if test="${empty sessionScope.user}">
+
+					<a href="pages/user/login.jsp">登录</a> |
+					<a href="pages/user/regist.jsp">注册</a> &nbsp;&nbsp;
+				</c:if>
+				<%--如果已经登录，则显示登录成功之后的用户信息--%>
+					<c:if test="${not empty sessionScope.user}">
+						<span>欢迎<span class="um_span">${sessionScope.user.username}</span>光临尚硅谷书城</span>
+						<a href="pages/order/order.jsp">我的订单</a>
+						<a href="userServlet?action=logout">注销</a>&nbsp;&nbsp;
+					</c:if>
+					<a href="pages/cart/cart.jsp">购物车</a>
+					<a href="pages/manager/manager.jsp">后台管理</a>
+			</div>
+	</div>-->
+
+
+                <div th:if="${session.User==null}" class="login">
+
                     <ul>
-                        <li>个人登录</li>
-                        <li>政府登录</li>
-                        <li><a href="login">登录</a></li>>
-                        <li class="last">退出</li>
+                        <li><a href="http://localhost:8081/login">后台登录</a></li>
                     </ul>
+                </div>
+                <div th:if="${session.User!=null}" class="login">
+                    <a>欢迎你：</a>
+                    <a th:text="${session.User.username}"></a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="last" href="logout" style="color:black">退出</a>
                 </div>
                 <div class="text">
                     <p >华迪基层公开综合服务监管系统</p>
@@ -62,64 +89,66 @@
             </div>
             <nav id="menu-left">
                 <ul>
-                    <li class="active"><a href="index.html">首页</a></li>
-                    <li><a href="">基层信息公开</a></li>
+                    <li class="active"><a href="http://localhost:8081/index" target="_self">首页</a></li>
+                    <li><a href="http://localhost:8081/xinxi" target="_self">基层信息公开</a></li>
                     <li><a href="">三资管理</a></li>
-                    <li><a href="">应用平台</a></li>
-                    <li><a href="">数据</a></li>
-                    <li><a href="">安全</a></li>
+                    <li><a href="http://localhost:8081/evaluate" target="_self">评价</a></li>
+
                 </ul>
             </nav>
         </div>
         <!------start-768px-menu---->
         <div class="hnav">
             <ul>
-                <li><a href="" target="_blank">首页</a></li>
-                <li><a href="" target="_blank">基层信息公开</a>
+                <li><a href="http://localhost:8081/index" target="_self">首页</a></li>
+                <li><a href="http://localhost:8081/hotspot/1" target="_self" >基层信息公开</a>
                     <div class="hnavbox">
-                        <ul id="hnavl">
-                            <li><a href="Fundsxinxi" target="_blank">资金信息公开</a></li>
-                            <li><a href="Propertyxinxi" target="_blank">资产信息公开</a></li>
-                            <li><a href="Sourcexinxi" target="_blank">资源信息公开</a></li>
-                            <li><a href="Projectxinxi" target="_blank">项目信息公开</a></li>
-                            <li><a href="Evaluatexinxi" target="_blank">评价信息公开</a></li>
+                        <ul id="hnav1">
+                            <li><a href="http://localhost:8081/hotspot/1" target="_self">热点信息公开</a></li>
+                            <li><a href="" target="_self">政务信息公开</a></li>
+                            <li><a href="" target="_self">公开满意度公开</a></li>
+                            <li><a href="http://localhost:8081/Fundsxinxi" target="_self">资金信息公开</a></li>
+                            <li><a href="http://localhost:8081/Propertyxinxi" target="_self">资产信息公开</a></li>
+                            <li><a href="http://localhost:8081/Sourcexinxi" target="_self">资源信息公开</a></li>
                         </ul>
                     </div>
                 </li>
-                <li><a href="" target="_blank">三资管理</a>
+                <li><a href="" target="_self">三资管理</a>
                     <div class="hnavbox">
                         <ul id="hnav2">
-                                        <li><a href="" target="_blank">总体框架</a></li>
-                                        <li><a href="Fundstable" target="_blank">资金管理</a></li>
-                                        <li><a href="Propertytable" target="_blank">资产管理</a></li>
-                                        <li><a href="Sourcetable" target="_blank">资源管理</a></li>
-                                        <li><a href="Projecttable" target="_blank">工程项目</a></li>
-                                        <li><a href="" target="_blank">收入支出</a></li>
-                                        <li><a href="" target="_blank">报表管理</a></li>
-                                        <li><a href="" target="_blank">统计分析</a></li>
-                                        <li><a href="" target="_blank">三资监控</a></li>
-                                        <li><a href="" target="_blank">经济合同</a></li>
-                                        <li><a href="" target="_blank">三资清查</a></li>
-                                        <li><a href="" target="_blank"></a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="evaluate">评价</a>
-                            </li>
+                            <li><a href="http://localhost:8081/Fundstable" target="_self">资金管理</a></li>
+                            <li><a href="http://localhost:8081/Propertytable" target="_self">资产管理</a></li>
+                            <li><a href="http://localhost:8081/Sourcetable" target="_self">资源管理</a></li>
+                            <li><a href="" target="_self">报表管理</a></li>
+
+                            <div th:if="${session.User!=null}" >
+                                <li><a href="" target="_self">添加报表</a></li>
+                                <li><a href="http://localhost:8081/Projecttable" target="_self">工程项目</a></li>
+                            </div>
+
+                        </ul>
+                    </div>
+                </li>
+
+                <li><a href="http://localhost:8081/evaluate" target="_self">评价</a>
+
+                </li>
+
+
+
+
+
+
+
             </ul>
-
-
-
-
-
             <div class="clear"> </div>
         </div>
     </div>
 </div>
 <div class="header_bottom">
 </div>
-</div>
+
+
 <!-- 预加载模块结束 -->
 
 
