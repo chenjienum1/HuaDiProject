@@ -38,9 +38,8 @@ public class HotspotController {
 
 
 
-    @RequestMapping(value = "/hotspot",method = RequestMethod.GET)
-    public String listHotspot(Model model){
-        int pageNum=1;
+    @RequestMapping(value = "/hotspot/{pageNum}",method = RequestMethod.GET)
+    public String listHotspot(Model model,@PathVariable("pageNum")int pageNum){
         PageInfo<Hotspot> hotspotPageInfo = hotspotService.listPage(pageNum, PAGESIZE);
         model.addAttribute("hotspotPages",hotspotPageInfo);
         System.out.println(hotspotPageInfo);

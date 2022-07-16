@@ -14,6 +14,9 @@ spring:
       filter:
         enabled: true   #开启页面表单的Rest功能
 
+
+
+
 #指定全局配置文件
 #配置mybatis规则
 mybatis:
