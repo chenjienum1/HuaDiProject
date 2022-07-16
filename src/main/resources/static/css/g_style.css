@@ -134,7 +134,7 @@ body {
 	margin: 0px auto; width: 1100px; position: relative;
 }
 .hnav > ul > li {
-	width: 100px; height: 44px; text-align: center; line-height: 44px; float: left;
+	width: 250px; height: 44px; text-align: center; line-height: 44px; float: left;
 }
 .hnav > ul > li > a {
 	color: rgb(255, 255, 255); font-size: 22px; display: block;
@@ -148,9 +148,7 @@ body {
 .hnavbox {
 	background-color:#f2f2f2; padding: 5px 5px; left: 0px; top: 44px; width: 1090px; height: 30px; display: none; position: absolute; z-index: 99;
 }
-.hnavbox .hnavl {
-	width: 799px; height: 90px; border-right-color: rgb(51, 51, 51); border-right-width: 1px; border-right-style: solid; float: left;
-}
+
 .hnavbox p {
 	height: 30px; text-align: left; line-height: 30px; font-weight: bold;
 }
@@ -174,6 +172,9 @@ body {
 }
 .hnavbox ul li a {
 	padding: 0px 10px; color: rgb(51, 51, 51); font-size: 16px; font-weight: bold; float: left; display: block;
+}
+.hnavbox ul li a:hover {
+	color: #21B7C6;
 }
 .hcontent {
     background: rgb(249, 249, 249);
