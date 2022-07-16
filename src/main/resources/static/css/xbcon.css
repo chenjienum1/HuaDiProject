@@ -119,3 +119,28 @@
 .set_height{
     height: 40px;
 }
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination a{
+    float: left;
+    width:auto;
+    border:1px solid #000;
+    margin-top:30px;
+    margin-left:10px;
+    padding:5px;
+    border-radius:5px;
+    background-color: #f1f1f1;
+    color:black;
+}
+.pagination a:hover{
+    background-color: #21B7C6;
+}
+.pagination div a{
+    padding-left:10px;
+    padding-right:10px;
+}
+
