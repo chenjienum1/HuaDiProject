@@ -102,14 +102,13 @@
                 <li><a href="index" target="_blank">首页</a></li>
                 <li><a href="hotspot/1" target="_blank" >基层信息公开</a>
                     <div class="hnavbox">
-                        <ul id="hnavl">
+                        <ul id="hnav1">
                             <li><a href="hotspot/1" target="_blank">热点信息公开</a></li>
                             <li><a href="" target="_blank">政务信息公开</a></li>
                             <li><a href="" target="_blank">公开满意度公开</a></li>
                             <li><a href="Fundsxinxi" target="_blank">资金信息公开</a></li>
                             <li><a href="Propertyxinxi" target="_blank">资产信息公开</a></li>
                             <li><a href="Sourcexinxi" target="_blank">资源信息公开</a></li>
-                            <li><a href="Projectxinxi" target="_blank">项目信息公开</a></li>
                         </ul>
                     </div>
                 </li>
@@ -121,7 +120,7 @@
                             <li><a href="Sourcetable" target="_blank">资源管理</a></li>
                             <li><a href="" target="_blank">报表管理</a></li>
 
-                            <div th:if="${session.User!=null}" class="login">
+                            <div th:if="${session.User!=null}">
                                 <li><a href="" target="_blank">添加报表</a></li>
                                 <li><a href="Projecttable" target="_blank">工程项目</a></li>
                             </div>

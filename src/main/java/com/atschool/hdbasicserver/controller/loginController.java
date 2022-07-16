@@ -34,7 +34,7 @@ public class loginController {
         if (loginService.login(u)){
             session.setAttribute("User",u);
             session.removeAttribute("msg");
-            return "redirect:success.html";
+            return "redirect:index";
         }else {
             session.setAttribute("msg","用户名或密码错误");
             return "redirect:login";
