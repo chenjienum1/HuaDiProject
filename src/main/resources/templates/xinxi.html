@@ -5,11 +5,11 @@
     <title>Home</title>
     <!--此处填写网页标签名 -->
     <meta charset="utf-8">
-    <link rel="shortcut icon" href="images/ico/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://localhost:8081/images/ico/favicon.ico" type="image/x-icon">
     <!--此处加入网页图标 -->
     <link href="http://localhost:8081/css/g_style.css" rel="stylesheet" type="text/css" media="all" />
     <!--此处加载模块预置css，不能修改g_style.css-->
-    <link href="css/xbcon.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="http://localhost:8081/css/xbcon.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="stylesheet" type="text/css" href="http://localhost:8081/css/magnific-popup.css">
     <script type="text/javascript" src="http://localhost:8081/js/jquery.min.js"></script>
     <!-----768px-menu----->
@@ -31,17 +31,14 @@
         <div class="header">
             <div class="logo">
                 <a href="index.html">
-                    <img src="images/lg.png" alt="">
+                    <img src="http://localhost:8081/images/lg.png" alt="">
                     <div class="clear"> </div>
                 </a>
             </div>
             <div class="right">
                 <div class="login">
                     <ul>
-                        <li>个人登录</li>
-                        <li>政府登录</li>
                         <li><a href="login">登录</a></li>>
-                        <li class="last">退出</li>
                     </ul>
                 </div>
                 <div class="text">
@@ -143,12 +140,6 @@
 
 
 
-                <div class="h_search">
-                    <form>
-                        <input type="text" value="" placeholder="搜索">
-                        <input type="submit" value="">
-                    </form>
-                </div>
             </ul>
 
 
@@ -191,16 +182,28 @@
                         <td th:text="${hotspot.id}" ></td>
                         <td th:text="${hotspot.title}" style="font-size:50px; font-weight:bold;"></td>
                         <td th:text="${hotspot.time}"  align="right" style="font-size:20px"></td>
+                         <div th:if="${session.User!=null}" class="login">
                         <td>
                             <a @click="deleteEmployee" th:href="@{/hotspot/}+${hotspot.id}">delete</a>
                             <a th:href="@{'/hotspot/'+${hotspot}}">update</a>
                         </td>
+                         </div>
                     </tr>
                 </table>
                 <form id="deleteForm" method="post">
                     <input type="hidden" name="_method" value="delete">
                 </form>
+                <div class="pagination">
+                    <a th:href="@{/hotspot/1}" aria-label="Previous">首页</a>
+                    <a th:if="${hotspotPages.pageNum}>1" th:href="@{/hotspot/}+${hotspotPages.prePage}">上一页</a>
+                    <div th:each=" a:${hotspotPages.navigatepageNums}">
+                        <a th:if="${hotspotPages.pageNum}!=${a}" th:href="@{/hotspot/}+${a}" th:text="${a}"></a>
+                        <a th:if="${hotspotPages.pageNum}==${a}" th:href="@{/hotspot/}+${a}" th:text="${a}"style="background-color: #21B7C6"></a>
+                    </div>
+                    <a th:if="${hotspotPages.pageNum}<${hotspotPages.pages}" th:href="@{/hotspot/}+${hotspotPages.nextPage}">下一页</a>
+                    <a th:href="@{/hotspot/}+${hotspotPages.pages}" aria-label="Next">尾页</a>
 
+                </div>
                 </div>
 
             </div>
@@ -211,29 +214,6 @@
 
 </div>
 
-<ul class="pagination" style="margin: 0px;">
-    <li >
-        <a th:href="@{/hotspot/1}" aria-label="Previous">首页</a>
-    </li><ul class="pagination" style="margin: 0px;">
-
-        <li th:if="${hotspotPages.pageNum}>1"><a th:href="@{/hotspot/}+${hotspotPages.prePage}">上一页</a></li>
-        <!--<c:forEach begin="${pageInfo.pageNum-5>0?pageInfo.pageNum-5:1}"
-                   end="${pageInfo.pageNum+4>pageInfo.pages?pageInfo.pages:pageInfo.pageNum+4}" var="i">
-            <li class="paginate_button ${pageInfo.pageNum==i ? 'active':''}"><a href="javascript:goPage(${i})">${i}</a></li>
-        </c:forEach>-->
-
-        <li th:each=" a:${hotspotPages.navigatepageNums}">
-            <a th:href="@{/hotspot/}+${a}" th:text="${a}">
-                <li th:if="${hotspotPages.pageNum}==${a}" style="color: #00AEFF"></li>
-            </a>
-        </li>
-        <li th:if="${hotspotPages.pageNum}<${hotspotPages.pages}"><a th:href="@{/hotspot/}+${hotspotPages.nextPage}">下一页</a></li>
-    </ul>
-
-    <li>
-        <a th:href="@{/hotspot/}+${hotspotPages.pages}" aria-label="Next">尾页</a>
-    </li>
-</ul>
 
 
 </body>
