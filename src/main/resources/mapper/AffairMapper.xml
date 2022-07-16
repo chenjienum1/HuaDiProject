@@ -18,4 +18,9 @@
     <select id="getAffair" resultType="com.atschool.hdbasicserver.bean.Affair">
         select * from affair
     </select>
+
+<!--public void deleteByID(int id);-->
+    <delete id="deleteByID">
+        delete from affair where `id` =#{id}
+    </delete>
 </mapper>

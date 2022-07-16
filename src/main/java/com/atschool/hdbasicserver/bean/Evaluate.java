@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Evaluate {//满意度
 
+    private int id;
     private String title;//标题
 
     private String kind;//种类
@@ -65,10 +66,19 @@ public class Evaluate {//满意度
         this.evaluate = evaluate;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "Evaluate{" +
-                "title='" + title + '\'' +
+                "id=" + id +
+                ", title='" + title + '\'' +
                 ", kind='" + kind + '\'' +
                 ", satisfaction=" + satisfaction +
                 ", time=" + time +

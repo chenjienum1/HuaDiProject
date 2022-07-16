@@ -1,15 +1,24 @@
 package com.atschool.hdbasicserver.controller;
 
 
+import com.atschool.hdbasicserver.bean.Affair;
 import com.atschool.hdbasicserver.mapper.AffairMapper;
+import com.atschool.hdbasicserver.service.AffairService;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 public class AffairController {
 
+    private static final int PAGESIZE=5;
+
+    @Autowired
+    AffairService affairService;
     @Autowired
     AffairMapper affairMapper;
 
@@ -25,4 +34,22 @@ public class AffairController {
         affairMapper.addAffair(title,time,picture,content);
         return "affair";
     }
+
+    @RequestMapping(value = "/affair/{pageNum}",method = RequestMethod.GET)
+    public String listAffair(Model model, @PathVariable("pageNum")int pageNum){
+        PageInfo<Affair> affairPageInfo = affairService.listPage(pageNum,PAGESIZE);
+        model.addAttribute("affairPages",affairPageInfo);
+        List<Affair> list = affairPageInfo.getList();
+        model.addAttribute("list",list);
+        return "affxinxi";
+    }
+
+
+    @RequestMapping(value = "/affair/{pageNum}/{id}",method = RequestMethod.DELETE)
+    public String deleteByID(Model model,@PathVariable("id")int id,@PathVariable("pageNum")int pageNum){
+        affairService.deleteByID(id);
+        return "redirect:/affair/"+pageNum;
+    }
+
+
 }
