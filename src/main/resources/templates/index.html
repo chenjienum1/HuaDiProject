@@ -5,6 +5,7 @@
     <title>Home</title>
     <!--此处填写网页标签名 -->
     <meta charset="utf-8">
+    <meta http-equiv="refresh">
     <link rel="shortcut icon" href="images/ico/favicon.ico" type="image/x-icon">
     <!--此处加入网页图标 -->
     <link href="css/g_style.css" rel="stylesheet" type="text/css" media="all" />
@@ -99,37 +100,37 @@
         <!------start-768px-menu---->
         <div class="hnav">
             <ul>
-                <li><a href="index" target="_blank">首页</a></li>
-                <li><a href="hotspot/1" target="_blank" >基层信息公开</a>
+                <li><a href="index" target="_self">首页</a></li>
+                <li><a href="hotspot/1" target="_self" >基层信息公开</a>
                     <div class="hnavbox">
                         <ul id="hnav1">
-                            <li><a href="hotspot/1" target="_blank">热点信息公开</a></li>
-                            <li><a href="" target="_blank">政务信息公开</a></li>
-                            <li><a href="" target="_blank">公开满意度公开</a></li>
-                            <li><a href="Fundsxinxi" target="_blank">资金信息公开</a></li>
-                            <li><a href="Propertyxinxi" target="_blank">资产信息公开</a></li>
-                            <li><a href="Sourcexinxi" target="_blank">资源信息公开</a></li>
+                            <li><a href="hotspot/1" target="_self">热点信息公开</a></li>
+                            <li><a href="" target="_self">政务信息公开</a></li>
+                            <li><a href="" target="_self">公开满意度公开</a></li>
+                            <li><a href="Fundsxinxi" target="_self">资金信息公开</a></li>
+                            <li><a href="Propertyxinxi" target="_self">资产信息公开</a></li>
+                            <li><a href="Sourcexinxi" target="_self">资源信息公开</a></li>
                         </ul>
                     </div>
                 </li>
-                <li><a href="" target="_blank">三资管理</a>
+                <li><a href="" target="_self">三资管理</a>
                     <div class="hnavbox">
                         <ul id="hnav2">
-                            <li><a href="Fundstable" target="_blank">资金管理</a></li>
-                            <li><a href="Propertytable" target="_blank">资产管理</a></li>
-                            <li><a href="Sourcetable" target="_blank">资源管理</a></li>
-                            <li><a href="" target="_blank">报表管理</a></li>
+                            <li><a href="Fundstable" target="_self">资金管理</a></li>
+                            <li><a href="Propertytable" target="_self">资产管理</a></li>
+                            <li><a href="Sourcetable" target="_self">资源管理</a></li>
+                            <li><a href="" target="_self">报表管理</a></li>
 
-                            <div th:if="${session.User!=null}">
-                                <li><a href="" target="_blank">添加报表</a></li>
-                                <li><a href="Projecttable" target="_blank">工程项目</a></li>
+                            <div th:if="${session.User!=null}" >
+                                <li><a href="" target="_self">添加报表</a></li>
+                                <li><a href="Projecttable" target="_self">工程项目</a></li>
                             </div>
 
                         </ul>
                     </div>
                 </li>
 
-                <li><a href="evaluate" target="_blank">评价</a>
+                <li><a href="evaluate" target="_self">评价</a>
 
                 </li>
 
