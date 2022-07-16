@@ -1,13 +1,27 @@
 package com.atschool.hdbasicserver.controller;
 
+import com.atschool.hdbasicserver.bean.Funds;
+import com.atschool.hdbasicserver.bean.Property;
 import com.atschool.hdbasicserver.mapper.EvaluateMapper;
 import com.atschool.hdbasicserver.mapper.PropertyMapper;
+import com.atschool.hdbasicserver.service.FundsService;
+import com.atschool.hdbasicserver.service.PropertyService;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
 @Controller
 public class PropertyController {
+
+    private static final int PAGESIZE=5;
+
+    @Autowired
+    PropertyService propertyService;
+
     @Autowired
     PropertyMapper propertyMapper;
 
@@ -26,5 +40,22 @@ public class PropertyController {
         String time = time_year + "-" + time_month + "-" + time_day;
         propertyMapper.addProperty(town,village,name,unit,amount,jinZhi,time,principal);
         return "Propertytable";
+    }
+
+    @RequestMapping(value = "/Property/{pageNum}",method = RequestMethod.GET)
+    public String listProperty(Model model, @PathVariable("pageNum")int pageNum){
+        PageInfo<Property> propertyPageInfo = propertyService.listPage(pageNum, PAGESIZE);
+        model.addAttribute("propertyPages",propertyPageInfo);
+        System.out.println(propertyPageInfo);
+        List<Property> list = propertyPageInfo.getList();
+        model.addAttribute("list",list);
+        return "Propertyxinxi";
+    }
+
+    @RequestMapping(value = "/Property/{pageNum}/{id}",method = RequestMethod.DELETE)
+    public String deleteByID(Model model,@PathVariable("id")int id,@PathVariable("pageNum") int pageNum){
+        propertyService.deleteByID(id);
+        System.out.println("删除"+id+"成功");
+        return "redirect:/Property/"+pageNum;
     }
 }

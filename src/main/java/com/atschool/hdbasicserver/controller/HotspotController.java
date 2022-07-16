@@ -49,15 +49,6 @@ public class HotspotController {
 
     }
 
-    /**
-     * @RequestMapping(value = "/employee/{id}",method = RequestMethod.DELETE)
-     *     public String deleteEmployee(@PathVariable("id")Integer id){
-     *         employeeDao.delete(id);
-     *         System.out.println("删除"+id+"成功");
-     *         return "redirect:/employee";
-     *     }
-     * @return
-     */
 
     @RequestMapping(value = "/hotspot/{pageNum}/{id}",method = RequestMethod.DELETE)
     public String deleteByID(Model model,@PathVariable("id")int id,@PathVariable("pageNum") int pageNum){

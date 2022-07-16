@@ -173,21 +173,38 @@
 
                 <table id="dataTable"   style="margin:0 auto; width:100%">
 
-                    <tr style="border-bottom: 1px solid black; height:80px; line-height:80px;" th:each="hotspot : ${hotspotPages.list}">
-                        <td th:text="${hotspot.id}" ></td>
-                        <td th:text="${hotspot.title}" style="font-size:50px; font-weight:bold;"></td>
-                        <td th:text="${hotspot.time}"  align="right" style="font-size:20px"></td>
+                    <tr style="border-bottom: 1px solid black; height:80px; line-height:80px;" th:each="funds : ${fundsPages.list}">
+                        <td th:text="${funds.id}" ></td>
+                        <td th:text="${funds.town}" style="font-size:50px; font-weight:bold;"></td>
+                        <td th:text="${funds.village}" style="font-size:50px; font-weight:bold;"></td>
+                        <td th:text="${funds.account}" style="font-size:50px; font-weight:bold;"></td>
+                        <td th:text="${funds.realAccount}" style="font-size:50px; font-weight:bold;"></td>
+                        <td th:text="${funds.available}" style="font-size:50px; font-weight:bold;"></td>
+                        <td th:text="${funds.comment}" style="font-size:50px; font-weight:bold;"></td>
+                        <td th:text="${funds.accountant}" style="font-size:50px; font-weight:bold;"></td>
+                        <td th:text="${funds.functionary}" style="font-size:50px; font-weight:bold;"></td>
                         <td>
-                            <a @click="deleteEmployee" th:href="@{/hotspot/}+${hotspot.id}">delete</a>
-                            <a th:href="@{'/hotspot/'+${hotspot}}">update</a>
+                            <a @click="deleteFunds" th:href="@{'/Funds/'+${fundsPages.pageNum}+'/'+${funds.id}}">delete</a>
+
                         </td>
                     </tr>
                 </table>
                 <form id="deleteForm" method="post">
                     <input type="hidden" name="_method" value="delete">
                 </form>
+                <div class="pagination">
+                    <a th:href="@{/Funds/1}" aria-label="Previous">首页</a>
+                    <a th:if="${fundsPages.pageNum}>1" th:href="@{/Funds/}+${fundsPages.prePage}">上一页</a>
+                    <div th:each=" a:${fundsPages.navigatepageNums}">
+                        <a th:if="${fundsPages.pageNum}!=${a}" th:href="@{/Funds/}+${a}" th:text="${a}"></a>
+                        <a th:if="${fundsPages.pageNum}==${a}" th:href="@{/Funds/}+${a}" th:text="${a}"style="background-color: #21B7C6"></a>
+                    </div>
+                    <a th:if="${fundsPages.pageNum}<${fundsPages.pages}" th:href="@{/Funds/}+${fundsPages.nextPage}">下一页</a>
+                    <a th:href="@{/Funds/}+${fundsPages.pages}" aria-label="Next">尾页</a>
 
+                </div>
             </div>
+
 
         </div>
     </div>
@@ -197,30 +214,6 @@
 
 </div>
 
-<ul class="pagination" style="margin: 0px;">
-    <li >
-        <a th:href="@{/hotspot/1}" aria-label="Previous">首页</a>
-    </li><ul class="pagination" style="margin: 0px;">
-
-    <li th:if="${hotspotPages.pageNum}>1"><a th:href="@{/hotspot/}+${hotspotPages.prePage}">上一页</a></li>
-    <!--<c:forEach begin="${pageInfo.pageNum-5>0?pageInfo.pageNum-5:1}"
-               end="${pageInfo.pageNum+4>pageInfo.pages?pageInfo.pages:pageInfo.pageNum+4}" var="i">
-        <li class="paginate_button ${pageInfo.pageNum==i ? 'active':''}"><a href="javascript:goPage(${i})">${i}</a></li>
-    </c:forEach>-->
-
-    <li th:each=" a:${hotspotPages.navigatepageNums}">
-        <a th:href="@{/hotspot/}+${a}" th:text="${a}">
-    <li th:if="${hotspotPages.pageNum}==${a}" style="color: #00AEFF"></li>
-    </a>
-    </li>
-    <li th:if="${hotspotPages.pageNum}<${hotspotPages.pages}"><a th:href="@{/hotspot/}+${hotspotPages.nextPage}">下一页</a></li>
-</ul>
-
-    <li>
-        <a th:href="@{/hotspot/}+${hotspotPages.pages}" aria-label="Next">尾页</a>
-    </li>
-</ul>
-
 
 </body>
 <script type="text/javascript" th:src="@{/js/vue.js}"></script>
@@ -228,7 +221,7 @@
     var vue=new Vue({
         el:"#dataTable",
         methods:{
-            deleteEmployee:function (event) {
+            deleteFunds:function (event) {
                 //根据id获取单击事件
                 var deleteForm=document.getElementById("deleteForm");
                 //触发点击事件的href属性赋值给表单的action
