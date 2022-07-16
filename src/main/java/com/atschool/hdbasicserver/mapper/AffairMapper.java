@@ -11,4 +11,6 @@ public interface AffairMapper {
     public void addAffair(String title, String time, String picture, String content);
 
     public List<Affair> getAffair();
+
+    public void deleteByID(int id);
 }

@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Affair {//政务
 
+    private int id;
     private String title;//标题
 
     private Date time;//时间
@@ -41,6 +42,14 @@ public class Affair {//政务
         return content;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -60,7 +69,8 @@ public class Affair {//政务
     @Override
     public String toString() {
         return "Affair{" +
-                "title='" + title + '\'' +
+                "id=" + id +
+                ", title='" + title + '\'' +
                 ", time=" + time +
                 ", picture='" + picture + '\'' +
                 ", content='" + content + '\'' +
