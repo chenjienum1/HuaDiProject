@@ -12,4 +12,6 @@ public interface EvaluateMapper {
     public void addEvaluate(String title, String kind, Integer satisfaction, String time, String evaluate);
 
     public List<Evaluate> getEvaluate();
+
+    public void deleteByID(int id);
 }

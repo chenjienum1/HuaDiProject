@@ -70,5 +70,14 @@ public class IndexController {
     public String login13(){
         return "Sourcexinxi";
     }
+    @RequestMapping("/affxinxi")
+    public String login14(){
+        return "affxinxi";
+    }
+
+    @RequestMapping("/evaxinxi")
+    public String login15(){
+        return "evaxinxi";
+    }
 
 }

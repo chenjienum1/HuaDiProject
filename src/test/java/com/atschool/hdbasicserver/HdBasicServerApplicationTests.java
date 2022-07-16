@@ -15,12 +15,10 @@ import java.util.List;
 class HdBasicServerApplicationTests {
 
     @Autowired
-    HotspotMapper hotspotMapper;
+    AffairMapper affairMapper;
     @Test
     void contextLoads() {
-        for (int i =21; i <41 ; i++) {
-            hotspotMapper.addHotspot(""+i,"1-1-1",""+i,""+i);
-        }
+        affairMapper.deleteByID(1);
     }
 
 
@@ -34,20 +32,5 @@ class HdBasicServerApplicationTests {
      * 2、在查询结束后获取分页信息
      */
 
-
-
-    @Test
-    void testPage(){
-        //Page<Object> page = PageHelper.startPage(1, 4);
-        //System.out.println(page);
-        PageHelper.startPage(2,4);
-        List<Hotspot> hotspot = hotspotMapper.getHotspot();
-        PageInfo<Hotspot> page=new PageInfo<>(hotspot,5); //第二个参数：设置导航分页的页码数
-
-        System.out.println(page);
-        List<Hotspot> list = page.getList();
-        list.forEach(hot -> System.out.println(hot));
-
-    }
 
 }
