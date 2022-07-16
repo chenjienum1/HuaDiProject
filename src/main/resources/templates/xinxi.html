@@ -89,10 +89,10 @@
             </div>
             <nav id="menu-left">
                 <ul>
-                    <li class="active"><a href="http://localhost:8081/index">首页</a></li>
-                    <li><a href="http://localhost:8081/xinxi">基层信息公开</a></li>
+                    <li class="active"><a href="http://localhost:8081/index" target="_self">首页</a></li>
+                    <li><a href="http://localhost:8081/xinxi" target="_self">基层信息公开</a></li>
                     <li><a href="">三资管理</a></li>
-                    <li><a href="http://localhost:8081/evaluate">评价</a></li>
+                    <li><a href="http://localhost:8081/evaluate" target="_self">评价</a></li>
 
                 </ul>
             </nav>
@@ -151,6 +151,7 @@
 
 
 
+
 <!-- 预加载模块结束 -->
 
 
@@ -185,6 +186,8 @@
                 <form id="deleteForm" method="post">
                     <input type="hidden" name="_method" value="delete">
                 </form>
+
+
                 <div class="pagination">
                     <a th:href="@{/hotspot/1}" aria-label="Previous">首页</a>
                     <a th:if="${hotspotPages.pageNum}>1" th:href="@{/hotspot/}+${hotspotPages.prePage}">上一页</a>
