@@ -6,15 +6,15 @@
     <!--此处填写网页标签名 -->
     <meta charset="utf-8">
     <meta http-equiv="refresh">
-    <link rel="shortcut icon" href="images/ico/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://localhost:8081/images/ico/favicon.ico" type="image/x-icon">
     <!--此处加入网页图标 -->
-    <link href="css/g_style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="http://localhost:8081/css/g_style.css" rel="stylesheet" type="text/css" media="all" />
     <!--此处加载模块预置css，不能修改style.css-->
-    <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
-    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://localhost:8081/css/magnific-popup.css">
+    <script type="text/javascript" src="http://localhost:8081/js/jquery.min.js"></script>
     <!-----768px-menu----->
-    <script type="text/javascript" src="js/jquery.mmenu.js"></script>
-    <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
+    <script type="text/javascript" src="http://localhost:8081/js/jquery.mmenu.js"></script>
+    <link type="text/css" rel="stylesheet" href="http://localhost:8081/css/jquery.mmenu.all.css" />
 
     <script type="text/javascript">
         //	The menu on the left
@@ -31,7 +31,7 @@
         <div class="header">
             <div class="logo">
                 <a href="index.html">
-                    <img src="images/lg.png" alt="">
+                    <img src="http://localhost:8081/images/lg.png" alt="">
                     <div class="clear"> </div>
                 </a>
             </div>
@@ -62,7 +62,7 @@
             <div th:if="${session.User==null}" class="login">
 
                 <ul>
-                    <li><a href="login">后台登录</a></li>
+                    <li><a href="http://localhost:8081/login">后台登录</a></li>
                 </ul>
             </div>
                 <div th:if="${session.User!=null}" class="login">
@@ -89,10 +89,10 @@
             </div>
             <nav id="menu-left">
                 <ul>
-                    <li class="active"><a href="index">首页</a></li>
-                    <li><a href="xinxi">基层信息公开</a></li>
+                    <li class="active"><a href="http://localhost:8081/index">首页</a></li>
+                    <li><a href="http://localhost:8081/xinxi">基层信息公开</a></li>
                     <li><a href="">三资管理</a></li>
-                    <li><a href="evaluate">评价</a></li>
+                    <li><a href="http://localhost:8081/evaluate">评价</a></li>
 
                 </ul>
             </nav>
@@ -104,33 +104,33 @@
                 <li><a href="hotspot/1" target="_self" >基层信息公开</a>
                     <div class="hnavbox">
                         <ul id="hnav1">
-                            <li><a href="hotspot/1" target="_self">热点信息公开</a></li>
+                            <li><a href="http://localhost:8081/hotspot/1" target="_self">热点信息公开</a></li>
                             <li><a href="" target="_self">政务信息公开</a></li>
                             <li><a href="" target="_self">公开满意度公开</a></li>
-                            <li><a href="Fundsxinxi" target="_self">资金信息公开</a></li>
-                            <li><a href="Propertyxinxi" target="_self">资产信息公开</a></li>
-                            <li><a href="Sourcexinxi" target="_self">资源信息公开</a></li>
+                            <li><a href="http://localhost:8081/Fundsxinxi" target="_self">资金信息公开</a></li>
+                            <li><a href="http://localhost:8081/Propertyxinxi" target="_self">资产信息公开</a></li>
+                            <li><a href="http://localhost:8081/Sourcexinxi" target="_self">资源信息公开</a></li>
                         </ul>
                     </div>
                 </li>
                 <li><a href="" target="_self">三资管理</a>
                     <div class="hnavbox">
                         <ul id="hnav2">
-                            <li><a href="Fundstable" target="_self">资金管理</a></li>
-                            <li><a href="Propertytable" target="_self">资产管理</a></li>
-                            <li><a href="Sourcetable" target="_self">资源管理</a></li>
+                            <li><a href="http://localhost:8081/Fundstable" target="_self">资金管理</a></li>
+                            <li><a href="http://localhost:8081/Propertytable" target="_self">资产管理</a></li>
+                            <li><a href="http://localhost:8081/Sourcetable" target="_self">资源管理</a></li>
                             <li><a href="" target="_self">报表管理</a></li>
 
                             <div th:if="${session.User!=null}" >
                                 <li><a href="" target="_self">添加报表</a></li>
-                                <li><a href="Projecttable" target="_self">工程项目</a></li>
+                                <li><a href="http://localhost:8081/Projecttable" target="_self">工程项目</a></li>
                             </div>
 
                         </ul>
                     </div>
                 </li>
 
-                <li><a href="evaluate" target="_self">评价</a>
+                <li><a href="http://localhost:8081/evaluate" target="_self">评价</a>
 
                 </li>
 
