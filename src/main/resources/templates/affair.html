@@ -2,20 +2,21 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" dir="ltr">
 
 <head>
-  <link rel="stylesheet" href="css/aff.css" type="text/css" media="all"/>
-  <title>Affair</title>
+  <link href="http://localhost:8081/css/aff.css" rel="stylesheet" type="text/css" media="all" />
+  <title>Home</title>
   <!--此处填写网页标签名 -->
   <meta charset="utf-8">
-  <link rel="shortcut icon" href="images/ico/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8081/images/ico/favicon.ico" type="image/x-icon">
   <!--此处加入网页图标 -->
-  <link href="css/g_style.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="http://localhost:8081/css/g_style.css" rel="stylesheet" type="text/css" media="all" />
   <!--此处加载模块预置css，不能修改g_style.css-->
-  <link href="css/xbcon.css" rel="stylesheet" type="text/css" media="all" />
-  <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
-  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <link href="http://localhost:8081/css/xbcon.css" rel="stylesheet" type="text/css" media="all" />
+  <link rel="stylesheet" type="text/css" href="http://localhost:8081/css/magnific-popup.css">
+  <script type="text/javascript" src="http://localhost:8081/js/jquery.min.js"></script>
   <!-----768px-menu----->
-  <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
-  <script type="text/javascript" src="js/jquery.mmenu.js"></script>
+  <link type="text/css" rel="stylesheet" href="http://localhost:8081/css/jquery.mmenu.all.css" />
+  <link type="text/css" rel="stylesheet" href="http://localhost:8081/css/xinxi.css" />
+  <script type="text/javascript" src="http://localhost:8081/js/jquery.mmenu.js"></script>
   <script type="text/javascript">
         //	The menu on the left
         $(function () {
@@ -31,12 +32,49 @@
     <div class="header">
       <div class="logo">
         <a href="index.html">
-          <img src="images/lg.png" alt="">
+          <img src="http://localhost:8081/images/lg.png" alt="">
           <div class="clear"> </div>
         </a>
       </div>
-      <div class="text">
-        <p >华迪基层公开综合服务监管系统</p>
+      <div class="right">
+
+        <!--<div id="header">
+    <img class="logo_img" alt="" src="static/img/logo.gif" >
+    <span class="wel_word">网上书城</span>
+    <div>
+        <%--如果用户还没有登录，显示【登录和注册的菜单】--%>
+        <c:if test="${empty sessionScope.user}">
+
+            <a href="pages/user/login.jsp">登录</a> |
+            <a href="pages/user/regist.jsp">注册</a> &nbsp;&nbsp;
+        </c:if>
+        <%--如果已经登录，则显示登录成功之后的用户信息--%>
+            <c:if test="${not empty sessionScope.user}">
+                <span>欢迎<span class="um_span">${sessionScope.user.username}</span>光临尚硅谷书城</span>
+                <a href="pages/order/order.jsp">我的订单</a>
+                <a href="userServlet?action=logout">注销</a>&nbsp;&nbsp;
+            </c:if>
+            <a href="pages/cart/cart.jsp">购物车</a>
+            <a href="pages/manager/manager.jsp">后台管理</a>
+    </div>
+</div>-->
+
+
+        <div th:if="${session.User==null}" class="login">
+
+          <ul>
+            <li><a href="http://localhost:8081/login">后台登录</a></li>
+          </ul>
+        </div>
+        <div th:if="${session.User!=null}" class="login">
+          <a>欢迎你：</a>
+          <a th:text="${session.User.username}"></a>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <a class="last" href="logout" style="color:black">退出</a>
+        </div>
+        <div class="text">
+          <p >华迪基层公开综合服务监管系统</p>
+        </div>
       </div>
       <div class="clear"> </div>
     </div>
@@ -52,99 +90,58 @@
       </div>
       <nav id="menu-left">
         <ul>
-          <li class="active"><a href="index.html">首页</a></li>
-          <li><a href="">基层信息公开</a></li>
+          <li class="active"><a href="http://localhost:8081/index">首页</a></li>
+          <li><a href="http://localhost:8081/xinxi">基层信息公开</a></li>
           <li><a href="">三资管理</a></li>
-          <li><a href="">应用平台</a></li>
-          <li><a href="">数据</a></li>
-          <li><a href="">安全</a></li>
+          <li><a href="http://localhost:8081/evaluate">评价</a></li>
+
         </ul>
       </nav>
     </div>
     <!------start-768px-menu---->
     <div class="hnav">
       <ul>
-        <li><a href="" target="_blank">首页</a></li>
-        <li><a href="" target="_blank">基层信息公开</a>
+        <li><a href="http://localhost:8081/index" target="_self">首页</a></li>
+        <li><a href="http://localhost:8081/hotspot/1" target="_self" >基层信息公开</a>
           <div class="hnavbox">
-            <ul id="hnavl">
-              <li><a href="" target="_blank">党务政务村务公开</a></li>
-              <li><a href="" target="_blank">热点搜集公开</a></li>
-              <li><a href="" target="_blank">廉政公开</a></li>
-              <li><a href="" target="_blank">公开满意度评价</a></li>
+            <ul id="hnav1">
+              <li><a href="http://localhost:8081/hotspot/1" target="_self">热点信息公开</a></li>
+              <li><a href="http://localhost:8081/affair/1" target="_self">政务信息公开</a></li>
+              <li><a href="" target="_self">公开满意度公开</a></li>
+              <li><a href="http://localhost:8081/Fundsxinxi" target="_self">资金信息公开</a></li>
+              <li><a href="http://localhost:8081/Propertyxinxi" target="_self">资产信息公开</a></li>
+              <li><a href="http://localhost:8081/Sourcexinxi" target="_self">资源信息公开</a></li>
             </ul>
           </div>
         </li>
-        <li><a href="" target="_blank">三资管理</a>
+        <li><a href="" target="_self">三资管理</a>
           <div class="hnavbox">
             <ul id="hnav2">
-              <li><a href="" target="_blank">总体框架</a></li>
-              <li><a href="" target="_blank">资金管理</a></li>
-              <li><a href="" target="_blank">资产管理</a></li>
-              <li><a href="" target="_blank">资源管理</a></li>
-              <li><a href="" target="_blank">工程项目</a></li>
-              <li><a href="" target="_blank">收入支出</a></li>
-              <li><a href="" target="_blank">报表管理</a></li>
-              <li><a href="" target="_blank">统计分析</a></li>
-              <li><a href="" target="_blank">三资监控</a></li>
-              <li><a href="" target="_blank">经济合同</a></li>
-              <li><a href="" target="_blank">三资清查</a></li>
-              <li><a href="" target="_blank"></a></li>
+              <li><a href="http://localhost:8081/Fundstable" target="_self">资金管理</a></li>
+              <li><a href="http://localhost:8081/Propertytable" target="_self">资产管理</a></li>
+              <li><a href="http://localhost:8081/Sourcetable" target="_self">资源管理</a></li>
+              <li><a href="" target="_self">报表管理</a></li>
+
+              <div th:if="${session.User!=null}" >
+                <li><a href="" target="_self">添加报表</a></li>
+                <li><a href="http://localhost:8081/Projecttable" target="_self">工程项目</a></li>
+              </div>
+
             </ul>
           </div>
         </li>
-        <li><a href="" target="_blank">应用平台</a>
-          <div class="hnavbox">
-            <ul id="hnav3">
-              <li><a href="" target="_blank">统一信息门户</a></li>
-              <li><a href="" target="_blank">统一机构管理系统</a></li>
-              <li><a href="" target="_blank">统一权限管理系统</a></li>
-              <li><a href="" target="_blank">统一用户管理系统</a></li>
-              <li><a href="" target="_blank">统一身份认证系统</a></li>
-              <li><a href="" target="_blank">统一检索平台</a></li>
-              <li><a href="" target="_blank">统一报表平台</a></li>
-            </ul>
-          </div>
-        </li>
-        <li><a href="" target="_blank">数据</a>
-          <div class="hnavbox">
-            <ul id="hnav4">
-              <li><a href="" target="_blank">党务数据</a></li>
-              <li><a href="" target="_blank">政务数据</a></li>
-              <li><a href="" target="_blank">村务数据</a></li>
-              <li><a href="" target="_blank">财务数据</a></li>
-              <li><a href="" target="_blank">热点信息</a></li>
-            </ul>
-          </div>
-        </li>
-        <li><a href="" target="_blank">安全</a>
-          <div class="hnavbox">
-            <ul id="hnav5">
-              <li><a href="" target="_blank">物理安全</a></li>
-              <li><a href="" target="_blank">网络安全</a></li>
-              <li><a href="" target="_blank">信息安全</a></li>
-              <li><a href="" target="_blank">安全管理</a></li>
-              <li><a href="" target="_blank">数字认证</a></li>
-              <li><a href="" target="_blank">安全审计</a></li>
-            </ul>
-          </div>
+
+        <li><a href="http://localhost:8081/evaluate" target="_self">评价</a>
+
         </li>
 
 
 
 
-        <div class="h_search">
-          <form>
-            <input type="text" value="" placeholder="搜索">
-            <input type="submit" value="">
-          </form>
-        </div>
+
+
+
       </ul>
-
-
-
-
-
       <div class="clear"> </div>
     </div>
   </div>
@@ -165,7 +162,7 @@
       <div class="maincon">
 
         <form th:action="@{/insertAffair}" method="post" >
-        <div>
+        <form form th:action="@{/insertEvaluate}" method="post" id="formtype" action="" class="affform">
           <table  cellspaceing="1" style="text-align:center; margin:0 auto;" border="1" bordercolor="black" >
             <tr class="tableact"><td style="background-color:#dfdfdf;"><p class="active">
               1.政务标题:
@@ -213,7 +210,7 @@
             </tr>
           </table>
         </form>
-        </div>
+        </form>
       </div>
     </div>
     <div class="main01"></div>
