@@ -51,4 +51,24 @@ public class IndexController {
         return "Projecttable";
     }
 
+    @RequestMapping("/Fundsxinxi")
+    public String login10(){
+        return "Fundsxinxi";
+    }
+
+    @RequestMapping("/Propertyxinxi")
+    public String login11(){
+        return "Propertyxinxi";
+    }
+
+    @RequestMapping("/Projectxinxi")
+    public String login12(){
+        return "Projectxinxi";
+    }
+
+    @RequestMapping("/Sourcexinxi")
+    public String login13(){
+        return "Sourcexinxi";
+    }
+
 }

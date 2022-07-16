@@ -63,13 +63,15 @@
                 <ul>
                     <li><a href="login">个人登录</a></li>
                     <li>政府登录</li>
+                    <li><a href="login">登录</a></li>>
+
                 </ul>
             </div>
                 <div th:if="${session.User!=null}" class="login">
                     <a>欢迎你：</a>
                     <a th:text="${session.User.username}"></a>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a class="last" href="logout" style="color:black">退出</a>
+                    class="last" href="logout">退出</a>                   <a class="last" href="logout" style="color:black">退出</a>
                 </div>
             <div class="text">
                 <p >华迪基层公开综合服务监管系统</p>
@@ -104,10 +106,11 @@
                 <li><a href="hotspot/1" target="_blank" >基层信息公开</a>
                     <div class="hnavbox">
                         <ul id="hnavl">
-                            <li><a href="" target="_blank">党务政务村务公开</a></li>
-                            <li><a href="" target="_blank">热点搜集公开</a></li>
-                            <li><a href="" target="_blank">廉政公开</a></li>
-                            <li><a href="" target="_blank">公开满意度评价</a></li>
+                            <li><a href="Fundsxinxi" target="_blank">资金信息公开</a></li>
+                            <li><a href="Propertyxinxi" target="_blank">资产信息公开</a></li>
+                            <li><a href="Sourcexinxi" target="_blank">资源信息公开</a></li>
+                            <li><a href="Projectxinxi" target="_blank">项目信息公开</a></li>
+                            <li><a href="Evaluatexinxi" target="_blank">评价信息公开</a></li>
                         </ul>
                     </div>
                 </li>
