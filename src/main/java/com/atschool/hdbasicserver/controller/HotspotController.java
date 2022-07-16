@@ -59,10 +59,10 @@ public class HotspotController {
      * @return
      */
 
-    @RequestMapping(value = "/hotspot/{id}",method = RequestMethod.DELETE)
-    public String deleteByID(@PathVariable("id")int id){
+    @RequestMapping(value = "/hotspot/{pageNum}/{id}",method = RequestMethod.DELETE)
+    public String deleteByID(Model model,@PathVariable("id")int id,@PathVariable("pageNum") int pageNum){
         hotspotService.deleteByID(id);
         System.out.println("删除"+id+"成功");
-        return "redirect:/hotspot";
+        return "redirect:/hotspot/"+pageNum;
     }
 }
