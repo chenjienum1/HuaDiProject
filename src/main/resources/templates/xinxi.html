@@ -195,6 +195,10 @@
                     <a th:if="${hotspotPages.pageNum}<${hotspotPages.pages}" th:href="@{/hotspot/}+${hotspotPages.nextPage}">下一页</a>
                     <a th:href="@{/hotspot/}+${hotspotPages.pages}" aria-label="Next">尾页</a>
 
+
+                    <div>总计[[${hotspotPages.pages}]]页 共[[${hotspotPages.total}]]条记录</div>
+
+
                 </div>
                 </div>
 
