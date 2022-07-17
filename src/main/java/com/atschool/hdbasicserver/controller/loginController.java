@@ -44,7 +44,7 @@ public class loginController {
     @RequestMapping("logout")
     public String logout(HttpSession session){
         session.removeAttribute("User");
-        return "index";
+        return "redirect:index";
     }
 
 
