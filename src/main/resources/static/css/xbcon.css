@@ -22,6 +22,18 @@
     padding-left:5px;
     padding-bottom: 20px;
 }
+.maincon div h1{
+    margin-top:80px;
+    font-size:30px;
+    font-weight: bold;
+    text-align: center;
+}
+.maincon div a{
+    margin-top:20px;
+    font-size:20px;
+    word-wrap:break-word;
+
+}
 .maincon-t {
   line-height: 2em;
   padding: 20px 0;
@@ -260,4 +272,22 @@ img{
 
 .banner>div.right{
             right: 0;
+}
+
+.changepages .leftpage span{
+    margin-top: 10px;
+    width:75px;
+    background-color:red;
+    padding:5px;
+    color:white;
+}
+.changepages .rightpage{
+    margin-top: 10px;
+}
+.changepages .rightpage span{
+    margin-top: 10px;
+    width:75px;
+    background-color:red;
+    padding:5px;
+    color:white;
 }
