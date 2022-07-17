@@ -89,10 +89,10 @@
             </div>
             <nav id="menu-left">
                 <ul>
-                    <li class="active"><a href="http://localhost:8081/index" target="_self">首页</a></li>
-                    <li><a href="http://localhost:8081/xinxi" target="_self">基层信息公开</a></li>
+                    <li class="active"><a href="http://localhost:8081/index">首页</a></li>
+                    <li><a href="http://localhost:8081/xinxi">基层信息公开</a></li>
                     <li><a href="">三资管理</a></li>
-                    <li><a href="http://localhost:8081/evaluate" target="_self">评价</a></li>
+                    <li><a href="http://localhost:8081/evaluate">评价</a></li>
 
                 </ul>
             </nav>
@@ -160,6 +160,7 @@
         <div class="main">
             <div class="set_height" ></div>
             <div class="powz accbg" accidx="67"><a href="index" target="_self" title="xxx" class="CurrChnlCls">首页</a>&nbsp;&gt;&gt;&nbsp;<a href="xinxi" target="_self" title="xxx" class="CurrChnlCls">基层信息公开</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>
+                <a th:if="${session.User!=null}" class="update" th:href="@{'/hotspot/'+${hotspot}}">update</a>
             </div>
             <div class="maincon">
                 <div class="con_title">
@@ -174,8 +175,8 @@
                         <td th:text="${hotspot.time}"  align="right" style="font-size:20px"></td>
                          <div th:if="${session.User!=null}" class="login">
                         <td>
-                            <a @click="deleteEmployee" th:href="@{'/hotspot/'+${hotspotPages.pageNum}+'/'+${hotspot.id}}">delete</a>
-                            <a th:href="@{'/hotspot/'+${hotspot}}">update</a>
+                            <a @click="deleteEmployee" th:href="@{'/hotspot/'+${hotspotPages.pageNum}+'/'+${hotspot.id}}" class="delete">delete</a>
+
                         </td>
                          </div>
                     </tr>
@@ -183,8 +184,8 @@
                 <form id="deleteForm" method="post">
                     <input type="hidden" name="_method" value="delete">
                 </form>
-
-
+                <div style="float: right;">总计[[${hotspotPages.pages}]]页 共[[${hotspotPages.total}]]条记录</div>
+                <div class="clear"></div>
                 <div class="pagination">
                     <a th:href="@{/hotspot/1}" aria-label="Previous">首页</a>
                     <a th:if="${hotspotPages.pageNum}>1" th:href="@{/hotspot/}+${hotspotPages.prePage}">上一页</a>
@@ -194,10 +195,6 @@
                     </div>
                     <a th:if="${hotspotPages.pageNum}<${hotspotPages.pages}" th:href="@{/hotspot/}+${hotspotPages.nextPage}">下一页</a>
                     <a th:href="@{/hotspot/}+${hotspotPages.pages}" aria-label="Next">尾页</a>
-
-
-                    <div>总计[[${hotspotPages.pages}]]页 共[[${hotspotPages.total}]]条记录</div>
-
 
                 </div>
 
@@ -212,7 +209,7 @@
 
 
 </body>
-<script type="text/javascript" th:src="@{/js/vue.js}"></script>
+<script type="text/javascript" th:src="@{http://localhost:8081/js/vue.js}"></script>
 <script type="text/javascript">
     var vue=new Vue({
         el:"#dataTable",

@@ -119,17 +119,49 @@
 .set_height{
     height: 40px;
 }
+.delete{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     float: right;
+     width:auto;
+     margin-top:19.8px;
+     border:2px solid #DC143C;
+     margin-right:10px;
+     background-color: red;
+     color:white;
+     height:30px;
+     border-radius:5px;
+     align-item:column;
+}
+.update{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     float: right;
+     width:auto;
+     margin-right:10px;
+     background-color: green;
+     color:white;
+     height:30px;
+     border-radius:5px;
+     align-item:column;
+}
+
 .pagination{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
+.pagination div{
+    float: right;
+    margin:0;
+}
 .pagination a{
     float: left;
     width:auto;
     border:1px solid #000;
-    margin-top:30px;
+    margin-top:50px;
     margin-left:10px;
     padding:5px;
     border-radius:5px;
