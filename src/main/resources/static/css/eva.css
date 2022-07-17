@@ -93,3 +93,10 @@ top:50px;
 
             width:800px;
             }
+            .table{}
+            .table tr {
+              height: 50px;
+              text-align: center;
+              line-height: 50px;
+              border: 1px solid black;
+            }
