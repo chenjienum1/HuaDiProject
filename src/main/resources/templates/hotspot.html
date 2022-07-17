@@ -2,20 +2,21 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" dir="ltr">
 
 <head>
-    <link rel="stylesheet" href="css/aff.css" type="text/css" media="all"/>
-    <title>Hotspot</title>
+    <link rel="stylesheet" href="css/eva.css"/>
+    <title>Home</title>
     <!--此处填写网页标签名 -->
     <meta charset="utf-8">
-    <link rel="shortcut icon" href="images/ico/favicon.ico" type="image/x-icon">
+    <meta http-equiv="refresh">
+    <link rel="shortcut icon" href="http://localhost:8081/images/ico/favicon.ico" type="image/x-icon">
     <!--此处加入网页图标 -->
-    <link href="css/g_style.css" rel="stylesheet" type="text/css" media="all" />
-    <!--此处加载模块预置css，不能修改g_style.css-->
-    <link href="css/xbcon.css" rel="stylesheet" type="text/css" media="all" />
-    <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
-    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <link href="http://localhost:8081/css/g_style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--此处加载模块预置css，不能修改style.css-->
+    <link rel="stylesheet" type="text/css" href="http://localhost:8081/css/magnific-popup.css">
+    <script type="text/javascript" src="http://localhost:8081/js/jquery.min.js"></script>
     <!-----768px-menu----->
-    <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
-    <script type="text/javascript" src="js/jquery.mmenu.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/js/jquery.mmenu.js"></script>
+    <link type="text/css" rel="stylesheet" href="http://localhost:8081/css/jquery.mmenu.all.css" />
+
     <script type="text/javascript">
         //	The menu on the left
         $(function () {
@@ -159,8 +160,7 @@
             <div class="maincon">
                 <div>
 
-                    <form th:action="@{/hotspot}" method="post" >
-                        <input name="_method" type="hidden" value="put"/>
+                    <form th:action="@{/insertHotspot}" method="post" >
                         <table  cellspaceing="1" style="text-align:center; margin:0 auto;" border="1" bordercolor="black" >
                             <tr class="tableact"><td style="background-color:#dfdfdf;"><p class="active">
                                 1.时政热点标题:

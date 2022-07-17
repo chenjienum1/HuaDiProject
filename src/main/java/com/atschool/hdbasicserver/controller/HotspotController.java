@@ -19,7 +19,7 @@ public class HotspotController {
     @Autowired
     HotspotService hotspotService;
 
-    @RequestMapping(value = "/hotspot")
+    @RequestMapping(value = "/addhotspot")
     public String jump(){
         return "hotspot";
     }
