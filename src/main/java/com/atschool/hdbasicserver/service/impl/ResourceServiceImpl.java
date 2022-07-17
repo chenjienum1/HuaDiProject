@@ -21,6 +21,11 @@ public class ResourceServiceImpl implements ResourceService {
     ResourceMapper resourceMapper;
 
     @Override
+    public void addResource(String town,String village,String variety,String position,int area,String charger){
+        resourceMapper.addResource(town,village,variety,position,area,charger);
+    }
+
+    @Override
     public PageInfo<Resource> listPage(int pageNumber, int pageSize) {
         PageHelper.startPage(pageNumber,pageSize);
         List<Resource> resources = resourceMapper.getResource();

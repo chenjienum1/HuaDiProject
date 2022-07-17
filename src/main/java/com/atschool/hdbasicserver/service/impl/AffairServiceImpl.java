@@ -18,6 +18,11 @@ public class AffairServiceImpl implements AffairService {
     AffairMapper affairMapper;
 
     @Override
+    public void addAffair(String title,String time,String picture,String content){
+        affairMapper.addAffair(title,time,picture,content);
+    }
+
+    @Override
     public PageInfo<Affair> listPage(int pageNumber, int pageSize){
         PageHelper.startPage(pageNumber, pageSize);
         List<Affair> affair = affairMapper.getAffair();

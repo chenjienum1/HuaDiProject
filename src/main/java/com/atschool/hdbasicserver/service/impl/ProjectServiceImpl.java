@@ -19,6 +19,10 @@ public class ProjectServiceImpl implements ProjectService {
     ProjectMapper projectMapper;
 
     @Override
+    public void addProject(String town,String village,String company,int area,int cost,String beginTime,String completeTime,String manager){
+        projectMapper.addProject(town,village,company,area,cost,beginTime,completeTime,manager);
+    }
+    @Override
     public PageInfo<Project> listPage(int pageNumber,int pageSize){
         PageHelper.startPage(pageNumber,pageSize);
         List<Project> project = projectMapper.getProject();

@@ -19,6 +19,11 @@ public class HotspotServiceImpl implements HotspotService {
     HotspotMapper hotspotMapper;
 
     @Override
+    public void addHotspot(String title,String time,String picture,String content){
+        hotspotMapper.addHotspot(title,time,picture,content);
+    }
+
+    @Override
     public PageInfo<Hotspot> listPage(int pageNumber, int pageSize) {
         PageHelper.startPage(pageNumber,pageSize);
         List<Hotspot> hotspot = hotspotMapper.getHotspot();

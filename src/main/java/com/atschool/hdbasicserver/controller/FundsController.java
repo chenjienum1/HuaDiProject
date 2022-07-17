@@ -19,8 +19,6 @@ public class FundsController {
     @Autowired
     FundsService fundsService;
 
-    @Autowired
-    FundsMapper fundsMapper;
 
     @PostMapping(value = "/insertFunds")
     public String insert(@RequestParam("town") String town,
@@ -31,7 +29,7 @@ public class FundsController {
                          @RequestParam("comment") String comment,
                          @RequestParam("accountant") String accountant,
                          @RequestParam("functionary") String functionary){
-        fundsMapper.addFunds(town,village,account,realAccount,available,comment,accountant,functionary);
+        fundsService.addFunds(town,village,account,realAccount,available,comment,accountant,functionary);
         return "Fundstable";
     }
 

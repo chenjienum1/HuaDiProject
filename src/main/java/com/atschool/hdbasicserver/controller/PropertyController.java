@@ -22,8 +22,6 @@ public class PropertyController {
     @Autowired
     PropertyService propertyService;
 
-    @Autowired
-    PropertyMapper propertyMapper;
 
     @PostMapping(value = "/insertProperty")
     public String insert(@RequestParam("town")String town,
@@ -38,7 +36,7 @@ public class PropertyController {
                          @RequestParam("principal")String principal){
 
         String time = time_year + "-" + time_month + "-" + time_day;
-        propertyMapper.addProperty(town,village,name,unit,amount,jinZhi,time,principal);
+        propertyService.addProperty(town,village,name,unit,amount,jinZhi,time,principal);
         return "Propertytable";
     }
 

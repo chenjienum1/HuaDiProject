@@ -19,8 +19,11 @@ public class HotspotController {
     @Autowired
     HotspotService hotspotService;
 
-    @Autowired
-    HotspotMapper hotspotMapper;
+    @RequestMapping(value = "/hotspot")
+    public String jump(){
+        return "hotspot";
+    }
+
 
 
     @PostMapping(value = "/insertHotspot")
@@ -32,7 +35,7 @@ public class HotspotController {
                          @RequestParam("content")String content){
 
         String time = time_year + "-" + time_month + "-" + time_day;
-        hotspotMapper.addHotspot(title,time,picture,content);
+        hotspotService.addHotspot(title,time,picture,content);
         return "hotspot";
     }
 

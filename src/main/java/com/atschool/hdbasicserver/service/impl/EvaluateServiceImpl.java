@@ -20,6 +20,10 @@ public class EvaluateServiceImpl implements EvaluateService {
     @Autowired
     EvaluateMapper evaluateMapper;
 
+    public void addEvaluate(String title,String kind,int satisfaction,String time,String evaluate){
+        evaluateMapper.addEvaluate(title,kind,satisfaction,time,evaluate);
+    }
+
     @Override
     public PageInfo<Evaluate> listPage(int pageNumber, int pageSize) {
         PageHelper.startPage(pageNumber,pageSize);

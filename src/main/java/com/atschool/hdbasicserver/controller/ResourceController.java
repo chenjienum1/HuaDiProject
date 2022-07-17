@@ -22,8 +22,6 @@ public class ResourceController {
     @Autowired
     ResourceService resourceService;
 
-    @Autowired
-    ResourceMapper resourceMapper;
 
 
     @PostMapping(value = "/insertResource")
@@ -34,7 +32,7 @@ public class ResourceController {
                          @RequestParam("area")int area,
                          @RequestParam("charger")String charger){
 
-        resourceMapper.addResource(town,village,variety,position,area,charger);
+        resourceService.addResource(town,village,variety,position,area,charger);
         return "Sourcetable";
     }
 

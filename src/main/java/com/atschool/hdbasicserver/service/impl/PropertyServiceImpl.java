@@ -19,6 +19,10 @@ public class PropertyServiceImpl implements PropertyService {
     PropertyMapper propertyMapper;
 
     @Override
+    public void addProperty(String town,String village,String name,String unit,int amount,int jinZhi,String time,String principal){
+        propertyMapper.addProperty(town,village,name,unit,amount,jinZhi,time,principal);
+    }
+    @Override
     public PageInfo<Property> listPage(int pageNumber, int pageSize) {
         PageHelper.startPage(pageNumber,pageSize);
         List<Property> properties = propertyMapper.getProperty();

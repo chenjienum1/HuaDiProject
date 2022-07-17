@@ -22,8 +22,6 @@ public class EvaluateController {
     @Autowired
     EvaluateService evaluateService;
 
-    @Autowired
-    EvaluateMapper evaluateMapper;
 
     @PostMapping(value = "/insertEvaluate")
     public String insert(HttpSession session, @RequestParam("title")String title,
@@ -35,7 +33,7 @@ public class EvaluateController {
                          @RequestParam("evaluate")String evaluate){
 
         String time = time_year + "-" + time_month + "-" + time_day;
-        evaluateMapper.addEvaluate(title,kind,satisfaction,time,evaluate);
+        evaluateService.addEvaluate(title,kind,satisfaction,time,evaluate);
         return "evaluate";
     }
 

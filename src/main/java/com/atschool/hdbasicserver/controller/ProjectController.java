@@ -21,8 +21,6 @@ public class ProjectController {
     @Autowired
     ProjectService projectService;
 
-    @Autowired
-    ProjectMapper projectMapper;
 
     @PostMapping(value = "/insertProject")
     public String insert(@RequestParam("town")String town,
@@ -40,7 +38,7 @@ public class ProjectController {
 
         String beginTime = beginYear + "-" + beginMonth + "-" + beginDay;
         String completeTime = completeYear + "-" + completeMonth + "-" + completeDay;
-        projectMapper.addProject(town,village,company,area,cost,beginTime,completeTime,manager);
+        projectService.addProject(town,village,company,area,cost,beginTime,completeTime,manager);
         return "Projecttable";
     }
 

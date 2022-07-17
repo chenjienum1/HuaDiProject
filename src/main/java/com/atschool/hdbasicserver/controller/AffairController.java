@@ -19,8 +19,7 @@ public class AffairController {
 
     @Autowired
     AffairService affairService;
-    @Autowired
-    AffairMapper affairMapper;
+
 
     @PostMapping(value = "/insertAffair")
     public String insert(@RequestParam("title")String title,
@@ -31,7 +30,7 @@ public class AffairController {
                          @RequestParam("content")String content){
 
         String time = time_year + "-" + time_month + "-" + time_day;
-        affairMapper.addAffair(title,time,picture,content);
+        affairService.addAffair(title,time,picture,content);
         return "affair";
     }
 

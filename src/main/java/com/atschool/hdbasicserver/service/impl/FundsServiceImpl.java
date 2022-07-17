@@ -19,6 +19,11 @@ public class FundsServiceImpl implements FundsService {
     FundsMapper fundsMapper;
 
     @Override
+    public void addFunds(String town,String village,int account,int realAccount,boolean available,String comment,String accountant,String functionary){
+        fundsMapper.addFunds(town,village,account,realAccount,available,comment,accountant,functionary);
+    }
+
+    @Override
     public PageInfo<Funds> listPage(int pageNumber,int pageSize){
         PageHelper.startPage(pageNumber,pageSize);
         List<Funds> funds = fundsMapper.getFunds();
