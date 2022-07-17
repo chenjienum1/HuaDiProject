@@ -5,17 +5,18 @@
     <title>Home</title>
     <!--此处填写网页标签名 -->
     <meta charset="utf-8">
+    <meta http-equiv="refresh">
     <link rel="shortcut icon" href="http://localhost:8081/images/ico/favicon.ico" type="image/x-icon">
     <!--此处加入网页图标 -->
     <link href="http://localhost:8081/css/g_style.css" rel="stylesheet" type="text/css" media="all" />
-    <!--此处加载模块预置css，不能修改g_style.css-->
-    <link href="http://localhost:8081/css/xbcon.css" rel="stylesheet" type="text/css" media="all" />
+    <!--此处加载模块预置css，不能修改style.css-->
     <link rel="stylesheet" type="text/css" href="http://localhost:8081/css/magnific-popup.css">
     <script type="text/javascript" src="http://localhost:8081/js/jquery.min.js"></script>
     <!-----768px-menu----->
-    <link type="text/css" rel="stylesheet" href="http://localhost:8081/css/jquery.mmenu.all.css" />
-    <link type="text/css" rel="stylesheet" href="http://localhost:8081/css/xinxi.css" />
     <script type="text/javascript" src="http://localhost:8081/js/jquery.mmenu.js"></script>
+    <link type="text/css" rel="stylesheet" href="http://localhost:8081/css/jquery.mmenu.all.css" />
+    <link type="text/css" rel="stylesheet" href="http://localhost:8081/css/Baseinformation.css" />
+
     <script type="text/javascript">
         //	The menu on the left
         $(function () {
@@ -90,7 +91,7 @@
             <nav id="menu-left">
                 <ul>
                     <li class="active"><a href="http://localhost:8081/index" target="_self">首页</a></li>
-                    <li><a href="http://localhost:8081/Baseinformation" target="_self">基层信息公开</a></li>
+                    <li><a href="http://localhost:8081/xinxi" target="_self">基层信息公开</a></li>
                     <li><a href="">三资管理</a></li>
                     <li><a href="http://localhost:8081/evaluate" target="_self">评价</a></li>
 
@@ -101,7 +102,7 @@
         <div class="hnav">
             <ul>
                 <li><a href="http://localhost:8081/index" target="_self">首页</a></li>
-                <li><a href="http://localhost:8081/Baseinformation" target="_self" >基层信息公开</a>
+                <li><a href="http://localhost:8081/hotspot/1" target="_self" >基层信息公开</a>
                     <div class="hnavbox">
                         <ul id="hnav1">
                             <li><a href="http://localhost:8081/hotspot/1" target="_self">热点信息公开</a></li>
@@ -147,9 +148,6 @@
 </div>
 
 
-<!-- 预加载模块结束 -->
-
-
 <div class="hcontent">
     <div class="hcon">
 
@@ -157,40 +155,41 @@
             <div class="set_height" ></div>
             <div class="powz accbg" accidx="67"><a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>
             </div>
-            <div class="maincon">
-                <div class="con_title">
-                    <div class="second_title">
-                        "满意度评价展示"
-                        <span style="font-size:20px margin-left:50px color:#313131">按发稿时间排序</span>
-                    </div>
-                </div>
-                <table id="dataTable"   style="margin:0 auto; width:100%">
-                    <tr style="border-bottom: 1px solid black; height:80px; line-height:80px;" th:each="evaluate : ${evaluatePages.list}">
-                        <td th:text="${evaluate.title}" style="font-size:50px; font-weight:bold;"></td>
-                        <td th:text="${evaluate.kind}" style="font-size:50px; font-weight:bold;"></td>
-                        <td th:text="${evaluate.satisfaction}" style="font-size:50px; font-weight:bold;"></td>
-                        <td th:text="${evaluate.time}"  align="right" style="font-size:20px"></td>
-                        <div th:if="${session.User!=null}" class="login">
-                            <td>
-                                <a @click="deleteEvaluate" th:href="@{'/evaluate/'+${evaluatePages.pageNum}+'/'+${evaluate.id}}">delete</a>
-                                <a th:href="@{'/evaluate/'+${evaluate}}">update</a>
-                            </td>
+            <div class="maincon" style="margin:0 20px;">
+                <div>
+                    <div class="classbox">
+                        <div class="boxtitle">
+                            <div class="box1">热点信息公开</div>
+                            <div class="box2"><a href="hotspot/1"> 更多>></a></div>
                         </div>
-                    </tr>
-                </table>
-                <form id="deleteForm" method="post">
-                    <input type="hidden" name="_method" value="delete">
-                </form>
-                <div class="pagination">
-                    <a th:href="@{/evaluate/1}" aria-label="Previous">首页</a>
-                    <a th:if="${evaluatePages.pageNum}>1" th:href="@{/evaluate/}+${evaluatePages.prePage}">上一页</a>
-                    <div th:each=" a:${evaluatePages.navigatepageNums}">
-                        <a th:if="${evaluatePages.pageNum}!=${a}" th:href="@{/evaluate/}+${a}" th:text="${a}"></a>
-                        <a th:if="${evaluatePages.pageNum}==${a}" th:href="@{/evaluate/}+${a}" th:text="${a}"style="background-color: #21B7C6"></a>
+                        <ul>
+                            <li><a href="">lalalla</a><span>2022-7-17</span></li>
+                            <li><a href="">lalalla</a><span>2022-7-17</span></li>
+                            <li><a href="">lalalla</a><span>2022-7-17</span></li>
+                        </ul>
                     </div>
-                    <a th:if="${evaluatePages.pageNum}<${evaluatePages.pages}" th:href="@{/evaluate/}+${evaluatePages.nextPage}">下一页</a>
-                    <a th:href="@{/evaluate/}+${evaluatePages.pages}" aria-label="Next">尾页</a>
-
+                    <div class="classbox">
+                        <div class="boxtitle">
+                            <div class="box1">政务信息公开</div>
+                            <div class="box2"><a href="affair/1"> 更多>></a></div>
+                        </div>
+                        <ul>
+                            <li><a href="">lalalla</a><span>2022-7-17</span></li>
+                            <li><a href="">lalalla</a><span>2022-7-17</span></li>
+                            <li><a href="">lalalla</a><span>2022-7-17</span></li>
+                        </ul>
+                    </div>
+                    <div class="classbox">
+                        <div class="boxtitle">
+                            <div class="box1">满意度公开</div>
+                            <div class="box2"><a href="evaluate/1"> 更多>></a></div>
+                        </div>
+                        <ul>
+                            <li><a href="">lalalla</a><span>2022-7-17</span></li>
+                            <li><a href="">lalalla</a><span>2022-7-17</span></li>
+                            <li><a href="">lalalla</a><span>2022-7-17</span></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -198,24 +197,12 @@
     </div>
     <div class="clear"></div>
 </div>
+
+
+
+
+
+
 </body>
-<script type="text/javascript" th:src="@{/js/vue.js}"></script>
-<script type="text/javascript">
-    var vue=new Vue({
-        el:"#dataTable",
-        methods:{
-            deleteEvaluate:function (event) {
-                //根据id获取单击事件
-                var deleteForm=document.getElementById("deleteForm");
-                //触发点击事件的href属性赋值给表单的action
-                deleteForm.action=event.target.href;
-                //提交表单
-                deleteForm.submit();
-                //取消超链接默认行为
-                event.preventDefault();
-            }
-        }
-    });
-</script>
 
 </html>
