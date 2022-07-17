@@ -8,10 +8,12 @@
     <meta http-equiv="refresh">
     <link rel="shortcut icon" href="http://localhost:8081/images/ico/favicon.ico" type="image/x-icon">
     <!--此处加入网页图标 -->
+    <link href="http://localhost:8081/css/xbcon.css" rel="stylesheet" type="text/css" media="all" />
     <link href="http://localhost:8081/css/g_style.css" rel="stylesheet" type="text/css" media="all" />
     <!--此处加载模块预置css，不能修改style.css-->
     <link rel="stylesheet" type="text/css" href="http://localhost:8081/css/magnific-popup.css">
     <script type="text/javascript" src="http://localhost:8081/js/jquery.min.js"></script>
+
     <!-----768px-menu----->
     <script type="text/javascript" src="http://localhost:8081/js/jquery.mmenu.js"></script>
     <link type="text/css" rel="stylesheet" href="http://localhost:8081/css/jquery.mmenu.all.css" />
@@ -25,7 +27,7 @@
     <!-----//768px-menu----->
 </head>
 
-<body>
+<body style="background-image: url(http://localhost:8081/images/xxx.png)">
 <div class="header_bg">
     <div class="wrap">
         <div class="header">
@@ -146,11 +148,35 @@
 <div class="header_bottom">
 </div>
 
+<div class="banner">
+    <ul class="imgBox">
+        <!-- 图片区域 -->
+        <li class="active"><img src="http://localhost:8081/images/3z1.png" alt=""></li>
+        <li><img src="http://localhost:8081/images/3z2.png" alt=""></li>
+        <li><img src="http://localhost:8081/images/3z3.png" alt=""></li>
+        <li><img src="http://localhost:8081/images/3z4.png" alt=""></li>
+    </ul>
 
 
+    <!-- 焦点区域 -->
+    <ol>
+        <li data-i="0" data-name="point" class="act"></li>
+        <li data-i="1" data-name="point"></li>
+        <li data-i="2" data-name="point"></li>
+        <li data-i="3" data-name="point"></li>
+        <!-- 设置自定义名称 方便检测点击 -->
+        <!-- 设定每个焦点的索引值 -->
+    </ol>
+
+    <!-- 左右切换按钮 -->
+    <div class="left">&lt;</div>
+    <!-- 左按钮 -->
+    <div class="right">&gt;</div>
+    <!-- 右按钮 -->
+</div>
 
 
 
 </body>
-
+<script type="text/javascript" src="http://localhost:8081/js/index.js"></script>
 </html>
