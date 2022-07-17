@@ -46,7 +46,7 @@ public class EvaluateController {
         model.addAttribute("evaluatePages",evaluatePageInfo);
         List<Evaluate> list = evaluatePageInfo.getList();
         model.addAttribute("list",list);
-        return "evaluatexinxi";
+        return "evaxinxi";
 
     }
 
