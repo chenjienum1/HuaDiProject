@@ -8,15 +8,14 @@
     <meta http-equiv="refresh">
     <link rel="shortcut icon" href="http://localhost:8081/images/ico/favicon.ico" type="image/x-icon">
     <!--此处加入网页图标 -->
-    <link href="http://localhost:8081/css/xbcon.css" rel="stylesheet" type="text/css" media="all" />
     <link href="http://localhost:8081/css/g_style.css" rel="stylesheet" type="text/css" media="all" />
     <!--此处加载模块预置css，不能修改style.css-->
     <link rel="stylesheet" type="text/css" href="http://localhost:8081/css/magnific-popup.css">
     <script type="text/javascript" src="http://localhost:8081/js/jquery.min.js"></script>
-
     <!-----768px-menu----->
     <script type="text/javascript" src="http://localhost:8081/js/jquery.mmenu.js"></script>
     <link type="text/css" rel="stylesheet" href="http://localhost:8081/css/jquery.mmenu.all.css" />
+    <link type="text/css" rel="stylesheet" href="http://localhost:8081/css/Baseinformation.css" />
 
     <script type="text/javascript">
         //	The menu on the left
@@ -39,23 +38,21 @@
             </div>
             <div class="right">
 
+                <div th:if="${session.User==null}" class="login">
 
-
-            <div th:if="${session.User==null}" class="login">
-
-                <ul>
-                    <li><a href="http://localhost:8081/login">后台登录</a></li>
-                </ul>
-            </div>
+                    <ul>
+                        <li><a href="http://localhost:8081/login">后台登录</a></li>
+                    </ul>
+                </div>
                 <div th:if="${session.User!=null}" class="login">
                     <a>欢迎你：</a>
                     <a th:text="${session.User.username}"></a>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a class="last" href="http://localhost:8081/logout" style="color:black">退出</a>
+                    <a class="last" href="logout" style="color:black">退出</a>
                 </div>
-            <div class="text">
-                <p >华迪基层公开综合服务监管系统</p>
-            </div>
+                <div class="text">
+                    <p >华迪基层公开综合服务监管系统</p>
+                </div>
             </div>
             <div class="clear"> </div>
         </div>
@@ -93,7 +90,7 @@
                         </ul>
                     </div>
                 </li>
-                <li><a href="http://localhost:8081/sanZiinformation" target="_self">三资信息公开</a>
+                <li><a href="" target="_self">三资信息公开</a>
                     <div class="hnavbox">
                         <ul id="hnav2">
                             <li><a href="http://localhost:8081/Funds/1" target="_self">资金信息公开</a></li>
@@ -128,44 +125,48 @@
 <div class="header_bottom">
 </div>
 
+
 <div class="hcontent">
     <div class="hcon">
-            <div class="maincon">
-                <div class="banner">
-                    <ul class="imgBox">
-                        <!-- 图片区域 -->
-                        <li class="active"><img src="http://localhost:8081/images/3z1.png" alt=""></li>
-                        <li><img src="http://localhost:8081/images/3z2.png" alt=""></li>
-                        <li><img src="http://localhost:8081/images/3z3.png" alt=""></li>
-                        <li><img src="http://localhost:8081/images/3z4.png" alt=""></li>
-                    </ul>
 
+        <div class="main">
+            <div class="set_height" ></div>
+            <div class="powz accbg" accidx="67"><a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>
+            </div>
+            <div class="maincon" style="margin:0 20px;">
+                <div>
 
-                    <!-- 焦点区域 -->
-                    <ol>
-                        <li data-i="0" data-name="point" class="act"></li>
-                        <li data-i="1" data-name="point"></li>
-                        <li data-i="2" data-name="point"></li>
-                        <li data-i="3" data-name="point"></li>
-                        <!-- 设置自定义名称 方便检测点击 -->
-                        <!-- 设定每个焦点的索引值 -->
-                    </ol>
-
-                    <!-- 左右切换按钮 -->
-                    <div class="left">&lt;</div>
-                    <!-- 左按钮 -->
-                    <div class="right">&gt;</div>
-                    <!-- 右按钮 -->
+                    <div class="classbox">
+                        <div class="boxtitle">
+                            <div class="box1">资产信息公开</div>
+                            <div class="box2"><a href="http://localhost:8081/Property/1"> 更多>></a></div>
+                        </div>
+                        <ul th:each="property : ${propertyPages.list}">
+                            <li><a href="">[[${property.name}]]</a><span>2022-7-17</span></li>
+                        </ul>
+                    </div>
+                    <div class="classbox">
+                        <div class="boxtitle">
+                            <div class="box1">资源信息公开</div>
+                            <div class="box2"><a href="http://localhost:8081/Resource/1"> 更多>></a></div>
+                        </div>
+                        <ul th:each="resource : ${resourcePages.list}">
+                            <li><a href="">[[${resource.position}]]</a><span>2022-7-17</span></li>
+                        </ul>
+                    </div>
                 </div>
-
             </div>
         </div>
-
+        <div class="main01"></div>
     </div>
     <div class="clear"></div>
+</div>
+
+
+
 
 
 
 </body>
-<script type="text/javascript" src="http://localhost:8081/js/index.js"></script>
+
 </html>
