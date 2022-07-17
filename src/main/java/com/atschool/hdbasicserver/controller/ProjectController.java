@@ -1,14 +1,25 @@
 package com.atschool.hdbasicserver.controller;
 
+import com.atschool.hdbasicserver.bean.Affair;
+import com.atschool.hdbasicserver.bean.Project;
 import com.atschool.hdbasicserver.mapper.EvaluateMapper;
 import com.atschool.hdbasicserver.mapper.ProjectMapper;
+import com.atschool.hdbasicserver.service.ProjectService;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 public class ProjectController {
+
+    private static final int PAGESIZE=5;
+
+    @Autowired
+    ProjectService projectService;
 
     @Autowired
     ProjectMapper projectMapper;
@@ -31,6 +42,22 @@ public class ProjectController {
         String completeTime = completeYear + "-" + completeMonth + "-" + completeDay;
         projectMapper.addProject(town,village,company,area,cost,beginTime,completeTime,manager);
         return "Projecttable";
+    }
+
+    @RequestMapping(value = "/project/{pageNum}",method = RequestMethod.GET)
+    public String listAffair(Model model, @PathVariable("pageNum")int pageNum){
+        PageInfo<Project> projectPageInfo = projectService.listPage(pageNum,PAGESIZE);
+        model.addAttribute("projectPages",projectPageInfo);
+        List<Project> list = projectPageInfo.getList();
+        model.addAttribute("list",list);
+        return "Projectxinxi";
+    }
+
+
+    @RequestMapping(value = "/project/{pageNum}/{id}",method = RequestMethod.DELETE)
+    public String deleteByID(Model model,@PathVariable("id")int id,@PathVariable("pageNum")int pageNum){
+        projectService.deleteByID(id);
+        return "redirect:/project/"+pageNum;
     }
 
 }

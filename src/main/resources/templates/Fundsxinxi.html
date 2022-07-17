@@ -5,11 +5,11 @@
     <title>Home</title>
     <!--此处填写网页标签名 -->
     <meta charset="utf-8">
-    <link rel="shortcut icon" href="images/ico/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://localhost:8081/images/ico/favicon.ico" type="image/x-icon">
     <!--此处加入网页图标 -->
     <link href="http://localhost:8081/css/g_style.css" rel="stylesheet" type="text/css" media="all" />
     <!--此处加载模块预置css，不能修改g_style.css-->
-    <link href="css/xbcon.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="http://localhost:8081/css/xbcon.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="stylesheet" type="text/css" href="http://localhost:8081/css/magnific-popup.css">
     <script type="text/javascript" src="http://localhost:8081/js/jquery.min.js"></script>
     <!-----768px-menu----->
@@ -165,10 +165,6 @@
                         <span style="font-size:20px margin-left:50px color:#313131">按发稿时间排序</span>
                     </div>
                 </div>
-
-
-
-
                 <table id="dataTable"   style="margin:0 auto; width:100%">
 
                     <tr style="border-bottom: 1px solid black; height:80px; line-height:80px;" th:each="funds : ${fundsPages.list}">
