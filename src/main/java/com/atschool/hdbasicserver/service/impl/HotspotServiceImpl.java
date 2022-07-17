@@ -35,4 +35,6 @@ public class HotspotServiceImpl implements HotspotService {
     public void deleteByID(int id) {
         hotspotMapper.deleteByID(id);
     }
+
+
 }

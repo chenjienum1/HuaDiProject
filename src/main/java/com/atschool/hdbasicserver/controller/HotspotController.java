@@ -45,9 +45,6 @@ public class HotspotController {
     public String listHotspot(Model model,@PathVariable("pageNum")int pageNum){
         PageInfo<Hotspot> hotspotPageInfo = hotspotService.listPage(pageNum, PAGESIZE);
         model.addAttribute("hotspotPages",hotspotPageInfo);
-        System.out.println(hotspotPageInfo);
-        List<Hotspot> list = hotspotPageInfo.getList();
-        model.addAttribute("list",list);
         return "xinxi";
 
     }
@@ -58,5 +55,10 @@ public class HotspotController {
         hotspotService.deleteByID(id);
         System.out.println("删除"+id+"成功");
         return "redirect:/hotspot/"+pageNum;
+    }
+
+    @RequestMapping("hotspotadd")
+    public String hotspotadd(){
+        return "hotspot";
     }
 }

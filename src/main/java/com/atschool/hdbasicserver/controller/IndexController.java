@@ -80,9 +80,6 @@ public class IndexController {
         return "evaxinxi";
     }
 
-    @RequestMapping("/Baseinformation")
-    public String login16(){
-        return "Baseinformation";
-    }
+
 
 }

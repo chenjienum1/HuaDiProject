@@ -91,7 +91,7 @@
             <nav id="menu-left">
                 <ul>
                     <li class="active"><a href="http://localhost:8081/index" target="_self">首页</a></li>
-                    <li><a href="http://localhost:8081/xinxi" target="_self">基层信息公开</a></li>
+                    <li><a href="http://localhost:8081/Baseinformation" target="_self">基层信息公开</a></li>
                     <li><a href="">三资管理</a></li>
                     <li><a href="http://localhost:8081/evaluate" target="_self">评价</a></li>
 
@@ -102,7 +102,7 @@
         <div class="hnav">
             <ul>
                 <li><a href="http://localhost:8081/index" target="_self">首页</a></li>
-                <li><a href="http://localhost:8081/hotspot/1" target="_self" >基层信息公开</a>
+                <li><a href="http://localhost:8081/Baseinformation" target="_self" >基层信息公开</a>
                     <div class="hnavbox">
                         <ul id="hnav1">
                             <li><a href="http://localhost:8081/hotspot/1" target="_self">热点信息公开</a></li>
@@ -160,34 +160,28 @@
                     <div class="classbox">
                         <div class="boxtitle">
                             <div class="box1">热点信息公开</div>
-                            <div class="box2"><a href="hotspot/1"> 更多>></a></div>
+                            <div class="box2"><a href="http://localhost:8081/hotspot/1"> 更多>></a></div>
                         </div>
-                        <ul>
-                            <li><a href="">lalalla</a><span>2022-7-17</span></li>
-                            <li><a href="">lalalla</a><span>2022-7-17</span></li>
-                            <li><a href="">lalalla</a><span>2022-7-17</span></li>
+                        <ul th:each="hotspot :${hotspotPages.list}">
+                            <li><a href="">[[${hotspot.title}]]</a><span>2022-7-17</span></li>
                         </ul>
                     </div>
                     <div class="classbox">
                         <div class="boxtitle">
                             <div class="box1">政务信息公开</div>
-                            <div class="box2"><a href="affair/1"> 更多>></a></div>
+                            <div class="box2"><a href="http://localhost:8081/affair/1"> 更多>></a></div>
                         </div>
-                        <ul>
-                            <li><a href="">lalalla</a><span>2022-7-17</span></li>
-                            <li><a href="">lalalla</a><span>2022-7-17</span></li>
-                            <li><a href="">lalalla</a><span>2022-7-17</span></li>
+                        <ul th:each="affair :${affairPages.list}">
+                            <li><a href="">[[${affair.title}]]</a><span>2022-7-17</span></li>
                         </ul>
                     </div>
                     <div class="classbox">
                         <div class="boxtitle">
                             <div class="box1">满意度公开</div>
-                            <div class="box2"><a href="evaluate/1"> 更多>></a></div>
+                            <div class="box2"><a href="http://localhost:8081/evaluate/1"> 更多>></a></div>
                         </div>
-                        <ul>
-                            <li><a href="">lalalla</a><span>2022-7-17</span></li>
-                            <li><a href="">lalalla</a><span>2022-7-17</span></li>
-                            <li><a href="">lalalla</a><span>2022-7-17</span></li>
+                        <ul th:each="evaluate :${evaluatePages.list}">
+                            <li><a href="">[[${evaluate.title}]]</a><span>2022-7-17</span></li>
                         </ul>
                     </div>
                 </div>

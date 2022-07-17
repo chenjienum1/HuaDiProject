@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 
@@ -23,7 +24,7 @@ public class loginController {
     LoginServiceImpl loginService;
 
     @RequestMapping(value = "/loginUser",method = RequestMethod.PUT)
-    public String loginUser(HttpSession session, @RequestParam("username")String username, @RequestParam("password") String password){
+    public String loginUser(HttpServletRequest request,HttpSession session, @RequestParam("username")String username, @RequestParam("password") String password){
         System.out.println(username+password);
         boolean ifExist = loginService.ifExist(username);
         if (!ifExist){
@@ -41,7 +42,7 @@ public class loginController {
         }
     }
 
-    @RequestMapping("logout")
+    @RequestMapping("/logout")
     public String logout(HttpSession session){
         session.removeAttribute("User");
         return "redirect:index";
