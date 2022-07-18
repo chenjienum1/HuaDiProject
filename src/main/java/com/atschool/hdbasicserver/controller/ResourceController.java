@@ -22,7 +22,10 @@ public class ResourceController {
     @Autowired
     ResourceService resourceService;
 
-
+    @RequestMapping(value = "/addresource")
+    public String jump(){
+        return "Sourcetable";
+    }
 
     @PostMapping(value = "/insertResource")
     public String insert(@RequestParam("town")String town,

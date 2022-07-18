@@ -13,4 +13,6 @@ public interface AffairMapper {
     public List<Affair> getAffair();
 
     public void deleteByID(int id);
+
+    public Affair getAffairByID(int id);
 }

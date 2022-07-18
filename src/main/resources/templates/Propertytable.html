@@ -5,17 +5,17 @@
     <title>Home</title>
     <!--此处填写网页标签名 -->
     <meta charset="utf-8">
-    <link rel="shortcut icon" href="images/ico/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://localhost:8081/images/ico/favicon.ico" type="image/x-icon">
     <!--此处加入网页图标 -->
-    <link href="css/g_style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="http://localhost:8081/css/g_style.css" rel="stylesheet" type="text/css" media="all" />
     <!--此处加载模块预置css，不能修改g_style.css-->
-    <link href="css/xbcon.css" rel="stylesheet" type="text/css" media="all" />
-    <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
-    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <link href="http://localhost:8081/css/xbcon.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:8081/css/magnific-popup.css">
+    <script type="text/javascript" src="http://localhost:8081/js/jquery.min.js"></script>
     <!-----768px-menu----->
-    <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
-    <link href="css/table.css" rel="stylesheet" type="text/css" media="all" />
-    <script type="text/javascript" src="js/jquery.mmenu.js"></script>
+    <link type="text/css" rel="stylesheet" href="http://localhost:8081/css/jquery.mmenu.all.css" />
+    <link type="text/css" rel="stylesheet" href="http://localhost:8081/css/xinxi.css" />
+    <script type="text/javascript" src="http://localhost:8081/js/jquery.mmenu.js"></script>
     <script type="text/javascript">
         //	The menu on the left
         $(function () {
@@ -36,27 +36,6 @@
                 </a>
             </div>
             <div class="right">
-
-                <!--<div id="header">
-			<img class="logo_img" alt="" src="static/img/logo.gif" >
-			<span class="wel_word">网上书城</span>
-			<div>
-				<%--如果用户还没有登录，显示【登录和注册的菜单】--%>
-				<c:if test="${empty sessionScope.user}">
-
-					<a href="pages/user/login.jsp">登录</a> |
-					<a href="pages/user/regist.jsp">注册</a> &nbsp;&nbsp;
-				</c:if>
-				<%--如果已经登录，则显示登录成功之后的用户信息--%>
-					<c:if test="${not empty sessionScope.user}">
-						<span>欢迎<span class="um_span">${sessionScope.user.username}</span>光临尚硅谷书城</span>
-						<a href="pages/order/order.jsp">我的订单</a>
-						<a href="userServlet?action=logout">注销</a>&nbsp;&nbsp;
-					</c:if>
-					<a href="pages/cart/cart.jsp">购物车</a>
-					<a href="pages/manager/manager.jsp">后台管理</a>
-			</div>
-	</div>-->
 
 
                 <div th:if="${session.User==null}" class="login">
@@ -158,7 +137,7 @@
             </div>
             <div class="maincon">
                 <div>
-                    <form action="Propertytable">
+                    <form th:action="@{/insertProperty}" method="post">
                         <p style="margin:0 auto; font-size:40px; text-align:center;">资产表</p>
                         <table cellspaceing="0" align="center" border="1" bordercolor="white" class="table">
                             <tr class="active">
@@ -197,7 +176,6 @@
                                 <td>负责人</td>
                                 <td colspan="3"><input type="text" ></td>
                             </tr>
-                        </table>
                         </table>
                     </form>
                 </div>

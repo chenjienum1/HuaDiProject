@@ -20,6 +20,10 @@ public class AffairController {
     @Autowired
     AffairService affairService;
 
+    @RequestMapping(value = "/addaffair")
+    public String jump(){
+        return "affair";
+    }
 
     @PostMapping(value = "/insertAffair")
     public String insert(@RequestParam("title")String title,

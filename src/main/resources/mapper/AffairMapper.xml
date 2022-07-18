@@ -23,4 +23,9 @@
     <delete id="deleteByID">
         delete from affair where `id` =#{id}
     </delete>
+
+<!--public Affair getAffairByID(int id);-->
+    <select id="getAffairByID" resultType="com.atschool.hdbasicserver.bean.Affair">
+        select * from affair where `id` =#{id}
+    </select>
 </mapper>

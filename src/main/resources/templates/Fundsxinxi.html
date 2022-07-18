@@ -157,6 +157,7 @@
         <div class="main">
             <div class="set_height" ></div>
             <div class="powz accbg" accidx="67"><a href="index" target="_self" title="xxx" class="CurrChnlCls">首页</a>&nbsp;&gt;&gt;&nbsp;<a href="xinxi" target="_self" title="xxx" class="CurrChnlCls">基层信息公开</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>
+                <a th:if="${session.User!=null}" class="update" href="http://localhost:8081/addfunds/">update</a>
             </div>
             <div class="maincon">
                 <div class="con_title">
@@ -177,8 +178,7 @@
                         <td th:text="${funds.accountant}" style="font-size:50px; font-weight:bold;"></td>
                         <td th:text="${funds.functionary}" style="font-size:50px; font-weight:bold;"></td>
                         <td>
-                            <a @click="deleteFunds" th:href="@{'/Funds/'+${fundsPages.pageNum}+'/'+${funds.id}}">delete</a>
-
+                            <a th:if="${session.User!=null}" @click="deleteFunds" th:href="@{'/Funds/'+${fundsPages.pageNum}+'/'+${funds.id}}" class="delete">delete</a>
                         </td>
                     </tr>
                 </table>

@@ -22,6 +22,10 @@ public class PropertyController {
     @Autowired
     PropertyService propertyService;
 
+    @RequestMapping(value = "/addproperty")
+    public String jump(){
+        return "Propertytable";
+    }
 
     @PostMapping(value = "/insertProperty")
     public String insert(@RequestParam("town")String town,

@@ -178,8 +178,8 @@
                         <td th:text="${project.manager}" style="font-size:50px; font-weight:bold;"></td>
                         <div th:if="${session.User!=null}" class="login">
                             <td>
-                                <a @click="deleteProject" th:href="@{'/project/'+${projectPages.pageNum}+'/'+${project.id}}">delete</a>
-                                <a th:href="@{'/project/'+${project}}">update</a>
+                                <a @click="deleteProject" th:href="@{'/project/'+${projectPages.pageNum}+'/'+${project.id}}" class="delete">delete</a>
+                                <a th:if="${session.User!=null}" th:href="@{'/project/'+${project}}">update</a>
                             </td>
                         </div>
                     </tr>

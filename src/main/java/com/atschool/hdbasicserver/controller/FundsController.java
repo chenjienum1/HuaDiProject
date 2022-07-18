@@ -19,6 +19,11 @@ public class FundsController {
     @Autowired
     FundsService fundsService;
 
+    @RequestMapping(value = "/addfunds")
+    public String jump(){
+        return "Fundstable";
+    }
+
 
     @PostMapping(value = "/insertFunds")
     public String insert(@RequestParam("town") String town,

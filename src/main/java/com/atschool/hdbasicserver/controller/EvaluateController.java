@@ -22,6 +22,10 @@ public class EvaluateController {
     @Autowired
     EvaluateService evaluateService;
 
+    @RequestMapping(value = "/addevaluate")
+    public String jump(){
+        return "evaluate";
+    }
 
     @PostMapping(value = "/insertEvaluate")
     public String insert(HttpSession session, @RequestParam("title")String title,

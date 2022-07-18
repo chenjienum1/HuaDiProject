@@ -21,6 +21,10 @@ public class ProjectController {
     @Autowired
     ProjectService projectService;
 
+    @RequestMapping("/addproject")
+    public String jump(){
+        return "Projecttable";
+    }
 
     @PostMapping(value = "/insertProject")
     public String insert(@RequestParam("town")String town,

@@ -10,4 +10,6 @@ public interface AffairService {
     public PageInfo<Affair> listPage(int pageNumber, int pageSize);
 
     public void deleteByID(int id);
+
+
 }
