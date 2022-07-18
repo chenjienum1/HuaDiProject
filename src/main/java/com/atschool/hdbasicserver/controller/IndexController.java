@@ -14,7 +14,7 @@ public class IndexController {
 
     @RequestMapping("/login")
     public String login(){
-        return "login";
+        return "3login";
     }
 
     @RequestMapping("/boot")
@@ -78,6 +78,11 @@ public class IndexController {
     @RequestMapping("/evaxinxi")
     public String login15(){
         return "evaxinxi";
+    }
+
+    @RequestMapping("/wenzhang")
+    public String login16(){
+        return "wenzhang";
     }
 
 
