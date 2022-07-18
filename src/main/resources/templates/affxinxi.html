@@ -147,7 +147,7 @@
                 </div>
                 <table id="dataTable"   style="margin:0 auto; width:100%">
                     <tr style="border-bottom: 1px solid black; height:80px; line-height:80px;" th:each="affair : ${affairPages.list}">
-                        <td th:text="${affair.title}" style="font-size:50px; font-weight:bold;"></td>
+                        <td style="font-size:50px; font-weight:bold;"><a th:text="${affair.title}" th:href="@{/showAffair/}+${affair.id}"></a></td>
                         <td th:text="${affair.time}"  align="right" style="font-size:20px"></td>
                         <div th:if="${session.User!=null}" class="login">
                             <td>

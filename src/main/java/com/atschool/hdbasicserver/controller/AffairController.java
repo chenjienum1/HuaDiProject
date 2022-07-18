@@ -2,6 +2,7 @@ package com.atschool.hdbasicserver.controller;
 
 
 import com.atschool.hdbasicserver.bean.Affair;
+import com.atschool.hdbasicserver.bean.Hotspot;
 import com.atschool.hdbasicserver.mapper.AffairMapper;
 import com.atschool.hdbasicserver.service.AffairService;
 import com.github.pagehelper.PageInfo;
@@ -52,6 +53,13 @@ public class AffairController {
     public String deleteByID(Model model,@PathVariable("id")int id,@PathVariable("pageNum")int pageNum){
         affairService.deleteByID(id);
         return "redirect:/affair/"+pageNum;
+    }
+
+    @RequestMapping("/showAffair/{id}")
+    public String showMessage(Model model,@PathVariable("id")int id){
+        Affair affairByID = affairService.getAffairByID(id);
+        model.addAttribute("Msg",affairByID);
+        return "wenzhang";
     }
 
 

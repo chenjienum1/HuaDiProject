@@ -65,7 +65,7 @@ public class HotspotController {
     @RequestMapping("/showMessage/{id}")
     public String showMessage(Model model,@PathVariable("id")int id){
         Hotspot hotspotById = hotspotService.getHotspotById(id);
-        model.addAttribute("hotMsg",hotspotById);
+        model.addAttribute("Msg",hotspotById);
         return "wenzhang";
     }
 }
