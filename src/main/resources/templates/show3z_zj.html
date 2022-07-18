@@ -179,8 +179,8 @@
                             <td><a th:text="${Msg.account}"></a></td>
                             <td><a th:text="${Msg.realAccount}"></a></td>
                             <td>
-                                <a th:if="${Msg.available}eq'1'">是</a>
-                                <a th:if="${Msg.available}eq'0'">否</a>
+                                <a th:if="${Msg.available}eq true">是</a>
+                                <a th:if="${Msg.available}eq false">否</a>
                             </td>
                             <td><a th:text="${Msg.comment}"></a></td>
                         </tr>
