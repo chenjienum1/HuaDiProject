@@ -36,5 +36,9 @@ public class HotspotServiceImpl implements HotspotService {
         hotspotMapper.deleteByID(id);
     }
 
-
+    @Override
+    public Hotspot getHotspotById(int id) {
+        Hotspot hotspotById = hotspotMapper.getHotspotById(id);
+        return hotspotById;
+    }
 }
