@@ -85,9 +85,19 @@ public class IndexController {
         return "wenzhang";
     }
 
-    @RequestMapping("/show3z")
+    @RequestMapping("/show3z_zc")
     public String login17(){
-        return "show3z";
+        return "show3z_zc";
+    }
+
+    @RequestMapping("/show3z_zj")
+    public String login18(){
+        return "show3z_zj";
+    }
+
+    @RequestMapping("/show3z_zy")
+    public String login19(){
+        return "show3z_zy";
     }
 
 
