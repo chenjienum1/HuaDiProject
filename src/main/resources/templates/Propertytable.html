@@ -138,46 +138,48 @@
             </div>
             <div class="maincon">
                 <div>
-                    <form th:action="@{/insertProperty}" method="post">
-                        <p style="margin:0 auto; font-size:40px; text-align:center;">资产表</p>
-                        <table cellspaceing="0" align="center" border="1" bordercolor="white" class="table">
-                            <tr class="active">
-                                <td width="100px">镇（社区）</td>
-                                <td width="300px"><input type="text"></td>
-                                <td width="100px">村（街道）</td>
-                                <td width="300px"><input type="text"></td>
-                            </tr>
-                            <tr >
-                                <td>资产名称</td>
-                                <td colspan="3"><input type="text"></td>
-                            </tr>
-                            <tr class="active">
-                                <td>资产单位</td>
-                                <td colspan="3"><input type="text" ></td>
-                            </tr>
-                            <tr >
-                                <td>数量</td>
-                                <td colspan="3"><input type="text"></td>
-                            </tr>
-                            <tr class="active">
-                                <td>资产净值</td>
-                                <td colspan="3"><input type="text">（万元）</td>
-                            </tr>
-                            <tr >
-                                <td>购置时间</td>
-                                <td colspan="3"><input type="text" style="width:150px">年
-                                    <input type="text" style="width:150px">月
-                                    <input type="text" style="width:150px">日</td>
-                            </tr>
-                            <tr class="active">
-                                <td>资产负责人</td>
-                                <td colspan="3"><input type="text"></td>
-                            </tr>
-                            <tr >
-                                <td>负责人</td>
-                                <td colspan="3"><input type="text" ></td>
-                            </tr>
-                        </table>
+                    <form action="Propertytable">
+                        <form action="/insertProperty" method="post">
+                            <table cellspaceing="0" align="center" border="1" bordercolor="white" class="table">
+                                <tr class="active">
+                                    <td width="100px">镇（社区）</td>
+                                    <td width="300px"><input name="town" type="text"></td>
+                                    <td width="100px">村（街道）</td>
+                                    <td width="300px"><input name="village" type="text"></td>
+                                </tr>
+                                <tr >
+                                    <td>资产名称</td>
+                                    <td colspan="3"><input name="name" type="text"></td>
+                                </tr>
+                                <tr class="active">
+                                    <td>资产单位</td>
+                                    <td colspan="3"><input name="unit" type="text" ></td>
+                                </tr>
+                                <tr >
+                                    <td>数量</td>
+                                    <td colspan="3"><input name="amount" type="text"></td>
+                                </tr>
+                                <tr class="active">
+                                    <td>资产净值</td>
+                                    <td colspan="3"><input name="jinZhi" type="text">（万元）</td>
+                                </tr>
+                                <tr >
+                                    <td>购置时间</td>
+                                    <td colspan="3"><input name="year" type="text" style="width:150px">年
+                                        <input name="month" type="text" style="width:150px">月
+                                        <input name="day" type="text" style="width:150px">日</td>
+                                </tr>
+                                <tr class="active">
+                                    <td>资产负责人</td>
+                                    <td colspan="3"><input name="principal" type="text"></td>
+                                </tr>
+                                <tr >
+                                    <td>负责人</td>
+                                <tr>
+                                    <td colspan="4"><input type="submit" value="提交"></td>
+                                </tr>
+                    </table>
+                        </form>
                     </form>
                 </div>
             </div>

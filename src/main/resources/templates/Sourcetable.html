@@ -141,31 +141,35 @@
             <div class="maincon">
                 <div>
                     <form action="Sourcetable">
-                        <p style="margin:0 auto; font-size:40px; text-align:center;">资源表</p>
-                        <table cellspaceing="0" align="center" border="1" bordercolor="white" class="table">
-                            <tr class="active">
-                                <td width="100px">镇（社区）</td>
-                                <td width="300px"><input type="text"></td>
-                                <td width="100px">村（街道）</td>
-                                <td width="300px"><input type="text"></td>
-                            </tr>
-                            <tr >
-                                <td>资源种类</td>
-                                <td colspan="3"><input type="text"></td>
-                            </tr>
-                            <tr class="active">
-                                <td>资源地址</td>
-                                <td colspan="3"><input type="text" ></td>
-                            </tr>
-                            <tr >
-                                <td>资源面积</td>
-                                <td colspan="3"><input type="text" ></td>
-                            </tr>
-                            <tr class="active">
-                                <td>资源负责人</td>
-                                <td colspan="3"><input type="text" ></td>
-                            </tr>
-                        </table>
+                        <form th:action="@{/insertResource}" method="post">
+                            <table cellspaceing="0" align="center" border="1" bordercolor="white" class="table">
+                                <tr class="active">
+                                    <td width="100px">镇（社区）</td>
+                                    <td width="300px"><input name="town" type="text"></td>
+                                    <td width="100px">村（街道）</td>
+                                    <td width="300px"><input name="village" type="text"></td>
+                                </tr>
+                                <tr >
+                                    <td>资源种类</td>
+                                    <td colspan="3"><input name="variety" type="text"></td>
+                                </tr>
+                                <tr class="active">
+                                    <td>资源地址</td>
+                                    <td colspan="3"><input name="position" type="text" ></td>
+                                </tr>
+                                <tr >
+                                    <td>资源面积</td>
+                                    <td colspan="3"><input name="area" type="text" ></td>
+                                </tr>
+                                <tr class="active">
+                                    <td>资源负责人</td>
+                                    <td colspan="3"><input name="charger" type="text" ></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4"><input type="submit" value="提交"></td>
+                                </tr>
+                            </table>
+                        </form>
                     </form>
                 </div>
             </div>
