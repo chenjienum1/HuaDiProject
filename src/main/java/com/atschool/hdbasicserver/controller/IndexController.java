@@ -14,7 +14,7 @@ public class IndexController {
 
     @RequestMapping("/login")
     public String login(){
-        return "3login";
+        return "login";
     }
 
     @RequestMapping("/boot")
