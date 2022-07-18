@@ -19,4 +19,9 @@
     <select id="getProperty" resultType="com.atschool.hdbasicserver.bean.Property">
         select * from property
     </select>
+
+    <!--public Property getPropertyByID(int id);-->
+    <select id="getPropertyByID" resultType="com.atschool.hdbasicserver.bean.Property">
+        select * from property where `id` = #{id}
+    </select>
 </mapper>

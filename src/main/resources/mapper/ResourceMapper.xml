@@ -19,4 +19,9 @@
     <select id="getResource" resultType="com.atschool.hdbasicserver.bean.Resource">
         select * from resource
     </select>
+
+    <!--public Resource getResourceByID(int id);-->
+    <select id="getResourceByID" resultType="com.atschool.hdbasicserver.bean.Resource">
+        select * from resource where `id` = #{id}
+    </select>
 </mapper>

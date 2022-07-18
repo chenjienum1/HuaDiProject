@@ -1,5 +1,6 @@
 package com.atschool.hdbasicserver.service.impl;
 
+import com.atschool.hdbasicserver.bean.Affair;
 import com.atschool.hdbasicserver.bean.Funds;
 import com.atschool.hdbasicserver.bean.Property;
 import com.atschool.hdbasicserver.mapper.PropertyMapper;
@@ -33,5 +34,11 @@ public class PropertyServiceImpl implements PropertyService {
     @Override
     public void deleteByID(int id) {
         propertyMapper.deleteProperty(id);
+    }
+
+    @Override
+    public Property getPropertyByID(int id){
+        Property propertyById = propertyMapper.getPropertyByID(id);
+        return propertyById;
     }
 }

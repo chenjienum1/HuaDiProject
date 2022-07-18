@@ -1,6 +1,7 @@
 package com.atschool.hdbasicserver.service.impl;
 
 import com.atschool.hdbasicserver.bean.Funds;
+import com.atschool.hdbasicserver.bean.Property;
 import com.atschool.hdbasicserver.bean.Resource;
 import com.atschool.hdbasicserver.mapper.ResourceMapper;
 import com.atschool.hdbasicserver.service.ResourceService;
@@ -36,5 +37,11 @@ public class ResourceServiceImpl implements ResourceService {
     @Override
     public void deleteByID(int id) {
         resourceMapper.deleteResource(id);
+    }
+
+    @Override
+    public Resource getResourceByID(int id){
+        Resource resourceById = resourceMapper.getResourceByID(id);
+        return resourceById;
     }
 }
