@@ -85,6 +85,11 @@ public class IndexController {
         return "wenzhang";
     }
 
+    @RequestMapping("/show3z")
+    public String login17(){
+        return "show3z";
+    }
+
 
 
 }
