@@ -15,6 +15,7 @@
     <!-----768px-menu----->
     <link type="text/css" rel="stylesheet" href="http://localhost:8081/css/jquery.mmenu.all.css" />
     <link type="text/css" rel="stylesheet" href="http://localhost:8081/css/xinxi.css" />
+    <link type="text/css" rel="stylesheet" href="http://localhost:8081/css/table.css" />
     <script type="text/javascript" src="http://localhost:8081/js/jquery.mmenu.js"></script>
     <script type="text/javascript">
         //	The menu on the left
@@ -140,7 +141,6 @@
             </div>
             <div class="maincon">
                 <div>
-                    <form action="Sourcetable">
                         <form th:action="@{/insertResource}" method="post">
                             <table cellspaceing="0" align="center" border="1" bordercolor="white" class="table">
                                 <tr class="active">
@@ -170,7 +170,6 @@
                                 </tr>
                             </table>
                         </form>
-                    </form>
                 </div>
             </div>
         </div>

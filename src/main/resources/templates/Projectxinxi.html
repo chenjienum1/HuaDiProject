@@ -139,6 +139,7 @@
         <div class="main">
             <div class="set_height" ></div>
             <div class="powz accbg" accidx="67"><a href="index" target="_self" title="xxx" class="CurrChnlCls">首页</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>
+                <a th:if="${session.User!=null}" class="update" href="http://localhost:8081/addproject/">update</a>
             </div>
             <div class="maincon">
                 <div class="con_title">
@@ -160,7 +161,6 @@
                         <div th:if="${session.User!=null}" class="login">
                             <td>
                                 <a @click="deleteProject" th:href="@{'/project/'+${projectPages.pageNum}+'/'+${project.id}}" class="delete">delete</a>
-                                <a th:if="${session.User!=null}" th:href="@{'/project/'+${project}}">update</a>
                             </td>
                         </div>
                     </tr>
