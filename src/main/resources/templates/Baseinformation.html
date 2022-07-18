@@ -162,7 +162,7 @@
                             <div class="box2"><a href="http://localhost:8081/evaluate/1"> 更多>></a></div>
                         </div>
                         <ul th:each="evaluate :${evaluatePages.list}">
-                            <li><a >[[${evaluate.title}]]</a><span>2022-7-17</span></li>
+                            <li><a th:href="@{/showEvaluate/}+${evaluate.id}" >[[${evaluate.title}]]</a><span>2022-7-17</span></li>
                         </ul>
                     </div>
                 </div>

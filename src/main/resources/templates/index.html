@@ -25,6 +25,132 @@
         });
     </script>
     <!-----//768px-menu----->
+    <style>
+
+
+        a{
+
+text-decoration:none
+
+}
+        ul{
+            list-style: none;
+            display: block;
+        }
+        #nav{
+            position:relative;
+            padding: 0;
+            width: 876px;
+            height: 50px;
+            margin-bottom: 1px  ;
+            background-color: #ccc;
+
+
+            font-size: 30px;
+
+
+        }
+        #line{
+            padding: 0;
+
+
+            top:50px;
+
+            width: 200px;
+            height:400px;
+            margin-left:7px;
+            background-color: #fff;
+            border-style: solid;
+            border-width:1px;
+            border-color: black;
+
+        }
+        #line li{
+            width:200px;
+            text-align:center;
+
+            font-size: 23px;
+            height:156px;
+            line-height: 50px;
+            border-bottom-style: solid;
+            border-bottom-color:#999;
+            line-height:156px;
+            
+
+
+            border-width: 1px;
+        }
+        #nav>li{
+            width: 292px;
+            height: 50px;
+            float: left;
+
+            line-height: 50px;
+            text-align: center;
+
+        }
+        .leftactive{
+            background: #fff;
+            color: #4ccc;
+        }
+        #nav>li ul{
+            width: 100%;
+
+        }
+        #nav>li ul li{
+            width: 100%;
+            height: 50px;
+            background: #ccc;
+
+        }
+        /* #nav>li ul{
+            display: none;
+        }
+        #nav>li:hover ul{
+            display: block;
+        } */
+
+
+        /* #nav li ul li:hover{
+            background: #333;
+            color: #fff;
+        } */
+        /* #nav li:hover{
+            background: #333;
+            color: #fff;
+        } */
+        .active{
+            background: red;
+            color: #fff;
+            display: block;
+        }
+        .inactive{
+            display: block;
+        }
+        .hidden{
+            display: none;
+        }
+
+        .contentsquare{
+            position:relative;
+
+            width:604px;
+            height:413px;
+
+
+
+
+        }
+        .contentsquare div a{
+            font-size: 25px;
+            color: black;
+        }
+        .contentsquare div a:hover{
+            color: red;
+        }
+
+
+        </style>
 </head>
 
 <body>
@@ -157,8 +283,103 @@
                     <div class="right">&gt;</div>
                     <!-- 右按钮 -->
                 </div>
+                <div style="display:flex;margin-top:10px" >
+
+
+                    <div >
+                <ul id="line" style="height:468px;color:#fff;background-color:red;">
+
+
+                    <li id="lfir" class="leftactive">
+                        <table>
+                            <tbody><tr style="position: absolute;float: left;">
+                                <td style="  width: 30px;"> <img src="http://localhost:8081/images/index_aff.png" style="width: 30px;height: 30px;"></td>
+                                <td>基层信息公开</td>
+                            </tr>
+                            </tbody></table>
+
+                    </li>
+                    <li id="lsec">
+                        <table>
+                            <tbody><tr style="position: absolute;float: left;">
+                                <td style="  width: 30px;"> <img src="http://localhost:8081/images/index_pro.png" style="width: 30px;height: 30px;"></td>
+                                <td>三资信息公开</td>
+                            </tr>
+                            </tbody></table>
+                    </li>
+                    <li id="lthi">
+                        <table>
+                            <tbody><tr style="position: absolute;float: left;">
+                                <td style="  width: 30px;"> <img src="http://localhost:8081/images/index_eva.png" style="width: 30px;height: 30px; "></td>
+                                <td>评价公开</td>
+                            </tr>
+                            </tbody></table>
+                    </li>
+
+                </ul>
+            </div>
+
+
+                    <div style="border-width:1px;border-style:solid;border-color:#000;width:876px;height=468px;">
+                    <div >
+                        </ul>
+                        <ul id="nav">
+                            <li id="first" class="active" style="width:438px">热点信息公开</li>
+                            <li id="second" class="inactive" style="width:438px">政务信息公开</li>
+                            <li id="third" class="hidden">资金信息公开</li>
+                            <li id="fourth" class="hidden">资产信息公开</li>
+                            <li id="fifth" class="hidden">资源信息公开</li>
+                            <li id="sixth" class="hidden" style="width:877px">评价公开</li>
+                        </ul>
+                    </div>
+<div>
+                <div id="hotspotinfo" class="contentsquare">
+                    <div> <a href="" target="_blank" title="1">热点信息公开内容</a></div>
+                    <div> <a href="" target="_blank" title="2">2</a></div>
+
+
+
+                </div>
+                <div id="affairinfo" class="contentsquare">
+                    <div> <a href="" target="_blank" title="1">政务信息公开内容</a></div>
+                    <div> <a href="" target="_blank" title="2">2</a></div>
+                    <div> <a href="" target="_blank" title="3">3</a></div>
+                    <div> <a href="" target="_blank" title="4">4</a></div>
+
+                </div>
+                <div id="fundinfo" class="contentsquare">
+                    <div> <a href="" target="_blank" title="1">资金信息公开内容</a></div>
+                    <div> <a href="" target="_blank" title="2">2</a></div>
+                    <div> <a href="" target="_blank" title="3">3</a></div>
+                    <div> <a href="" target="_blank" title="4">4</a></div>
+
+                </div>
+                <div id="sourceinfo" class="contentsquare">
+                    <div> <a href="" target="_blank" title="1">资源信息公开内容</a></div>
+                    <div> <a href="" target="_blank" title="2">2</a></div>
+                    <div> <a href="" target="_blank" title="3">3</a></div>
+                    <div> <a href="" target="_blank" title="4">4</a></div>
+
+                </div>
+                <div id="assetinfo" class="contentsquare">
+                    <div> <a href="" target="_blank" title="1">资产信息公开内容</a></div>
+                    <div> <a href="" target="_blank" title="2">2</a></div>
+                    <div> <a href="" target="_blank" title="3">3</a></div>
+                    <div> <a href="" target="_blank" title="4">4</a></div>
+
+                </div>
+                <div id="evaluateinfo" class="contentsquare">
+                    <div> <a href="" target="_blank" title="1">评价信息公开内容</a></div>
+                    <div> <a href="" target="_blank" title="2">2</a></div>
+                    <div> <a href="" target="_blank" title="3">3</a></div>
+                    <div> <a href="" target="_blank" title="4">4</a></div>
+
+                </div>
 
             </div>
+            </div>
+                </div>
+    </div>
         </div>
 
     </div>
@@ -168,4 +389,174 @@
 
 </body>
 <script type="text/javascript" src="http://localhost:8081/js/index.js"></script>
+<script>
+        var fir= document.getElementById("lfir");
+        var sec= document.getElementById("lsec");
+        var thi= document.getElementById("lthi");
+       var ffir= document.getElementById("first");
+
+       var fsec= document.getElementById("second");
+       var sfir= document.getElementById("third");
+       var ssec= document.getElementById("fourth");
+       var sthi= document.getElementById("fifth");
+       var tfir= document.getElementById("sixth");
+       var ffircont=document.getElementById("hotspotinfo");
+       var fseccont=document.getElementById("affairinfo");
+       var sfircont=document.getElementById("fundinfo");
+       var sseccont=document.getElementById("assetinfo");
+       var sthicont=document.getElementById("sourceinfo");
+       var tfircont=document.getElementById("evaluateinfo");
+
+
+
+        ffircont.style.display="block";
+        fseccont.style.display="none";
+        sfircont.style.display="none";
+        sseccont.style.display="none";
+        sthicont.style.display="none";
+        tfircont.style.display="none";
+
+
+
+       fir.onmouseover=function()
+       {
+
+        if(sec.className=="leftactive")
+        {
+            sec.className="";
+        }
+        if(thi.className=="leftactive")
+        {
+            thi.className="";
+        }
+        if( fir.className!="leftactive")
+        {
+            fir.className="leftactive";
+            ssec.className="hidden";
+            sthi.className="hidden";
+            tfir.className="hidden";
+            ffir.className="active";
+            fsec.className="inactive";
+            sfir.className="hidden";
+            ffircont.style.display="block";
+            fseccont.style.display="none";
+            sfircont.style.display="none";
+            sseccont.style.display="none";
+            sthicont.style.display="none";
+            tfircont.style.display="none";
+        }
+
+
+
+
+       }
+       sec.onmouseover=function()
+       {
+
+        if(fir.className=="leftactive")
+        {
+            fir.className="";
+        }
+        if(thi.className=="leftactive")
+        {
+            thi.className="";
+        }
+        if( sec.className!="leftactive")
+        {
+            sec.className="leftactive";
+            ffir.className="hidden";
+            fsec.className="hidden";
+            tfir.className="hidden";
+            sfir.className="active";
+            ssec.className="inactive";
+            sthi.className="inactive";
+            ffircont.style.display="none";
+            fseccont.style.display="none";
+            sfircont.style.display="block";
+            sseccont.style.display="none";
+            sthicont.style.display="none";
+            tfircont.style.display="none";
+        }
+
+        }
+
+
+
+
+
+       thi.onmouseover=function()
+       {
+
+        if(fir.className=="leftactive")
+        {
+            fir.className="";
+        }
+        if(sec.className=="leftactive")
+        {
+            sec.className="";
+        }
+        if(thi.className!="leftactive")
+        {
+            thi.className="leftactive";
+            ffir.className="hidden";
+            fsec.className="hidden";
+            sfir.className="hidden";
+            ssec.className="hidden";
+            sthi.className="hidden";
+            tfir.className="active";
+            ffircont.style.display="none";
+            fseccont.style.display="none";
+            sfircont.style.display="none";
+            sseccont.style.display="none";
+            sthicont.style.display="none";
+            tfircont.style.display="block";
+        }
+
+       }
+
+    ffir.onmouseover=function()
+    {
+        ffir.className="active";
+        fsec.className="inactive";
+        fseccont.style.display="none";
+        ffircont.style.display="block";
+    }
+    fsec.onmouseover=function()
+    {
+        fsec.className="active";
+        ffir.className="inactive";
+        fseccont.style.display="block";
+        ffircont.style.display="none";
+
+    }
+    sfir.onmouseover=function()
+    {
+        sfir.className="active";
+        ssec.className="inactive";
+        sthi.className="inactive";
+        sfircont.style.display="block";
+        sseccont.style.display="none";
+        sthicont.style.display="none";
+
+    }
+    ssec.onmouseover=function()
+    {
+        ssec.className="active";
+        sfir.className="inactive";
+        sthi.className="inactive";
+        sfircont.style.display="none";
+        sseccont.style.display="block";
+        sthicont.style.display="none";
+
+    }
+    sthi.onmouseover=function()
+    {
+        ssec.className="inactive";
+        sfir.className="inactive";
+        sthi.className="active";
+        sfircont.style.display="none";
+        sseccont.style.display="none";
+        sthicont.style.display="block";
+    }
+    </script>
 </html>

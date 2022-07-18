@@ -2,6 +2,7 @@ package com.atschool.hdbasicserver.controller;
 
 
 import com.atschool.hdbasicserver.bean.Evaluate;
+import com.atschool.hdbasicserver.bean.Hotspot;
 import com.atschool.hdbasicserver.mapper.EvaluateMapper;
 import com.atschool.hdbasicserver.service.EvaluateService;
 import com.github.pagehelper.PageInfo;
@@ -56,6 +57,13 @@ public class EvaluateController {
     public String deleteByID(Model model,@PathVariable("id")int id,@PathVariable("pageNum") int pageNum){
         evaluateService.deleteByID(id);
         return "redirect:/evaluate/"+pageNum;
+    }
+
+    @RequestMapping("/showEvaluate/{id}")
+    public String showMessage(Model model,@PathVariable("id")int id){
+        Evaluate evaluate = evaluateService.getEvaluateByID(id);
+        model.addAttribute("Msg",evaluate);
+        return "showpleasure";
     }
 
 
