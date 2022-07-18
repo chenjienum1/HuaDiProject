@@ -1,7 +1,6 @@
 package com.atschool.hdbasicserver.controller;
 
 import com.atschool.hdbasicserver.bean.Funds;
-import com.atschool.hdbasicserver.mapper.FundsMapper;
 import com.atschool.hdbasicserver.service.FundsService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.ui.Model;
@@ -54,4 +53,5 @@ public class FundsController {
         System.out.println("删除"+id+"成功");
         return "redirect:/Funds/"+pageNum;
     }
+
 }

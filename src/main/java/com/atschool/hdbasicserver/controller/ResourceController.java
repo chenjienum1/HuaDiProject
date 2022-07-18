@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.xml.transform.Source;
 import java.util.List;
 
 @Controller
@@ -54,5 +55,13 @@ public class ResourceController {
         resourceService.deleteByID(id);
         System.out.println("删除"+id+"成功");
         return "redirect:/Resource/"+pageNum;
+    }
+
+
+    @RequestMapping("/showres/{id}")
+    public String showMessage(Model model,@PathVariable("id")int id){
+        Resource resource = resourceService.getResourceByID(id);
+        model.addAttribute("Msg",resource);
+        return "showresource";
     }
 }

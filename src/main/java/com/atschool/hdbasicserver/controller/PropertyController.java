@@ -1,5 +1,6 @@
 package com.atschool.hdbasicserver.controller;
 
+import com.atschool.hdbasicserver.bean.Affair;
 import com.atschool.hdbasicserver.bean.Funds;
 import com.atschool.hdbasicserver.bean.Property;
 import com.atschool.hdbasicserver.mapper.EvaluateMapper;
@@ -59,5 +60,12 @@ public class PropertyController {
         propertyService.deleteByID(id);
         System.out.println("删除"+id+"成功");
         return "redirect:/Property/"+pageNum;
+    }
+
+    @RequestMapping("/showpro/{id}")
+    public String showMessage(Model model,@PathVariable("id")int id){
+        Property property = propertyService.getPropertyByID(id);
+        model.addAttribute("Msg",property);
+        return "showproperty";
     }
 }
