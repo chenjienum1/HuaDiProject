@@ -15,22 +15,15 @@ import java.util.List;
 class HdBasicServerApplicationTests {
 
     @Autowired
-    FundsMapper fundsMapper;
-
-    @Autowired
-    PropertyMapper propertyMapper;
-
-    @Autowired
-    ResourceMapper resourceMapper;
+    EvaluateMapper evaluateMapper;
 
     @Test
     void contextLoads() {
-        for (int i = 0;i<50;i++){
-            fundsMapper.addFunds(i+"",i+"",i,i,true,""+i,""+i,""+i);
-            propertyMapper.addProperty(""+i,""+i,""+i,""+i,i,i,"1-1-1",""+i);
-            resourceMapper.addResource(""+i,""+i,""+i,""+i,i,""+i);
+        List<Evaluate> evaluates = evaluateMapper.getEvaluate();
+        for (Evaluate e: evaluates
+             ) {
+            System.out.println(e.toString());
         }
-
     }
 
 

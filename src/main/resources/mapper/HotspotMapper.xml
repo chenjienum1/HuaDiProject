@@ -22,5 +22,11 @@
     <delete id="deleteByID">
         delete from hotspot where `id` =#{id}
     </delete>
-    
+
+
+    <!--public Hotspot getHotspotById(int id);-->
+    <select id="getHotspotById" resultType="com.atschool.hdbasicserver.bean.Hotspot">
+        select * from hotspot where `id` =#{id}
+    </select>
+
 </mapper>

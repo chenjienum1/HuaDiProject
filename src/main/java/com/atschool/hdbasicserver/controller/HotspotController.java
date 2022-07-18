@@ -61,4 +61,11 @@ public class HotspotController {
     public String hotspotadd(){
         return "hotspot";
     }
+
+    @RequestMapping("/showMessage/{id}")
+    public String showMessage(Model model,@PathVariable("id")int id){
+        Hotspot hotspotById = hotspotService.getHotspotById(id);
+        model.addAttribute("hotMsg",hotspotById);
+        return "wenzhang";
+    }
 }
