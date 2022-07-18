@@ -66,6 +66,6 @@ public class PropertyController {
     public String showMessage(Model model,@PathVariable("id")int id){
         Property property = propertyService.getPropertyByID(id);
         model.addAttribute("Msg",property);
-        return "showproperty";
+        return "show3z_zc";
     }
 }

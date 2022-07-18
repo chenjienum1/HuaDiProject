@@ -59,26 +59,6 @@
             </div>
             <div class="right">
 
-                <!--<div id="header">
-			<img class="logo_img" alt="" src="static/img/logo.gif" >
-			<span class="wel_word">网上书城</span>
-			<div>
-				<%--如果用户还没有登录，显示【登录和注册的菜单】--%>
-				<c:if test="${empty sessionScope.user}">
-
-					<a href="pages/user/login.jsp">登录</a> |
-					<a href="pages/user/regist.jsp">注册</a> &nbsp;&nbsp;
-				</c:if>
-				<%--如果已经登录，则显示登录成功之后的用户信息--%>
-					<c:if test="${not empty sessionScope.user}">
-						<span>欢迎<span class="um_span">${sessionScope.user.username}</span>光临尚硅谷书城</span>
-						<a href="pages/order/order.jsp">我的订单</a>
-						<a href="userServlet?action=logout">注销</a>&nbsp;&nbsp;
-					</c:if>
-					<a href="pages/cart/cart.jsp">购物车</a>
-					<a href="pages/manager/manager.jsp">后台管理</a>
-			</div>
-	</div>-->
 
 
                 <div th:if="${session.User==null}" class="login">
@@ -181,8 +161,7 @@
             <div class="maincon">
                 <div>
                     <h3 class="tabletitle">“三资”情况登记表——货币资金</h3>
-                    <div><a class="left">_________________乡镇（街道）_____________街（区）（盖章）</a><a class="right"   style="margin-top:0px;">单位：元</a></div>
-
+                    <div><a class="left">___<a th:text="${Msg.town}"></a>___乡镇（街道）___<a th:text="${Msg.village}"></a>___街（区）（盖章）</a><a class="right"   style="margin-top:0px;">单位：元</a></div>
                     <div style="height:20px;" ></div>
                     <table  border="1" cellspacing="0" cellpadding="0" class="3zzj">
                         <tr>
@@ -193,49 +172,26 @@
                         <tr>
                             <td class="width1">账面金额</td>
                             <td class="width1">实存金额</td>
+                            <td class="width1">是否符合</td>
                             <td class="width2">账实不符原因</td>
-
-
-                            <td class="width1">账面金额</td>
-                            <td class="width1">实存金额</td>
-                            <td class="width2">账实不符原因</td>
-
                         </tr>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><a th:text="${Msg.account}"></a></td>
+                            <td><a th:text="${Msg.realAccount}"></a></td>
+                            <td>
+                                <a th:if="${Msg.available}eq'1'">是</a>
+                                <a th:if="${Msg.available}eq'0'">否</a>
+                            </td>
+                            <td><a th:text="${Msg.comment}"></a></td>
                         </tr>
                     </table>
                     <div>
-                    <a class="left">村清理小组成员（签字）:</a>
-                    <a class="right" style="margin-top:0px;margin-right:200px;"> 村财务负责人（签字）:</a>
+                    <a class="left">村财务负责人（签字）:</a>
+                    <a class="right" style="margin-top:0px;margin-right:200px;">[[${Msg.accountant}]]</a>
                     </div>
                     <div>
-                    <a class="left">农村财务委托代理服务中心负责人（签字）:</a>
-                    <a class="right" style="margin-top:0px;margin-right:200px;"> 乡镇（街道)负责人(签字):</a>
+                    <a class="left">乡镇（街道)负责人(签字):</a>
+                    <a class="right" style="margin-top:0px;margin-right:200px;">[[${Msg.functionary}]]</a>
                 </div>
                 </div>
             </div>

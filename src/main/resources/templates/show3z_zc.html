@@ -181,7 +181,7 @@
             <div class="maincon">
                 <div>
                     <h3 class="tabletitle">“三资”情况登记表——资产</h3>
-                    <div><a class="left">_________________乡镇（街道）_____________街（区）（盖章）</a><a class="right"   style="margin-top:0px;">单位：元</a></div>
+                    <div><a class="left">________<a th:text="${Msg.town}"></a>_______乡镇（街道）______<a th:text="${Msg.village}"></a>_____街（区）（盖章）</a><a class="right"   style="margin-top:0px;">单位：元</a></div>
 
                     <div style="height:20px;" ></div>
                     <table  border="1" cellspacing="0" cellpadding="0" class="3zzj">
@@ -193,42 +193,21 @@
                         </tr>
                         <tr>
                             <td class="width1">数量</td>
-                            <td class="width1">净值</td>
+                            <td class="width1">净值(万元)</td>
                             <td class="width1">时间</td>
 
                         </tr>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><a th:text="${Msg.name}"></a></td>
+                            <td><a th:text="${Msg.unit}"></a></td>
+                            <td><a th:text="${Msg.amount}"></a></td>
+                            <td><a th:text="${Msg.jinZhi}"></a></td>
+                            <td><a th:text="${Msg.time}"></a></td>
+                            <td><a ></a></td>
                         </tr>
                     </table>
                     <div>
-                        <a class="left">村清理小组成员（签字）:</a>
-                        <a class="right" style="margin-top:0px;margin-right:200px;"> 村财务负责人（签字）:</a>
-                    </div>
-                    <div>
-                        <a class="left">农村财务委托代理服务中心负责人（签字）:</a>
-                        <a class="right" style="margin-top:0px;margin-right:200px;"> 乡镇（街道)负责人(签字):</a>
+                        <a class="right" style="margin-top:0px;margin-right:200px;"> 乡镇（街道)负责人(签字):[[${Msg.principal}]]</a>
                     </div>
                 </div>
             </div>

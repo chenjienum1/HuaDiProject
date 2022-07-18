@@ -12,4 +12,5 @@ public interface FundsMapper {
     public void deleteFunds(int id);
     public List<Funds> getIncome();
     public List<Funds> getExpend();
+    public Funds getFundsByID(int id);
 }

@@ -1,6 +1,7 @@
 package com.atschool.hdbasicserver.service.impl;
 
 
+import com.atschool.hdbasicserver.bean.Evaluate;
 import com.atschool.hdbasicserver.bean.Funds;
 import com.atschool.hdbasicserver.mapper.FundsMapper;
 import com.atschool.hdbasicserver.service.FundsService;
@@ -36,4 +37,9 @@ public class FundsServiceImpl implements FundsService {
         fundsMapper.deleteFunds(id);
     }
 
+    @Override
+    public Funds getFundsByID(int id){
+        Funds funds = fundsMapper.getFundsByID(id);
+        return funds;
+    }
 }

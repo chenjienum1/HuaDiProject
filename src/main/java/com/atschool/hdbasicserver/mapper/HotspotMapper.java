@@ -16,4 +16,5 @@ public interface HotspotMapper {
     public void deleteByID(int id);
 
     public Hotspot getHotspotById(int id);
+
 }
