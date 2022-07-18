@@ -11,5 +11,7 @@ public interface AffairService {
 
     public void deleteByID(int id);
 
+    public Affair getAffairByID(int id);
+
 
 }

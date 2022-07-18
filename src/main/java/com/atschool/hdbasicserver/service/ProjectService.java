@@ -9,4 +9,6 @@ public interface ProjectService {
     public PageInfo<Project> listPage(int pageNumber,int pageSize);
 
     public void deleteByID(int id);
+
+    public Project getProjectByID(int id);
 }

@@ -33,4 +33,10 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public void deleteByID(int id){projectMapper.deleteProject(id);}
+
+    @Override
+    public Project getProjectByID(int id){
+        Project project = projectMapper.getProjectByID(id);
+        return project;
+    }
 }

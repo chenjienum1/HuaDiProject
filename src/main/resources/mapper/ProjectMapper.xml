@@ -19,4 +19,9 @@
     <select id="getProject" resultType="com.atschool.hdbasicserver.bean.Project">
         select * from project
     </select>
+
+    <!--public Project getProjectByID(int id);-->
+    <select id="getProjectByID" resultType="com.atschool.hdbasicserver.bean.Project">
+        select * from project where `id` = #{id}
+    </select>
 </mapper>

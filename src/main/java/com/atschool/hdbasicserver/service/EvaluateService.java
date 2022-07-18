@@ -9,4 +9,6 @@ public interface EvaluateService {
 
     public PageInfo<Evaluate> listPage(int pageNumber, int pageSize);
     public void deleteByID(int id);
+
+    public Evaluate getEvaluateByID(int id);
 }

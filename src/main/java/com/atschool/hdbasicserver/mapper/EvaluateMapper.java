@@ -14,4 +14,6 @@ public interface EvaluateMapper {
     public List<Evaluate> getEvaluate();
 
     public void deleteByID(int id);
+
+    public Evaluate getEvaluateByID(int id);
 }

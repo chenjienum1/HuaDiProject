@@ -38,6 +38,13 @@ public class EvaluateServiceImpl implements EvaluateService {
     }
 
 
+    @Override
+    public Evaluate getEvaluateByID(int id){
+        Evaluate evaluate = evaluateMapper.getEvaluateByID(id);
+        return evaluate;
+    }
+
+
 
 
 

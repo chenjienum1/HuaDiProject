@@ -36,6 +36,12 @@ public class AffairServiceImpl implements AffairService {
         affairMapper.deleteByID(id);
     }
 
+    @Override
+    public Affair getAffairByID(int id){
+        Affair affairById = affairMapper.getAffairByID(id);
+        return affairById;
+    }
+
 
 
 }

@@ -19,4 +19,9 @@
     <delete id="deleteByID">
         delete from evaluate where `id` =#{id}
     </delete>
+
+<!--public Evaluate getEvaluateByID(int id);-->
+    <select id="getEvaluateByID" resultType="com.atschool.hdbasicserver.bean.Evaluate">
+        select * from evaluate where `id` =#{id}
+    </select>
 </mapper>

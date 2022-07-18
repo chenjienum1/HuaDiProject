@@ -10,4 +10,6 @@ public interface ProjectMapper {
     public void addProject(String town, String village, String company, int area, int cost, String startTime, String completeTime, String manager);
     public void deleteProject(int id);
     public List<Project> getProject();
+
+    public Project getProjectByID(int id);
 }
