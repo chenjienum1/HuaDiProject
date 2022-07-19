@@ -144,7 +144,7 @@
                             <div class="box2"><a href="http://localhost:8081/hotspot/1"> 更多>></a></div>
                         </div>
                         <ul th:each="hotspot :${hotspotPages.list}">
-                            <li><a th:href="@{/showMessage/}+${hotspot.id}">[[${hotspot.title}]]</a><span>2022-7-17</span></li>
+                            <li><a th:href="@{/showMessage/}+${hotspot.id}">[[${hotspot.title}]]</a></li>
                         </ul>
                     </div>
                     <div class="classbox">
@@ -153,7 +153,7 @@
                             <div class="box2"><a href="http://localhost:8081/affair/1"> 更多>></a></div>
                         </div>
                         <ul th:each="affair :${affairPages.list}">
-                            <li><a th:href="@{/showAffair/}+${affair.id}">[[${affair.title}]]</a><span>2022-7-17</span></li>
+                            <li><a th:href="@{/showAffair/}+${affair.id}">[[${affair.title}]]</a></li>
                         </ul>
                     </div>
                     <div class="classbox">
@@ -162,7 +162,7 @@
                             <div class="box2"><a href="http://localhost:8081/evaluate/1"> 更多>></a></div>
                         </div>
                         <ul th:each="evaluate :${evaluatePages.list}">
-                            <li><a th:href="@{/showEvaluate/}+${evaluate.id}" >[[${evaluate.title}]]</a><span>2022-7-17</span></li>
+                            <li><a th:href="@{/showEvaluate/}+${evaluate.id}" >[[${evaluate.title}]]</a></li>
                         </ul>
                     </div>
                 </div>

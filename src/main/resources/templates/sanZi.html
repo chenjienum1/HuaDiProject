@@ -145,7 +145,7 @@
                             <div class="box2"><a href="http://localhost:8081/Property/1"> 更多>></a></div>
                         </div>
                         <ul th:each="property : ${propertyPages.list}">
-                            <li><a th:href="@{/showpro/}+${property.id}">[[${property.name}]]</a><span>2022-7-17</span></li>
+                            <li><a th:href="@{/showpro/}+${property.id}">[[${property.name}]]</a></li>
                         </ul>
                     </div>
                     <div class="classbox">
@@ -154,7 +154,7 @@
                             <div class="box2"><a href="http://localhost:8081/Resource/1"> 更多>></a></div>
                         </div>
                         <ul th:each="resource : ${resourcePages.list}">
-                            <li><a th:href="@{/showres/}+${resource.id}">[[${resource.position}]]</a><span>2022-7-17</span></li>
+                            <li><a th:href="@{/showres/}+${resource.id}">[[${resource.position}]]</a></li>
                         </ul>
                     </div>
                 </div>

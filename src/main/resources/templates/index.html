@@ -206,38 +206,34 @@
                     </div>
                 <div style="padding:30px; padding-top:0px; height:333px;">
                 <div id="hotspotinfo" class="contentsquare">
-                    <div> <a href="" target="_blank" title="2">2</a></div>
-
+                    <tr style="border-bottom: 1px solid black; height:80px; line-height:80px;" th:each="hotspot : ${indexHot.list}">
+                        <div> <a th:href="@{/showMessage/}+${hotspot.id}" target="_blank" title="2">[[${hotspot.title}]]</a></div>
+                    </tr>
                 </div>
                 <div id="affairinfo" class="contentsquare">
-                    <div> <a href="" target="_blank" title="2">2</a></div>
-                    <div> <a href="" target="_blank" title="3">3</a></div>
-                    <div> <a href="" target="_blank" title="4">4</a></div>
-
+                    <tr style="border-bottom: 1px solid black; height:80px; line-height:80px;" th:each="affair : ${indexAff.list}">
+                        <div> <a th:href="@{/showAffair/}+${affair.id}" target="_blank" title="2">[[${affair.title}]]</a></div>
+                    </tr>
                 </div>
                 <div id="fundinfo" class="contentsquare">
-                    <div> <a href="" target="_blank" title="2">2</a></div>
-                    <div> <a href="" target="_blank" title="3">3</a></div>
-                    <div> <a href="" target="_blank" title="4">4</a></div>
-
-                </div>
-                <div id="sourceinfo" class="contentsquare">
-                    <div> <a href="" target="_blank" title="2">2</a></div>
-                    <div> <a href="" target="_blank" title="3">3</a></div>
-                    <div> <a href="" target="_blank" title="4">4</a></div>
-
+                    <tr style="border-bottom: 1px solid black; height:80px; line-height:80px;" th:each="funds : ${indexFunds.list}">
+                        <li><a th:href="@{/showfunds/}+${funds.id}">[[${funds.town}+${funds.village}]]</a></li>
+                    </tr>
                 </div>
                 <div id="assetinfo" class="contentsquare">
-                    <div> <a href="" target="_blank" title="2">2</a></div>
-                    <div> <a href="" target="_blank" title="3">3</a></div>
-                    <div> <a href="" target="_blank" title="4">4</a></div>
-
+                    <tr style="border-bottom: 1px solid black; height:80px; line-height:80px;" th:each="property : ${indexPro.list}">
+                        <li><a th:href="@{/showpro/}+${property.id}">[[${property.name}]]</a></li>
+                    </tr>
+                </div>
+                <div id="sourceinfo" class="contentsquare">
+                    <tr style="border-bottom: 1px solid black; height:80px; line-height:80px;" th:each="resource : ${indexRes.list}">
+                        <li><a th:href="@{/showres/}+${resource.id}">[[${resource.position}]]</a></li>
+                    </tr>
                 </div>
                 <div id="evaluateinfo" class="contentsquare">
-                    <div> <a href="" target="_blank" title="2">2</a></div>
-                    <div> <a href="" target="_blank" title="3">3</a></div>
-                    <div> <a href="" target="_blank" title="4">4</a></div>
-
+                    <tr style="border-bottom: 1px solid black; height:80px; line-height:80px;" th:each="Eva: ${indexEva.list}">
+                        <li><a th:href="@{/showEvaluate/}+${Eva.id}">[[${Eva.title}]]</a></li>
+                    </tr>
                 </div>
 
             </div>
