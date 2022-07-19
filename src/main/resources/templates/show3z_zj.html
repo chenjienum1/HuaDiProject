@@ -36,7 +36,7 @@
     height:50px;
     }
     .width1{
-        width:100px;
+        width:200px;
     }
      .width2{
         width:300px;
@@ -156,7 +156,7 @@
 
         <div class="main">
             <div class="set_height" ></div>
-            <div class="powz accbg" accidx="67"><a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>
+            <div class="powz accbg" accidx="67"><a href="http://localhost:8081/index" target="_self" title="基层公开综合服务监管系统" class="CurrChnlCls">首页</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="资金信息公开" class="CurrChnlCls">资金信息公开</a>
             </div>
             <div class="maincon">
                 <div>
@@ -166,7 +166,7 @@
                     <table  border="1" cellspacing="0" cellpadding="0" class="3zzj">
                         <tr>
                             <th  colspan="3">银行存款</th>
-                            <th colspan="3">库存现金</th>
+                            <th class="width2">库存现金</th>
                             <th class="width1" rowspan="2">备注</th>
                         </tr>
                         <tr>
@@ -183,6 +183,7 @@
                                 <a th:if="${Msg.available}eq false">否</a>
                             </td>
                             <td><a th:text="${Msg.comment}"></a></td>
+                            <td class="width1"></td>
                         </tr>
                     </table>
                     <div>
