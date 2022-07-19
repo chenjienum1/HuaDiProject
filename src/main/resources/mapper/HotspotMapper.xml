@@ -15,7 +15,7 @@
 
 <!--public List<Hotspot> getHotspot();-->
     <select id="getHotspot" resultType="com.atschool.hdbasicserver.bean.Hotspot">
-        select * from hotspot
+        select * from hotspot order by time desc
     </select>
 
     <!--public void deleteByID(int id);-->

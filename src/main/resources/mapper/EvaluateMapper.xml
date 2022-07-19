@@ -12,7 +12,7 @@
 
 <!--public void  getEvaluate();-->
     <select id="getEvaluate" resultType="com.atschool.hdbasicserver.bean.Evaluate">
-        select * from evaluate
+        select * from evaluate order by time desc
     </select>
 
 <!--public void deleteByID(int id);-->

@@ -16,7 +16,7 @@
 
 <!--public List<Affair> getAffair();-->
     <select id="getAffair" resultType="com.atschool.hdbasicserver.bean.Affair">
-        select * from affair
+        select * from affair order by time desc
     </select>
 
 <!--public void deleteByID(int id);-->
