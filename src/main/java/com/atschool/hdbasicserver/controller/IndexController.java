@@ -49,6 +49,10 @@ public class IndexController {
 
         return "index";
     }
+    @RequestMapping("/index")
+    public String index2(){
+        return "index";
+    }
 
     @RequestMapping("/login")
     public String login(){
