@@ -31,11 +31,11 @@ public class AffairController {
                          @RequestParam("year")String time_year,
                          @RequestParam("month")String time_month,
                          @RequestParam("day")String time_day,
-                         @RequestParam("picture")String picture,
+                         @RequestParam("laiyuan")String laiyuan,
                          @RequestParam("content")String content){
 
         String time = time_year + "-" + time_month + "-" + time_day;
-        affairService.addAffair(title,time,picture,content);
+        affairService.addAffair(title,time,laiyuan,content);
         return "affair";
     }
 

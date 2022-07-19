@@ -6,9 +6,9 @@
 
 <mapper namespace="com.atschool.hdbasicserver.mapper.HotspotMapper">
 
-<!--public void addHotspot(String title, String time, String picture, String content);-->
+<!--public void addHotspot(String title, String time, String laiyuan, String content);-->
     <insert id="addHotspot">
-        insert into hotspot(`title`,`time`,`picture`,`content`) values (#{title},#{time},#{picture},#{content})
+        insert into hotspot(`title`,`time`,`laiyuan`,`content`) values (#{title},#{time},#{laiyuan},#{content})
     </insert>
 
 
