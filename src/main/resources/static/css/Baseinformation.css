@@ -15,11 +15,13 @@
 .boxtitle .box1{
     font-size:30px;
     font-weight:bold;
+    color:#dc3a3a;
+    border-bottom:1px solid #dc3a3a;
 }
 
 .boxtitle .box2{
-    position:relative;
-    left:800px;
+    position:absolute;
+    left:1400px;
 }
 
 .classbox ul{

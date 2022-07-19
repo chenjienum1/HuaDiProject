@@ -1,0 +1,133 @@
+a{
+
+text-decoration:none
+
+}
+        ul{
+            list-style: none;
+            display: block;
+        }
+        #nav{
+            position:relative;
+            padding: 0;
+            width: 816px;
+            height: 50px;
+            margin-bottom: 1px  ;
+            background-color: #ccc;
+
+
+            font-size: 30px;
+
+
+        }
+        #line{
+            padding: 0;
+            height:476px;
+            color:#fff;
+            background-color:#ccc;
+            top:50px;
+            width: 200px;
+            margin-left:7px;
+        }
+
+        #line li{
+            width:200px;
+            text-align:center;
+            font-size: 23px;
+            height:158px;
+            line-height: 50px;
+            border-bottom-style: solid;
+            border-bottom-color:#999;
+            line-height:155px;
+            border-right:1px solid black;
+            border-width: 1px;
+        }
+
+        #line li:hover{
+            border-right:0px;
+        }
+
+        #nav>li{
+            width: 272px;
+            height: 50px;
+            float: left;
+            line-height: 50px;
+            text-align: center;
+
+        }
+        .leftactive{
+            background: #dc3a3a;
+            color: #4ccc;
+        }
+        #nav>li ul{
+            width: 100%;
+
+        }
+        #nav>li ul li{
+            width: 100%;
+            height: 50px;
+            background: #ccc;
+
+        }
+
+        #nav li a{
+            color:white
+        }
+        /* #nav>li ul{
+            display: none;
+        }
+        #nav>li:hover ul{
+            display: block;
+        } */
+
+
+        /* #nav li ul li:hover{
+            background: #333;
+            color: #fff;
+        } */
+        /* #nav li:hover{
+            background: #333;
+            color: #fff;
+        } */
+        .active{
+            background: #dc3a3a;
+            color: #fff;
+            display: block;
+        }
+        .inactive{
+            display: block;
+        }
+        .hidden{
+            display: none;
+        }
+
+        .contentsquare{
+            position:relative;
+
+            width:604px;
+            height:333px;
+
+
+
+
+        }
+        .contentsquare div a{
+            font-size: 25px;
+            color: black;
+        }
+        .contentsquare div a:hover{
+            color: red;
+        }
+
+        .show ul li:hover img{
+            animation: run 0.5s linear 1;
+        }
+
+        @keyframes run {
+                    from{
+                        transform: rotate(0deg);
+                    }
+                    to{
+                        transform: rotate(360deg);
+                    }
+        }

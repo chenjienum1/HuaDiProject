@@ -17,7 +17,7 @@
     <!-----768px-menu----->
     <script type="text/javascript" src="http://localhost:8081/js/jquery.mmenu.js"></script>
     <link type="text/css" rel="stylesheet" href="http://localhost:8081/css/jquery.mmenu.all.css" />
-
+    <link type="text/css" rel="stylesheet" href="http://localhost:8081/css/Show.css" />
     <script type="text/javascript">
         //	The menu on the left
         $(function () {
@@ -25,132 +25,6 @@
         });
     </script>
     <!-----//768px-menu----->
-    <style>
-
-
-        a{
-
-text-decoration:none
-
-}
-        ul{
-            list-style: none;
-            display: block;
-        }
-        #nav{
-            position:relative;
-            padding: 0;
-            width: 876px;
-            height: 50px;
-            margin-bottom: 1px  ;
-            background-color: #ccc;
-
-
-            font-size: 30px;
-
-
-        }
-        #line{
-            padding: 0;
-
-
-            top:50px;
-
-            width: 200px;
-            height:400px;
-            margin-left:7px;
-            background-color: #fff;
-            border-style: solid;
-            border-width:1px;
-            border-color: black;
-
-        }
-        #line li{
-            width:200px;
-            text-align:center;
-
-            font-size: 23px;
-            height:156px;
-            line-height: 50px;
-            border-bottom-style: solid;
-            border-bottom-color:#999;
-            line-height:156px;
-            
-
-
-            border-width: 1px;
-        }
-        #nav>li{
-            width: 292px;
-            height: 50px;
-            float: left;
-
-            line-height: 50px;
-            text-align: center;
-
-        }
-        .leftactive{
-            background: #fff;
-            color: #4ccc;
-        }
-        #nav>li ul{
-            width: 100%;
-
-        }
-        #nav>li ul li{
-            width: 100%;
-            height: 50px;
-            background: #ccc;
-
-        }
-        /* #nav>li ul{
-            display: none;
-        }
-        #nav>li:hover ul{
-            display: block;
-        } */
-
-
-        /* #nav li ul li:hover{
-            background: #333;
-            color: #fff;
-        } */
-        /* #nav li:hover{
-            background: #333;
-            color: #fff;
-        } */
-        .active{
-            background: red;
-            color: #fff;
-            display: block;
-        }
-        .inactive{
-            display: block;
-        }
-        .hidden{
-            display: none;
-        }
-
-        .contentsquare{
-            position:relative;
-
-            width:604px;
-            height:413px;
-
-
-
-
-        }
-        .contentsquare div a{
-            font-size: 25px;
-            color: black;
-        }
-        .contentsquare div a:hover{
-            color: red;
-        }
-
-
-        </style>
 </head>
 
 <body>
@@ -167,22 +41,21 @@ text-decoration:none
 
 
 
+            <div th:if="${session.User==null}" class="login">
 
-                <div th:if="${session.User==null}" class="login">
-
-                    <ul>
-                        <li><a href="http://localhost:8081/login">后台登录</a></li>
-                    </ul>
-                </div>
+                <ul>
+                    <li><a href="http://localhost:8081/login">后台登录</a></li>
+                </ul>
+            </div>
                 <div th:if="${session.User!=null}" class="login">
                     <a>欢迎你：</a>
                     <a th:text="${session.User.username}"></a>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a class="last" href="logout" style="color:black">退出</a>
+                    <a class="last" href="http://localhost:8081/logout" style="color:black">退出</a>
                 </div>
-                <div class="text">
-                    <p >华迪基层公开综合服务监管系统</p>
-                </div>
+            <div class="text">
+                <p >华迪基层公开综合服务监管系统</p>
+            </div>
             </div>
             <div class="clear"> </div>
         </div>
@@ -200,7 +73,7 @@ text-decoration:none
                 <ul>
                     <li class="active"><a href="http://localhost:8081/index" target="_self">首页</a></li>
                     <li><a href="http://localhost:8081/Baseinformation" target="_self">基层信息公开</a></li>
-                    <li><a href="http://localhost:8081/sanZiinformation">三资管理</a></li>
+                    <li><a href="">三资管理</a></li>
                     <li><a href="http://localhost:8081/evaluate" target="_self">评价</a></li>
 
                 </ul>
@@ -229,6 +102,7 @@ text-decoration:none
 
 
                             <div th:if="${session.User!=null}" >
+                                <li><a href="" target="_self">添加报表</a></li>
                                 <li><a href="http://localhost:8081/project/1" target="_self">工程项目</a></li>
                             </div>
 
@@ -254,7 +128,6 @@ text-decoration:none
 <div class="header_bottom">
 </div>
 
-
 <div class="hcontent">
     <div class="hcon">
             <div class="maincon">
@@ -278,17 +151,16 @@ text-decoration:none
                         <!-- 设定每个焦点的索引值 -->
                     </ol>
 
-                    <!-- 左右切换按钮 -->
-                    <div class="left">&lt;</div>
-                    <!-- 左按钮 -->
-                    <div class="right">&gt;</div>
-                    <!-- 右按钮 -->
+<!--                    &lt;!&ndash; 左右切换按钮 &ndash;&gt;-->
+<!--                    <div class="left">&lt;</div>-->
+<!--                    &lt;!&ndash; 左按钮 &ndash;&gt;-->
+<!--                    <div class="right">&gt;</div>-->
+<!--                    &lt;!&ndash; 右按钮 &ndash;&gt;-->
                 </div>
                 <div style="display:flex;margin-top:10px" >
 
-
-                    <div >
-                <ul id="line" style="height:468px;color:#fff;background-color:red;">
+                    <div class="show">
+                <ul id="line">
 
 
                     <li id="lfir" class="leftactive">
@@ -321,49 +193,50 @@ text-decoration:none
             </div>
 
 
-                    <div style="border-width:1px;border-style:solid;border-color:#000;width:876px;height=468px;">
-                    <div >
-                        </ul>
+                    <div style="border-width:1px;border-style:solid;border-color:#000;width:876px;height=468px;border-left:0px;">
+                    <div style="padding:30px;">
                         <ul id="nav">
-                            <li id="first" class="active" style="width:438px">热点信息公开</li>
-                            <li id="second" class="inactive" style="width:438px">政务信息公开</li>
-                            <li id="third" class="hidden">资金信息公开</li>
-                            <li id="fourth" class="hidden">资产信息公开</li>
-                            <li id="fifth" class="hidden">资源信息公开</li>
-                            <li id="sixth" class="hidden" style="width:877px">评价公开</li>
+                            <li id="first" class="active" style="width:408px"><a href="http:localhost:8081/hotspot/1">热点信息公开</a> </li>
+                            <li id="second" class="inactive" style="width:408px"><a href="http:localhost:8081/affair/1">政务信息公开</a></li>
+                            <li id="third" class="hidden"><a href="http:localhost:8081/Funds/1">资金信息公开</a></li>
+                            <li id="fourth" class="hidden"><a href="http:localhost:8081/Property/1">资产信息公开</a></li>
+                            <li id="fifth" class="hidden"><a href="http:localhost:8081/Source/1">资源信息公开</a></li>
+                            <li id="sixth" class="hidden" style="width:816px"><a href="http:localhost:8081/evaluate/1">评价公开</a></li>
                         </ul>
                     </div>
-<div>
+                <div style="padding:30px; padding-top:0px; height:333px;">
                 <div id="hotspotinfo" class="contentsquare">
-                    <tr style="border-bottom: 1px solid black; height:80px; line-height:80px;" th:each="hotspot : ${indexHot.list}">
-                        <div> <a th:href="@{/showMessage/}+${hotspot.id}" target="_blank" title="2">[[${hotspot.title}]]</a></div>
-                    </tr>
+                    <div> <a href="" target="_blank" title="2">2</a></div>
+
                 </div>
                 <div id="affairinfo" class="contentsquare">
-                    <tr style="border-bottom: 1px solid black; height:80px; line-height:80px;" th:each="affair : ${indexAff.list}">
-                        <div> <a th:href="@{/showAffair/}+${affair.id}" target="_blank" title="2">[[${affair.title}]]</a></div>
-                    </tr>
+                    <div> <a href="" target="_blank" title="2">2</a></div>
+                    <div> <a href="" target="_blank" title="3">3</a></div>
+                    <div> <a href="" target="_blank" title="4">4</a></div>
+
                 </div>
                 <div id="fundinfo" class="contentsquare">
-                    <tr style="border-bottom: 1px solid black; height:80px; line-height:80px;" th:each="funds : ${indexFunds.list}">
-                        <li><a th:href="@{/showfunds/}+${funds.id}">[[${funds.town}+${funds.village}]]</a></li>
-                    </tr>
+                    <div> <a href="" target="_blank" title="2">2</a></div>
+                    <div> <a href="" target="_blank" title="3">3</a></div>
+                    <div> <a href="" target="_blank" title="4">4</a></div>
+
                 </div>
                 <div id="sourceinfo" class="contentsquare">
-                    <ul th:each="property : ${indexPro.list}">
-                        <li><a th:href="@{/showpro/}+${property.id}">[[${property.name}]]</a></li>
-                    </ul>
+                    <div> <a href="" target="_blank" title="2">2</a></div>
+                    <div> <a href="" target="_blank" title="3">3</a></div>
+                    <div> <a href="" target="_blank" title="4">4</a></div>
+
                 </div>
                 <div id="assetinfo" class="contentsquare">
-                    <ul th:each="resource : ${indexRes.list}">
-                        <li><a th:href="@{/showres/}+${resource.id}">[[${resource.position}]]</a></li>
-                    </ul>
+                    <div> <a href="" target="_blank" title="2">2</a></div>
+                    <div> <a href="" target="_blank" title="3">3</a></div>
+                    <div> <a href="" target="_blank" title="4">4</a></div>
 
                 </div>
                 <div id="evaluateinfo" class="contentsquare">
-                    <tr style="border-bottom: 1px solid black; height:80px; line-height:80px;" th:each="Eva: ${indexEva.list}">
-                        <li><a th:href="@{/showEvaluate/}+${Eva.id}">[[${Eva.title}]]</a></li>
-                    </tr>
+                    <div> <a href="" target="_blank" title="2">2</a></div>
+                    <div> <a href="" target="_blank" title="3">3</a></div>
+                    <div> <a href="" target="_blank" title="4">4</a></div>
 
                 </div>
 
@@ -380,174 +253,5 @@ text-decoration:none
 
 </body>
 <script type="text/javascript" src="http://localhost:8081/js/index.js"></script>
-<script>
-        var fir= document.getElementById("lfir");
-        var sec= document.getElementById("lsec");
-        var thi= document.getElementById("lthi");
-       var ffir= document.getElementById("first");
-
-       var fsec= document.getElementById("second");
-       var sfir= document.getElementById("third");
-       var ssec= document.getElementById("fourth");
-       var sthi= document.getElementById("fifth");
-       var tfir= document.getElementById("sixth");
-       var ffircont=document.getElementById("hotspotinfo");
-       var fseccont=document.getElementById("affairinfo");
-       var sfircont=document.getElementById("fundinfo");
-       var sseccont=document.getElementById("assetinfo");
-       var sthicont=document.getElementById("sourceinfo");
-       var tfircont=document.getElementById("evaluateinfo");
-
-
-
-        ffircont.style.display="block";
-        fseccont.style.display="none";
-        sfircont.style.display="none";
-        sseccont.style.display="none";
-        sthicont.style.display="none";
-        tfircont.style.display="none";
-
-
-
-       fir.onmouseover=function()
-       {
-
-        if(sec.className=="leftactive")
-        {
-            sec.className="";
-        }
-        if(thi.className=="leftactive")
-        {
-            thi.className="";
-        }
-        if( fir.className!="leftactive")
-        {
-            fir.className="leftactive";
-            ssec.className="hidden";
-            sthi.className="hidden";
-            tfir.className="hidden";
-            ffir.className="active";
-            fsec.className="inactive";
-            sfir.className="hidden";
-            ffircont.style.display="block";
-            fseccont.style.display="none";
-            sfircont.style.display="none";
-            sseccont.style.display="none";
-            sthicont.style.display="none";
-            tfircont.style.display="none";
-        }
-
-
-
-
-       }
-       sec.onmouseover=function()
-       {
-
-        if(fir.className=="leftactive")
-        {
-            fir.className="";
-        }
-        if(thi.className=="leftactive")
-        {
-            thi.className="";
-        }
-        if( sec.className!="leftactive")
-        {
-            sec.className="leftactive";
-            ffir.className="hidden";
-            fsec.className="hidden";
-            tfir.className="hidden";
-            sfir.className="active";
-            ssec.className="inactive";
-            sthi.className="inactive";
-            ffircont.style.display="none";
-            fseccont.style.display="none";
-            sfircont.style.display="block";
-            sseccont.style.display="none";
-            sthicont.style.display="none";
-            tfircont.style.display="none";
-        }
-
-        }
-
-
-
-
-
-       thi.onmouseover=function()
-       {
-
-        if(fir.className=="leftactive")
-        {
-            fir.className="";
-        }
-        if(sec.className=="leftactive")
-        {
-            sec.className="";
-        }
-        if(thi.className!="leftactive")
-        {
-            thi.className="leftactive";
-            ffir.className="hidden";
-            fsec.className="hidden";
-            sfir.className="hidden";
-            ssec.className="hidden";
-            sthi.className="hidden";
-            tfir.className="active";
-            ffircont.style.display="none";
-            fseccont.style.display="none";
-            sfircont.style.display="none";
-            sseccont.style.display="none";
-            sthicont.style.display="none";
-            tfircont.style.display="block";
-        }
-
-       }
-
-    ffir.onmouseover=function()
-    {
-        ffir.className="active";
-        fsec.className="inactive";
-        fseccont.style.display="none";
-        ffircont.style.display="block";
-    }
-    fsec.onmouseover=function()
-    {
-        fsec.className="active";
-        ffir.className="inactive";
-        fseccont.style.display="block";
-        ffircont.style.display="none";
-
-    }
-    sfir.onmouseover=function()
-    {
-        sfir.className="active";
-        ssec.className="inactive";
-        sthi.className="inactive";
-        sfircont.style.display="block";
-        sseccont.style.display="none";
-        sthicont.style.display="none";
-
-    }
-    ssec.onmouseover=function()
-    {
-        ssec.className="active";
-        sfir.className="inactive";
-        sthi.className="inactive";
-        sfircont.style.display="none";
-        sseccont.style.display="block";
-        sthicont.style.display="none";
-
-    }
-    sthi.onmouseover=function()
-    {
-        ssec.className="inactive";
-        sfir.className="inactive";
-        sthi.className="active";
-        sfircont.style.display="none";
-        sseccont.style.display="none";
-        sthicont.style.display="block";
-    }
-    </script>
+<script type="text/javascript" src="http://localhost:8081/js/Show.js"></script>
 </html>
