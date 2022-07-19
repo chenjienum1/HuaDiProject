@@ -1,6 +1,7 @@
 package com.atschool.hdbasicserver.controller;
 
 import com.atschool.hdbasicserver.bean.Funds;
+import com.atschool.hdbasicserver.bean.Hotspot;
 import com.atschool.hdbasicserver.service.FundsService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.ui.Model;
@@ -54,4 +55,11 @@ public class FundsController {
         return "redirect:/Funds/"+pageNum;
     }
 
+
+    @RequestMapping("/showfunds/{id}")
+    public String showMessage(Model model,@PathVariable("id")int id){
+        Funds funds = fundsService.getFundsByID(id);
+        model.addAttribute("Msg",funds);
+        return "show3z_zj";
+    }
 }

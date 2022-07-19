@@ -62,6 +62,6 @@ public class ResourceController {
     public String showMessage(Model model,@PathVariable("id")int id){
         Resource resource = resourceService.getResourceByID(id);
         model.addAttribute("Msg",resource);
-        return "showresource";
+        return "show3z_zy";
     }
 }

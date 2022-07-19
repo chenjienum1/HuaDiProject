@@ -155,9 +155,9 @@
                 <table id="dataTable"   style="margin:0 auto; width:100%">
 
                     <tr style="border-bottom: 1px solid black; height:80px; line-height:80px;" th:each="property : ${propertyPages.list}">
+                        <td style="font-size:50px; font-weight:bold;"><a th:text="${property.name}"  th:href="@{'/showpro/'+${property.id}}"></a></td>
                         <td th:text="${property.town}" style="font-size:50px; font-weight:bold;"></td>
                         <td th:text="${property.village}" style="font-size:50px; font-weight:bold;"></td>
-                        <td th:text="${property.name}" style="font-size:50px; font-weight:bold;"></td>
                         <td th:text="${property.unit}" style="font-size:50px; font-weight:bold;"></td>
                         <td th:text="${property.amount}" style="font-size:50px; font-weight:bold;"></td>
                         <td th:text="${property.jinZhi}" style="font-size:50px; font-weight:bold;"></td>

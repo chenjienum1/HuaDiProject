@@ -17,7 +17,7 @@
 
     <!--public void deleteFunds(int id):-->
     <delete id="deleteFunds">
-        delete from funds where `id`=#{id};
+        delete from funds where `id`=#{id}
     </delete>
 
     <!--public List<Funds> getIncome();-->
@@ -28,5 +28,10 @@
     <!-->public List<Funds> getExpend();-->
     <select id="getExpend" resultType="com.atschool.hdbasicserver.bean.Funds">
         select * from funds where realaccount &lt; 0
+    </select>
+
+    <!--public Funds getFundsByID(int id);-->
+    <select id="getFundsByID" resultType="com.atschool.hdbasicserver.bean.Funds">
+        select * from funds where `id`=#{id}
     </select>
 </mapper>
