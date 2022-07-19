@@ -40,6 +40,7 @@
 
 
 
+
         <div th:if="${session.User==null}" class="login">
 
           <ul>
@@ -70,10 +71,10 @@
       </div>
       <nav id="menu-left">
         <ul>
-          <li class="active"><a href="http://localhost:8081/index">首页</a></li>
-          <li><a href="http://localhost:8081/Baseinformation">基层信息公开</a></li>
-          <li><a href="">三资管理</a></li>
-          <li><a href="http://localhost:8081/evaluate">评价</a></li>
+          <li class="active"><a href="http://localhost:8081/index" target="_self">首页</a></li>
+          <li><a href="http://localhost:8081/Baseinformation" target="_self">基层信息公开</a></li>
+          <li><a href="http://localhost:8081/sanZiinformation">三资管理</a></li>
+          <li><a href="http://localhost:8081/evaluate" target="_self">评价</a></li>
 
         </ul>
       </nav>
@@ -92,7 +93,7 @@
             </ul>
           </div>
         </li>
-        <li><a href="" target="_self">三资信息公开</a>
+        <li><a href="http://localhost:8081/sanZiinformation" target="_self">三资信息公开</a>
           <div class="hnavbox">
             <ul id="hnav2">
               <li><a href="http://localhost:8081/Funds/1" target="_self">资金信息公开</a></li>
@@ -101,7 +102,6 @@
 
 
               <div th:if="${session.User!=null}" >
-                <li><a href="" target="_self">添加报表</a></li>
                 <li><a href="http://localhost:8081/Projecttable" target="_self">工程项目</a></li>
               </div>
 
@@ -126,7 +126,8 @@
 </div>
 <div class="header_bottom">
 </div>
-</div>
+
+
 <!-- 预加载模块结束 -->
 
 
@@ -135,7 +136,7 @@
 
     <div class="main">
       <div class="set_height" ></div>
-      <div class="powz accbg" accidx="67"><a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="xxx" class="CurrChnlCls">xxx</a>
+      <div class="powz accbg" accidx="67"><a href="http://localhost:8081/index" target="_self" title="基层公开综合服务监管系统" class="CurrChnlCls">首页</a>&nbsp;&gt;&gt;&nbsp;<a href="http://localhost:8081/Baseinformation" target="_self" title="基层信息公开" class="CurrChnlCls">基层信息公开</a>&nbsp;&gt;&gt;&nbsp;<a href="" target="_self" title="政务信息添加" class="CurrChnlCls">政务信息添加</a>
       </div>
       <div class="maincon">
 

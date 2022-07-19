@@ -37,7 +37,8 @@
                 </a>
             </div>
             <div class="right">
-                
+
+
 
 
                 <div th:if="${session.User==null}" class="login">
@@ -72,7 +73,7 @@
                 <ul>
                     <li class="active"><a href="http://localhost:8081/index" target="_self">首页</a></li>
                     <li><a href="http://localhost:8081/Baseinformation" target="_self">基层信息公开</a></li>
-                    <li><a href="">三资管理</a></li>
+                    <li><a href="http://localhost:8081/sanZiinformation">三资管理</a></li>
                     <li><a href="http://localhost:8081/evaluate" target="_self">评价</a></li>
 
                 </ul>
@@ -82,17 +83,17 @@
         <div class="hnav">
             <ul>
                 <li><a href="http://localhost:8081/index" target="_self">首页</a></li>
-                <li><a href="http://localhost:8081/hotspot/1" target="_self" >基层信息公开</a>
+                <li><a href="http://localhost:8081/Baseinformation" target="_self" >基层信息公开</a>
                     <div class="hnavbox">
                         <ul id="hnav1">
-                            <li><a href="http://localhost:8081/Baseinformation" target="_self">热点信息公开</a></li>
+                            <li><a href="http://localhost:8081/hotspot/1" target="_self">热点信息公开</a></li>
                             <li><a href="http://localhost:8081/affair/1" target="_self">政务信息公开</a></li>
                             <li><a href="http://localhost:8081/evaluate/1" target="_self">满意度公开</a></li>
 
                         </ul>
                     </div>
                 </li>
-                <li><a href="" target="_self">三资信息公开</a>
+                <li><a href="http://localhost:8081/sanZiinformation" target="_self">三资信息公开</a>
                     <div class="hnavbox">
                         <ul id="hnav2">
                             <li><a href="http://localhost:8081/Funds/1" target="_self">资金信息公开</a></li>
@@ -101,7 +102,6 @@
 
 
                             <div th:if="${session.User!=null}" >
-                                <li><a href="" target="_self">添加报表</a></li>
                                 <li><a href="http://localhost:8081/Projecttable" target="_self">工程项目</a></li>
                             </div>
 
