@@ -8,9 +8,9 @@
 
 <mapper namespace="com.atschool.hdbasicserver.mapper.AffairMapper">
 
-<!--public void addAffair(String title, String time, String picture, String content);-->
+<!--public void addAffair(String title, String time, String laiyuan, String content);-->
     <insert id="addAffair">
-        insert into affair(`title`,`time`,`picture`,`content`) values (#{title},#{time},#{picture},#{content})
+        insert into affair(`title`,`time`,`laiyuan`,`content`) values (#{title},#{time},#{laiyuan},#{content})
     </insert>
 
 

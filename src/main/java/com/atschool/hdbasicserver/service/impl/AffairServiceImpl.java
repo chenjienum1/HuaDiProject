@@ -18,8 +18,8 @@ public class AffairServiceImpl implements AffairService {
     AffairMapper affairMapper;
 
     @Override
-    public void addAffair(String title,String time,String picture,String content){
-        affairMapper.addAffair(title,time,picture,content);
+    public void addAffair(String title,String time,String laiyuan,String content){
+        affairMapper.addAffair(title,time,laiyuan,content);
     }
 
     @Override

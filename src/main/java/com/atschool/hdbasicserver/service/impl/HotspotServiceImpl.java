@@ -19,8 +19,8 @@ public class HotspotServiceImpl implements HotspotService {
     HotspotMapper hotspotMapper;
 
     @Override
-    public void addHotspot(String title,String time,String picture,String content){
-        hotspotMapper.addHotspot(title,time,picture,content);
+    public void addHotspot(String title,String time,String laiyuan,String content){
+        hotspotMapper.addHotspot(title,time,laiyuan,content);
     }
 
     @Override

@@ -9,7 +9,7 @@ import java.util.List;
 @Mapper
 public interface HotspotMapper {
 
-    public void addHotspot(String title, String time, String picture, String content);
+    public void addHotspot(String title, String time, String laiyuan, String content);
 
     public List<Hotspot> getHotspot();
 

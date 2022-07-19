@@ -9,7 +9,7 @@ public class Affair {//政务
 
     private Date time;//时间
 
-    private String picture;//图片
+    private String laiyuan;//图片
 
     private String content;//内容
 
@@ -19,9 +19,9 @@ public class Affair {//政务
 
 
 
-    public Affair(String title, String time, String picture, String content) {
+    public Affair(String title, String time, String laiyuan, String content) {
         this.title = title;
-        this.picture = picture;
+        this.laiyuan = laiyuan;
         this.content = content;
         this.time = java.sql.Date.valueOf(time);
     }
@@ -34,8 +34,8 @@ public class Affair {//政务
         return time;
     }
 
-    public String getPicture() {
-        return picture;
+    public String getlaiyuan() {
+        return laiyuan;
     }
 
     public String getContent() {
@@ -58,8 +58,8 @@ public class Affair {//政务
         this.time = time;
     }
 
-    public void setPicture(String picture) {
-        this.picture = picture;
+    public void setlaiyuan(String laiyuan) {
+        this.laiyuan = laiyuan;
     }
 
     public void setContent(String content) {
@@ -72,7 +72,7 @@ public class Affair {//政务
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", time=" + time +
-                ", picture='" + picture + '\'' +
+                ", laiyuan='" + laiyuan + '\'' +
                 ", content='" + content + '\'' +
                 '}';
     }

@@ -31,11 +31,11 @@ public class HotspotController {
                          @RequestParam("year")String time_year,
                          @RequestParam("month")String time_month,
                          @RequestParam("day")String time_day,
-                         @RequestParam("picture")String picture,
+                         @RequestParam("laiyuan")String laiyuan,
                          @RequestParam("content")String content){
 
         String time = time_year + "-" + time_month + "-" + time_day;
-        hotspotService.addHotspot(title,time,picture,content);
+        hotspotService.addHotspot(title,time,laiyuan,content);
         return "hotspot";
     }
 
